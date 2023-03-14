@@ -1,0 +1,8 @@
+@startuml
+class DestroyBullet {
+    - Start() : void
+    - Update() : void
+    - OnCollisionEnter(other:Collision) : void
+}
+MonoBehaviour <|-- DestroyBullet
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+class LightCtr {
+    + timeOut : float
+    + timeElapsed : float
+    + timeUp : bool = false
+    + timeStart : bool = false
+    + lightUp : bool = false
+    + lightOff : bool = false
+    + LIntensity : float
+    - b_Start : bool = false
+    + lightUpSpeed : float
+    - cnt : float
+    - Awake() : void
+    - Update() : void
+    + GetlightUp() : bool
+}
+MonoBehaviour <|-- LightCtr
+@enduml

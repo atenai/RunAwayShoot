@@ -1,0 +1,9 @@
+@startuml
+class TextureManager {
+    - Start() : void
+    - Update() : void
+}
+MonoBehaviour <|-- TextureManager
+TextureManager --> "Star" Sprite
+TextureManager --> "Star_Half" Sprite
+@enduml

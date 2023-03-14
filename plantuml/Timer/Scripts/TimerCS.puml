@@ -1,0 +1,17 @@
+@startuml
+class TimerCS {
+    - totalTime : float
+    - minute : int
+    - seconds : float
+    - oldSeconds : float
+    - b_Result : bool
+    - Start() : void
+    - Update() : void
+    + GetMinute() : int
+}
+MonoBehaviour <|-- TimerCS
+TimerCS --> "timerText" Text
+TimerCS --> "TimeOver_text" Text
+TimerCS --> "TimeOverSound" AudioClip
+TimerCS --> "audioSource" AudioSource
+@enduml

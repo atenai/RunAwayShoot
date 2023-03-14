@@ -1,0 +1,22 @@
+@startuml
+class Effect {
+    - Update() : void
+    - OnRenderImage(_source:RenderTexture, _destination:RenderTexture) : void
+    - switchType() : void
+    - checkValue() : void
+    - defaltePostEffect(_source:RenderTexture, _destination:RenderTexture) : void
+    - monoToonRender(_source:RenderTexture, _destination:RenderTexture) : void
+    - gaussianBlur(_source:RenderTexture, _destination:RenderTexture) : void
+}
+enum PostEffectNum {
+    Default= 0,
+    MonoToon,
+    GaussianBlur,
+    Max,
+}
+MonoBehaviour <|-- Effect
+Effect --> "mMonoToonMat" Material
+Effect --> "mDefMat" Material
+Effect o-> "mType" PostEffectNum
+Effect +-- PostEffectNum
+@enduml

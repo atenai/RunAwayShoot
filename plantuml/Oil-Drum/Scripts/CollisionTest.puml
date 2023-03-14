@@ -1,0 +1,7 @@
+@startuml
+class CollisionTest {
+    - Start() : void
+    - Update() : void
+}
+MonoBehaviour <|-- CollisionTest
+@enduml

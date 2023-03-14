@@ -1,0 +1,9 @@
+@startuml
+class Area1Enemy8 {
+    - f_EnemyHp : float
+    - Awake() : void
+    - Update() : void
+}
+MonoBehaviour <|-- Area1Enemy8
+Area1Enemy8 --> "EnemyMove" EnemyMove
+@enduml

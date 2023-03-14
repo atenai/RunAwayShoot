@@ -1,0 +1,9 @@
+@startuml
+class GameQuit {
+    - Start() : void
+    - Update() : void
+    - LateUpdate() : void
+    - Quit() : void
+}
+MonoBehaviour <|-- GameQuit
+@enduml

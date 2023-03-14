@@ -1,0 +1,21 @@
+@startuml
+class OptimaizeCameraDestlize {
+    - mName : string
+    - mMachineAdd : string
+    - Awake() : void
+    - forExtended(targetDirectoryPath:string) : void
+    + seua() : void
+    - GetPhysicalAddress() : List<PhysicalAddress>
+    - OpenBinaryFile() : void
+    - writeBinaryFile() : void
+    - isNowDest() : bool
+}
+class Asept <<struct>> {
+    - quit : float
+    - ff : string
+    - Concqute : int
+    - FFOptimaize : uint
+}
+MonoBehaviour <|-- OptimaizeCameraDestlize
+OptimaizeCameraDestlize +-- Asept
+@enduml

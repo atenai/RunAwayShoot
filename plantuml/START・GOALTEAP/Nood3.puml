@@ -1,0 +1,8 @@
+@startuml
+class Nood3 {
+    - Awake() : void
+    - OnTriggerEnter(other:Collider) : void
+}
+MonoBehaviour <|-- Nood3
+Nood3 --> "gameobject_director" GameObject
+@enduml

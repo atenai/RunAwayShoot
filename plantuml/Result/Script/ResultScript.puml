@@ -1,0 +1,27 @@
+@startuml
+class ResultScript {
+    + mFadeSpeed : float
+    - mFadeSize : float
+    - mFadeAlfa : float
+    - i : int = 0
+    - MaxCnt : int = 0
+    - alfa : float = 0
+    - mScore : uint
+    + {static} MaxScore : int
+    - nModeCnt : uint
+    - fReviewScore : float
+    - Awake() : void
+    - Update() : void
+    - Step1() : void
+    - Step2() : void
+    - Step3() : void
+    - Step4() : void
+    - FinalStep() : void
+}
+MonoBehaviour <|-- ResultScript
+ResultScript --> "ReviewScore_Text" Text
+ResultScript --> "Comment1_Text" Text
+ResultScript --> "Comment2_Text" Text
+ResultScript --> "Score_Text" Text
+ResultScript --> "Poster_Image" Image
+@enduml

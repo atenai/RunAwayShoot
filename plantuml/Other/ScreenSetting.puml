@@ -1,0 +1,7 @@
+@startuml
+class ScreenSetting {
+    - Start() : void
+    - Update() : void
+}
+MonoBehaviour <|-- ScreenSetting
+@enduml

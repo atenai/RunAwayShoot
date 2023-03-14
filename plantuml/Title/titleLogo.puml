@@ -1,0 +1,10 @@
+@startuml
+class titleLogo {
+    - titlelogo : bool
+    - Awake() : void
+    - Update() : void
+    + titlelogoUp() : void
+}
+MonoBehaviour <|-- titleLogo
+titleLogo --> "Title" GameObject
+@enduml

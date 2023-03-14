@@ -1,0 +1,14 @@
+@startuml
+class PlayerCollider {
+    - Awake() : void
+    - Update() : void
+    - OnTriggerEnter(other:Collider) : void
+}
+MonoBehaviour <|-- PlayerCollider
+PlayerCollider --> "mHitCircle" HitAttackUI
+PlayerCollider --> "mWeapon" GameObject
+PlayerCollider --> "mPlayerCon" player
+PlayerCollider --> "sound1" AudioClip
+PlayerCollider --> "soundNood" AudioClip
+PlayerCollider --> "audioSource" AudioSource
+@enduml

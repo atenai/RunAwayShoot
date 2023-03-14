@@ -1,0 +1,15 @@
+@startuml
+class EnemySoundList {
+    - Start() : void
+    - Update() : void
+    + EnemyWalkSound() : void
+    + EnemyShotSound() : void
+    + EnemyDamagedSound() : void
+    + StopAudio() : void
+}
+MonoBehaviour <|-- EnemySoundList
+EnemySoundList --> "Move_Sound" AudioClip
+EnemySoundList --> "Shot_Sound" AudioClip
+EnemySoundList --> "Damaged_Sound" AudioClip
+EnemySoundList --> "EnemyMaster_audioSource" AudioSource
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class MouseCursorOff {
+    - Start() : void
+    - Update() : void
+}
+MonoBehaviour <|-- MouseCursorOff
+@enduml

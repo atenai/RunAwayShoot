@@ -1,0 +1,14 @@
+@startuml
+class IsRenderer {
+    - <<const>> CAMERA_TAG_NAME : string = "MovieCamera1"
+    + {static} isRendered : bool = false
+    + isPlayer : bool = false
+    - Awake() : void
+    - Update() : void
+    + {static} GetIsRendered() : bool
+}
+MonoBehaviour <|-- IsRenderer
+IsRenderer --> "movieCamera1" GameObject
+IsRenderer --> "plane" GameObject
+IsRenderer --> "script" InCamera
+@enduml

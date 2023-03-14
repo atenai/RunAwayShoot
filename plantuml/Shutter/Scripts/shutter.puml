@@ -1,0 +1,20 @@
+@startuml
+class shutter {
+    - m_Distance : float
+    - m_Second : int
+    - m_ColliderOffset : float
+    - m_fMove : float
+    - m_bShutout : bool
+    - UpdateDiatance : float
+    - Start() : void
+    - Update() : void
+    - TimerInit() : void
+    - TimerUpdate() : void
+    + GetShutout() : bool
+}
+MonoBehaviour <|-- shutter
+shutter --> "m_Target" GameObject
+shutter --> "m_Position" Vector3
+shutter --> "m_TargetPosition" Vector3
+shutter --> "distanceUI" Text
+@enduml

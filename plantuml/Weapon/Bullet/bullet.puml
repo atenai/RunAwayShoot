@@ -1,0 +1,11 @@
+@startuml
+class bullet {
+    - mSpeed : float
+    - mLimit : float
+    - Awake() : void
+    + createBullet(_obj:GameObject, _frontVec:Vector3) : void
+    + createBullet(_obj:GameObject, _frontVec:Vector3, _tagName:string) : void
+}
+MonoBehaviour <|-- bullet
+bullet --> "mObject" GameObject
+@enduml

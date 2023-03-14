@@ -1,0 +1,21 @@
+@startuml
+class Score {
+    + {static} score : int
+    - Awake() : void
+    - Update() : void
+    + {static} AddScore(num:int) : int
+    + {static} GetScore() : int
+}
+enum AddScoreType {
+    Add100,
+    Add500,
+    Add3000,
+    Add5000,
+    take100,
+    take3000,
+}
+MonoBehaviour <|-- Score
+Score --> "add_score_type" AddScoreType
+Score --> "score_text" Text
+Score +-- AddScoreType
+@enduml

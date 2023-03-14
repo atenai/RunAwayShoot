@@ -1,0 +1,12 @@
+@startuml
+class InCamera {
+    {static} + isStay : bool = false
+    - Awake() : void
+    - Update() : void
+    - OnTriggerEnter(other:Collider) : void
+    - OnTriggerExit(other:Collider) : void
+    {static} + GetisStay() : bool
+}
+MonoBehaviour <|-- InCamera
+InCamera --> "director" Director
+@enduml

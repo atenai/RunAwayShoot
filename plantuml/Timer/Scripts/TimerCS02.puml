@@ -1,0 +1,15 @@
+@startuml
+class TimerCS02 {
+    - totalTime : float
+    - minute : int
+    - seconds : float
+    - oldSeconds : float
+    - Start() : void
+    - Update() : void
+    - Draw(score:int) : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- TimerCS02
+TimerCS02 o-> "number<int>" "List`1"
+@enduml

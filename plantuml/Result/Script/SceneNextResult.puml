@@ -1,0 +1,14 @@
+@startuml
+class SceneNextResult {
+    - debugGoal : bool
+    - b_GOAL : bool
+    - ResultTime : float
+    - Start() : void
+    - Update() : void
+    - OnTriggerEnter(other:Collider) : void
+}
+MonoBehaviour <|-- SceneNextResult
+SceneNextResult --> "GOAL_text" Text
+SceneNextResult --> "GOALSound" AudioClip
+SceneNextResult --> "audioSource" AudioSource
+@enduml

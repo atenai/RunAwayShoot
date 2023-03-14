@@ -1,0 +1,13 @@
+@startuml
+class RectTest {
+    - xMax : float
+    - yMax : float
+    - xSpeed : float
+    - ySpeed : float
+    + FPS : float
+    - Start() : void
+    - Update() : void
+}
+MonoBehaviour <|-- RectTest
+RectTest o-> "rectTransform" RectTransform
+@enduml

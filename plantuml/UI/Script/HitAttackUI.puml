@@ -1,0 +1,14 @@
+@startuml
+class HitAttackUI {
+    - timer : float
+    + OnDamage(sender:Vector3) : void
+    - OnGUI() : void
+    + setPlayerPos(_posVec:Vector3) : void
+    + setPlayerCameraVec(_frontVec:Vector3) : void
+}
+MonoBehaviour <|-- HitAttackUI
+HitAttackUI --> "tex" Texture
+HitAttackUI --> "attacker" Vector3
+HitAttackUI --> "mPlayerPos" Vector3
+HitAttackUI --> "mPlayerFrontVec" Vector3
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class SampleAnimation {
+    - <<const>> key_isRun : string = "IsRun"
+    - <<const>> key_isPrepare : string = "IsPrepare"
+    - <<const>> key_isReload : string = "IsReload"
+    - Awake() : void
+    - Update() : void
+    + IsRun_False() : void
+    + IsRun_True() : void
+    + IsPrepare_False() : void
+    + IsPrepare_True() : void
+    + IsReload_False() : void
+    + IsReload_True() : void
+}
+MonoBehaviour <|-- SampleAnimation
+SampleAnimation --> "animator" Animator
+@enduml

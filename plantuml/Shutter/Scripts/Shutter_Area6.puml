@@ -1,0 +1,13 @@
+@startuml
+class Shutter_Area6 {
+    - posy : float
+    - b_pos : bool
+    - Awake() : void
+    - Update() : void
+    - OnTriggerEnter(other:Collider) : void
+}
+MonoBehaviour <|-- Shutter_Area6
+Shutter_Area6 --> "ShutterOya" GameObject
+Shutter_Area6 --> "ShutterCol" Transform
+Shutter_Area6 --> "ShutterX" Transform
+@enduml

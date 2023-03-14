@@ -1,0 +1,10 @@
+@startuml
+class WhiteSmokeCS {
+    - Start() : void
+    - Update() : void
+    - OnTriggerEnter(coll:Collider) : void
+}
+MonoBehaviour <|-- WhiteSmokeCS
+WhiteSmokeCS --> "m_TargetEnemy" GameObject
+WhiteSmokeCS --> "m_EnemyCS" EnemyMove
+@enduml

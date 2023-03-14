@@ -1,0 +1,6 @@
+@startuml
+class HPUIRotation {
+    - LateUpdate() : void
+}
+MonoBehaviour <|-- HPUIRotation
+@enduml

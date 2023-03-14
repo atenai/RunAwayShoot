@@ -1,0 +1,53 @@
+@startuml
+class EnemyMove {
+    - mSpeed : float = 2.0f
+    - mRotationSpeed : float = 1.0f
+    - mPosrange : float = 10f
+    - mHP : float
+    - mMaxHP : float = 100
+    + mDistancetoTarget : float
+    + mDistancetoPlayer : float
+    - mSearchAngle : float = 50f
+    - mSetMode : int
+    - mIs_Obstacle : bool
+    - mdestPoint : int = 0
+    + mDistancetoVoice : float
+    - IsDestroy : bool
+    - Cnt : int
+    - StayCnt : int = 0
+    - Awake() : void
+    - WalkCnt : int = 0
+    - Update() : void
+    - GotoNextPoint() : void
+    - Ray() : void
+    - Move() : void
+    - Chase() : void
+    - AttackCnt : int = 0
+    - Attack() : void
+    - BeDamaged() : void
+    - DestroyPhase() : void
+    - OnTriggerStay(other:Collider) : void
+    - OnTriggerExit(other:Collider) : void
+    - OnCollisionEnter(other:Collision) : void
+    + GetEnemyHP() : float
+    + ReceiveDamage(Damage:int) : void
+}
+MonoBehaviour <|-- EnemyMove
+EnemyMove --> "mTargetPos" Vector3
+EnemyMove --> "Player" GameObject
+EnemyMove --> "SearchArea" SphereCollider
+EnemyMove --> "HPUI" GameObject
+EnemyMove --> "HPSlider" Slider
+EnemyMove --> "Direction" GameObject
+EnemyMove --> "S_enemyAttack" EnemyAttack
+EnemyMove --> "Direction2" GameObject
+EnemyMove --> "S_enemyAttack2" EnemyAttack
+EnemyMove --> "BeDamaged_PlayerPos" Vector3
+EnemyMove --> "OCanvas" GameObject
+EnemyMove --> "TestObj" GameObject
+EnemyMove --> "ExplosionParticle" GameObject
+EnemyMove --> "ExplosionParticle2" GameObject
+EnemyMove --> "EnemySound" EnemySoundList
+EnemyMove --> "DamegeSound" AudioClip
+EnemyMove --> "audioSource" AudioSource
+@enduml

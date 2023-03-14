@@ -1,0 +1,11 @@
+@startuml
+class SceneNext {
+    - SceneNextTimer : float
+    - b_Start : bool = false
+    - Start() : void
+    - Update() : void
+}
+MonoBehaviour <|-- SceneNext
+SceneNext --> "StartSound" AudioClip
+SceneNext --> "audioSource" AudioSource
+@enduml

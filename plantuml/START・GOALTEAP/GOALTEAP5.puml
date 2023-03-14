@@ -1,0 +1,8 @@
+@startuml
+class GOALTEAP5 {
+    - Awake() : void
+    - OnTriggerEnter(other:Collider) : void
+}
+MonoBehaviour <|-- GOALTEAP5
+GOALTEAP5 --> "gameobject_director" GameObject
+@enduml

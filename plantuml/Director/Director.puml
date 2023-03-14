@@ -1,0 +1,202 @@
+@startuml
+class Director {
+    + area_Num : int = 0
+    + fadeInSpeed : float = 0.05f
+    + fadeOutSpeed : float = 0.05f
+    - b_Area1Fade : bool = false
+    - b_Area2MissionSuccessFade : bool = false
+    - b_Area2MissionFailureFade : bool = false
+    - b_Area3Fade : bool = false
+    - b_Area4MissionSuccessFade : bool = false
+    - b_Area4MissionFailureFade : bool = false
+    - b_Area5MissionSuccessFade : bool = false
+    - b_Area5MissionFailureFade : bool = false
+    - b_Area6Fade : bool = false
+    - b_AreaAllFade : bool = false
+    {static} + enemyDestroyNum : int = 0
+    + b_Area1 : bool = false
+    {static} - Enemy1 : bool = false
+    {static} - Enemy2 : bool = false
+    {static} - Enemy3 : bool = false
+    {static} - Enemy4 : bool = false
+    {static} - Enemy5 : bool = false
+    {static} - Enemy6 : bool = false
+    {static} - Enemy7 : bool = false
+    {static} - Enemy8 : bool = false
+    + b_GOAL1 : bool = false
+    {static} + enemyFound : bool = false
+    + b_Area2 : bool = true
+    + b_FoundFalseGOAL : bool = false
+    {static} + b_Area2if : bool = false
+    + b_GOAL2 : bool = false
+    + b_Area3 : bool = true
+    {static} + b_Area3if : bool = false
+    {static} + b_EnemyDrumsDestroy : bool = false
+    + b_GOAL3 : bool = false
+    + b_Area4 : bool = true
+    + {static} time : float = 50.0f
+    - t : int
+    - b_TimeOver : bool = false
+    + b_TimeOverFalseGOAL : bool = false
+    + b_GOAL4 : bool = false
+    + b_Area5 : bool = true
+    {static} + b_Area5if : bool = false
+    {static} + b_PlayerDamege : bool = false
+    + b_DamegeFalseGOAL : bool = false
+    + b_GOAL5 : bool = false
+    + b_Area6 : bool = true
+    - nood1 : bool = false
+    - nood2 : bool = false
+    - nood3 : bool = false
+    - nood4 : bool = false
+    - nood5 : bool = false
+    - noodNum : int = 0
+    + b_GOAL6 : bool = false
+    - b_All_Area1 : bool = false
+    - b_All_Area2 : bool = false
+    - b_All_Area3 : bool = false
+    - b_All_Area4 : bool = false
+    - b_All_Area5 : bool = false
+    - b_All_Area6 : bool = false
+    + b_AreaAll : bool = true
+    - b_SE_Failure_Area2 : bool = true
+    - b_SE_Failure_Area4 : bool = true
+    - b_SE_Failure_Area5 : bool = true
+    - b_SE_Start_Area1 : bool = true
+    - b_SE_Start_Area2 : bool = true
+    - b_SE_Start_Area3 : bool = true
+    - b_SE_Start_Area4 : bool = true
+    - b_SE_Start_Area5 : bool = true
+    - b_SE_Start_Area6 : bool = true
+    - Awake() : void
+    - Update() : void
+    {static} + EnemyDestroy() : void
+    {static} + EnemyFound() : void
+    {static} + EnemyDrumsDestroy() : void
+    {static} + PlayerDamege() : void
+    + Addnood1() : void
+    + Addnood2() : void
+    + Addnood3() : void
+    + Addnood4() : void
+    + Addnood5() : void
+    {static} + EnemyDestroy1() : void
+    {static} + EnemyDestroy2() : void
+    {static} + EnemyDestroy3() : void
+    {static} + EnemyDestroy4() : void
+    {static} + EnemyDestroy5() : void
+    {static} + EnemyDestroy6() : void
+    {static} + EnemyDestroy7() : void
+    {static} + EnemyDestroy8() : void
+    - Area1DirectorFadeIn() : void
+    - Area2DirectorFadeIn() : void
+    - Area3DirectorFadeIn() : void
+    - Area4DirectorFadeIn() : void
+    - Area5DirectorFadeIn() : void
+    - Area6DirectorFadeIn() : void
+    - Area1MissionSuccessFadeIn() : void
+    - Area2MissionSuccessFadeIn() : void
+    - Area3MissionSuccessFadeIn() : void
+    - Area4MissionSuccessFadeIn() : void
+    - Area5MissionSuccessFadeIn() : void
+    - Area6MissionSuccessFadeIn() : void
+    - Area2MissionFailureFadeIn() : void
+    - Area4MissionFailureFadeIn() : void
+    - Area5MissionFailureFadeIn() : void
+    - AllMissionSuccessFadeIn() : void
+    - Area1DirectorFadeOut() : void
+    - Area2DirectorFadeOut() : void
+    - Area3DirectorFadeOut() : void
+    - Area4DirectorFadeOut() : void
+    - Area5DirectorFadeOut() : void
+    - Area6DirectorFadeOut() : void
+    - Area1MissionSuccessFadeOut() : void
+    - Area2MissionSuccessFadeOut() : void
+    - Area3MissionSuccessFadeOut() : void
+    - Area4MissionSuccessFadeOut() : void
+    - Area5MissionSuccessFadeOut() : void
+    - Area6MissionSuccessFadeOut() : void
+    - Area2MissionFailureFadeOut() : void
+    - Area4MissionFailureFadeOut() : void
+    - Area5MissionFailureFadeOut() : void
+}
+MonoBehaviour <|-- Director
+Director --> "Area1DirectortextColor" Color
+Director --> "Area2DirectortextColor" Color
+Director --> "Area3DirectortextColor" Color
+Director --> "Area4DirectortextColor" Color
+Director --> "Area5DirectortextColor" Color
+Director --> "Area6DirectortextColor" Color
+Director --> "ContenttextColor" Color
+Director --> "Area1MissionSuccesstextColor" Color
+Director --> "Area2MissionSuccesstextColor" Color
+Director --> "Area3MissionSuccesstextColor" Color
+Director --> "Area4MissionSuccesstextColor" Color
+Director --> "Area5MissionSuccesstextColor" Color
+Director --> "Area6MissionSuccesstextColor" Color
+Director --> "Area2MissionFailuretextColor" Color
+Director --> "Area4MissionFailuretextColor" Color
+Director --> "Area5MissionFailuretextColor" Color
+Director --> "AllMissionSuccesstextColor" Color
+Director --> "direct_text" Text
+Director --> "content_text" Text
+Director --> "MissionSuccess_text" Text
+Director --> "Table1_text" Text
+Director --> "Table2_text" Text
+Director --> "Table3_text" Text
+Director --> "Table4_text" Text
+Director --> "Table5_text" Text
+Director --> "Table6_text" Text
+Director --> "Table7_text" Text
+Director --> "Table8_text" Text
+Director --> "AllMissionSuccess_text" Text
+Director --> "soundMissionSuccess" AudioClip
+Director --> "soundMissionFailure" AudioClip
+Director --> "soundAllMissionSuccess" AudioClip
+Director --> "soundMissionStart" AudioClip
+Director --> "audioSource" AudioSource
+Director --> "player" player
+Director --> "ImageArea1Director_object" GameObject
+Director --> "ImageArea1Director_component" Image
+Director --> "ImageArea2Director_object" GameObject
+Director --> "ImageArea2Director_component" Image
+Director --> "ImageArea3Director_object" GameObject
+Director --> "ImageArea3Director_component" Image
+Director --> "ImageArea4Director_object" GameObject
+Director --> "ImageArea4Director_component" Image
+Director --> "ImageArea5Director_object" GameObject
+Director --> "ImageArea5Director_component" Image
+Director --> "ImageArea6Director_object" GameObject
+Director --> "ImageArea6Director_component" Image
+Director --> "ImageArea1_object" GameObject
+Director --> "ImageArea1_component" Image
+Director --> "ImageArea2_object" GameObject
+Director --> "ImageArea2_component" Image
+Director --> "ImageArea3_object" GameObject
+Director --> "ImageArea3_component" Image
+Director --> "ImageArea4_object" GameObject
+Director --> "ImageArea4_component" Image
+Director --> "ImageArea5_object" GameObject
+Director --> "ImageArea5_component" Image
+Director --> "ImageArea6_object" GameObject
+Director --> "ImageArea6_component" Image
+Director --> "ImageArea1MissionSuccess_object" GameObject
+Director --> "ImageArea1MissionSuccess_component" Image
+Director --> "ImageArea2MissionSuccess_object" GameObject
+Director --> "ImageArea2MissionSuccess_component" Image
+Director --> "ImageArea3MissionSuccess_object" GameObject
+Director --> "ImageArea3MissionSuccess_component" Image
+Director --> "ImageArea4MissionSuccess_object" GameObject
+Director --> "ImageArea4MissionSuccess_component" Image
+Director --> "ImageArea5MissionSuccess_object" GameObject
+Director --> "ImageArea5MissionSuccess_component" Image
+Director --> "ImageArea6MissionSuccess_object" GameObject
+Director --> "ImageArea6MissionSuccess_component" Image
+Director --> "ImageArea2MissionFailure_object" GameObject
+Director --> "ImageArea2MissionFailure_component" Image
+Director --> "ImageArea4MissionFailure_object" GameObject
+Director --> "ImageArea4MissionFailure_component" Image
+Director --> "ImageArea5MissionFailure_object" GameObject
+Director --> "ImageArea5MissionFailure_component" Image
+Director --> "ImageAllMissionSuccess_object" GameObject
+Director --> "ImageAllMissionSuccess_component" Image
+@enduml

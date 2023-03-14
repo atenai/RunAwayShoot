@@ -1,0 +1,8 @@
+@startuml
+class CollTape {
+    - Awake() : void
+    - OnTriggerEnter(other:Collider) : void
+}
+MonoBehaviour <|-- CollTape
+CollTape --> "gameobject_director" GameObject
+@enduml

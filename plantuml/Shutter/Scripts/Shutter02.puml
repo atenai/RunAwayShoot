@@ -1,0 +1,29 @@
+@startuml
+class Shutter02 {
+    - m_Second : int
+    - m_bShutout : bool
+    - m_bShutterStart : bool
+    - UpdateDiatance : float
+    - Start() : void
+    - Update() : void
+    + Shutter_Start() : void
+    - TimerUpdate() : void
+    + GetShutout() : bool
+    - OnCollisionEnter(collision:Collision) : void
+}
+enum SHUTTER_TYPE {
+    LEFT= 0,
+    RIGHT,
+    MAX,
+}
+MonoBehaviour <|-- Shutter02
+Shutter02 --> "m_Parent" GameObject
+Shutter02 --> "m_ShutterL" Transform
+Shutter02 --> "m_ShutterR" Transform
+Shutter02 --> "m_Player" GameObject
+Shutter02 --> "m_PlayerSize" Vector3
+Shutter02 --> "m_PlayerCollider" BoxCollider
+Shutter02 --> "m_Center" Vector3
+Shutter02 --> "distanceUI" Text
+Shutter02 +-- SHUTTER_TYPE
+@enduml

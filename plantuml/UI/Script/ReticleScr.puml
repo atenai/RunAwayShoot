@@ -1,0 +1,8 @@
+@startuml
+class ReticleScr {
+    - mReticleScale : float = 0
+    - LateUpdate() : void
+    + setReticleSize(_scale:float) : void
+}
+MonoBehaviour <|-- ReticleScr
+@enduml

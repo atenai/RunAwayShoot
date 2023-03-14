@@ -1,0 +1,18 @@
+@startuml
+class PlayerSound {
+    - Bool_Sound : bool = true
+    - Start() : void
+    - Update() : void
+    + PlayAssultSound() : void
+    + PlayReloadSound() : void
+    + PlayBulletEmptySound() : void
+    + PlaySwitchSound() : void
+    + StopAudio() : void
+}
+MonoBehaviour <|-- PlayerSound
+PlayerSound --> "Assult_Sound" AudioClip
+PlayerSound --> "Reload_Sound" AudioClip
+PlayerSound --> "BulletEmpty_Sound" AudioClip
+PlayerSound --> "Switch_sound" AudioClip
+PlayerSound --> "Master_audioSource" AudioSource
+@enduml

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 public class TimerCS : MonoBehaviour
 {
     //　トータル制限時間
@@ -66,7 +67,10 @@ public class TimerCS : MonoBehaviour
         {
             timerText.text = minute.ToString("00") + ":" + ((int)seconds).ToString("00");
         }
+
         oldSeconds = seconds;
+
+
         //　制限時間以下になったらコンソールに『制限時間終了』という文字列を表示する
         if (totalTime <= 0.0f)
         {

@@ -1,0 +1,19 @@
+@startuml
+class weapon {
+    # - mMaxBullet : uint
+    # - mRemainderBulletContet : uint
+    # - mMaxBulletMagazine : uint
+    # - mRemainderBulletMagazine : uint
+    # - mShootSpeed : float
+    + <<virtual>> Awake() : void
+    + <<virtual>> Update() : void
+    + <<virtual>> shooting(_tagName:string) : void
+    + reload() : void
+    + addBullet(_num:uint) : void
+    + getRemainderBulletMagazine() : uint
+    + getRemainderBulletContet() : uint
+}
+MonoBehaviour <|-- weapon
+weapon --> "mBulletPrefab" GameObject
+weapon --> "mFrontVec" GameObject
+@enduml

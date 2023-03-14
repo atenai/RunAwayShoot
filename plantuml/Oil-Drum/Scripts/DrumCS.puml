@@ -1,0 +1,12 @@
+@startuml
+class DrumCS {
+    - SE_Endtime : float
+    - Start() : void
+    - Update() : void
+    - OnTriggerEnter(coll:Collider) : void
+}
+MonoBehaviour <|-- DrumCS
+DrumCS --> "explosionPrefab" GameObject
+DrumCS --> "ExplosionPlayer" GameObject
+DrumCS --> "Explosion_SE" AudioClip
+@enduml

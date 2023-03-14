@@ -1,0 +1,42 @@
+@startuml
+class player {
+    - mBattleMode : bool
+    - mNormalWalkSpeed : float
+    - mWeaponWalkSpeed : float
+    - mRunMagnification : float
+    - mApplySpeed : float
+    - mHP : float
+    - IsReload : bool
+    - ReloadCnt : int
+    - L_Stick_x : float
+    - L_Stick_y : float
+    - Awake() : void
+    - Update() : void
+    - guidUIUpdate() : void
+    - weapon() : void
+    - normal() : void
+    - switchMode() : void
+    + getPlayerMode() : bool
+    - activationReticle() : void
+    - disablingReticle() : void
+    - SetWeapon(_obj:GameObject) : void
+    - ReloadCounter() : void
+    - getMoveManification() : float
+    + getHP() : float
+    + onDamege(_damege:float) : void
+    - onResult() : void
+}
+MonoBehaviour <|-- player
+player --> "mBody" GameObject
+player --> "mCameraLookAt" GameObject
+player --> "mCamera" PlayerCamera
+player --> "mReticle" Canvas
+player --> "mVelocity" Vector3
+player --> "mHorizontalCameraVec" Vector3
+player --> "mWeapon" GameObject
+player --> "Playsound" PlayerSound
+player --> "AnimetionController" SampleAnimation
+player --> "mGuidUI" GameObject
+player --> "mGuidUI2" GameObject
+player --> "GB_Score" GameObject
+@enduml

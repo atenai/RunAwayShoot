@@ -1,0 +1,8 @@
+@startuml
+class PPDepthCS {
+    - Start() : void
+    - OnRenderImage(src:RenderTexture, dest:RenderTexture) : void
+}
+MonoBehaviour <|-- PPDepthCS
+PPDepthCS --> "EffectMaterial" Material
+@enduml

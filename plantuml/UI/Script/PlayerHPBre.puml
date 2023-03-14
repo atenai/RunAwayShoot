@@ -1,0 +1,10 @@
+@startuml
+class PlayerHPBre {
+    - Awake() : void
+    - Update() : void
+}
+MonoBehaviour <|-- PlayerHPBre
+PlayerHPBre --> "mPlayerCon" player
+PlayerHPBre --> "mLifeUI" Image
+PlayerHPBre --> "mRedGageUI" Image
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+class AssaultRifle {
+    - mLaterFlame : float = 0
+    - mReactionMax : float
+    - mReaction : float = 0
+    - mReactionInclimentSize : float
+    - mReactionDecrimentSize : float
+    - Recastsound : bool = true
+    - Recastcount : int = 0
+    - Recastlimit : int = 30
+    + Awake() : void
+    + <<override>> Update() : void
+    + LateUpdate() : void
+    + <<override>> shooting(_tagName:string) : void
+    + getReactionSize() : float
+    + getRecoil() : Vector3
+}
+weapon <|-- AssaultRifle
+AssaultRifle --> "mRecoil" Vector3
+AssaultRifle --> "Playsound" PlayerSound
+AssaultRifle --> "mReticle" ReticleScr
+AssaultRifle --> "mRecoilSave" Vector3
+AssaultRifle --> "mCamera" PlayerCamera
+@enduml

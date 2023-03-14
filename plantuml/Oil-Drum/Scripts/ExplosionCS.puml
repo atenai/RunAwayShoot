@@ -1,0 +1,10 @@
+@startuml
+class ExplosionCS {
+    - Start() : void
+    - Update() : void
+    - OnTriggerEnter(coll:Collider) : void
+}
+MonoBehaviour <|-- ExplosionCS
+ExplosionCS --> "m_TargetEnemy" GameObject
+ExplosionCS --> "m_EnemyCS" EnemyMove
+@enduml

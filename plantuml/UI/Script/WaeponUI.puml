@@ -1,0 +1,10 @@
+@startuml
+class WaeponUI {
+    - Awake() : void
+    - Update() : void
+}
+MonoBehaviour <|-- WaeponUI
+WaeponUI --> "mUI01" Text
+WaeponUI --> "mUI02" Text
+WaeponUI --> "mObj" GameObject
+@enduml

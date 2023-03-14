@@ -1,0 +1,9 @@
+@startuml
+class HitPlayerBulletUI {
+    {static} - timer : float
+    - Awake() : void
+    - OnGUI() : void
+    {static} + OnHitPlayerBullet() : void
+}
+MonoBehaviour <|-- HitPlayerBulletUI
+@enduml

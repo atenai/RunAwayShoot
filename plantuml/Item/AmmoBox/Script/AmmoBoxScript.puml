@@ -1,0 +1,7 @@
+@startuml
+class AmmoBoxScript {
+    - Awake() : void
+    - Update() : void
+}
+MonoBehaviour <|-- AmmoBoxScript
+@enduml

@@ -1,0 +1,44 @@
+@startuml
+class PlayerCamera {
+    - mTurnSpeed : float
+    - mDistance : float
+    - mAimSpeed : float
+    - mAimDefSpeed : float
+    - mAimAdjusSpeed : float
+    - mRecoilLarp : float = 0
+    - isShoot : bool
+    - mRStickDeadZone : float = 0.0f
+    - mCameraLimit : float = 60f
+    - Awake() : void
+    - LateUpdate() : void
+    - RStickUpDate() : void
+    - normalEye() : void
+    - weaponEye() : void
+    - updateRay() : void
+    + gethRot() : Quaternion
+    + getFronVec() : Vector3
+    + getRightVec() : Vector3
+    + getPos() : Vector3
+    - recoilCameraLockAt() : void
+    - cameraRicoilUpdate() : void
+    + setShooting() : void
+    + switchCameraNW() : void
+    + switchCameraWN() : void
+}
+MonoBehaviour <|-- PlayerCamera
+PlayerCamera --> "mPlayerClass" player
+PlayerCamera --> "mCameraLookAt" GameObject
+PlayerCamera --> "mBodyaLookAt" GameObject
+PlayerCamera --> "assaultRifle" AssaultRifle
+PlayerCamera --> "mControlLookAt" GameObject
+PlayerCamera --> "mPlayer" Transform
+PlayerCamera --> "mEye" Vector3
+PlayerCamera --> "mvRotation" Quaternion
+PlayerCamera --> "mhRotation" Quaternion
+PlayerCamera --> "mWeponRecoli" Vector3
+PlayerCamera --> "m_optmaizeVec" Vector3
+PlayerCamera --> "mRayMask" LayerMask
+PlayerCamera --> "mHitCircle" HitAttackUI
+PlayerCamera o-> "mDataWeponsH" Vector3
+PlayerCamera --> "R_Stick" Vector2
+@enduml

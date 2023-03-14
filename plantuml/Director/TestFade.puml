@@ -1,0 +1,12 @@
+@startuml
+class TestFade {
+    + fadeSpeed : float = 0.002f
+    - b_Fade : bool = false
+    - Start() : void
+    - Update() : void
+    - FadeIn() : void
+}
+MonoBehaviour <|-- TestFade
+TestFade --> "textColor" Color
+TestFade --> "degree" GameObject
+@enduml

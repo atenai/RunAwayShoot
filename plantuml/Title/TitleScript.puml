@@ -1,0 +1,12 @@
+@startuml
+class TitleScript {
+    - Awake() : void
+    - Start() : void
+    - Update() : void
+}
+MonoBehaviour <|-- TitleScript
+TitleScript --> "Right" GameObject
+TitleScript --> "Left" GameObject
+TitleScript --> "Video" GameObject
+TitleScript --> "VideoPlayer" VideoPlayer
+@enduml

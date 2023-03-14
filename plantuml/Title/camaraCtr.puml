@@ -1,0 +1,12 @@
+@startuml
+class camaraCtr {
+    - videoFlag : bool = false
+    - cnt : float
+    - inputFlag : bool = false
+    - Awake() : void
+    - Update() : void
+}
+MonoBehaviour <|-- camaraCtr
+camaraCtr --> "moviectr" MovieCtr
+camaraCtr --> "camera_transform" Transform
+@enduml

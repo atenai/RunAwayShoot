@@ -1,0 +1,6 @@
+@startuml
+class AreaManager {
+    - Update() : void
+}
+MonoBehaviour <|-- AreaManager
+@enduml

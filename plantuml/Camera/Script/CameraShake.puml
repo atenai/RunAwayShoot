@@ -1,0 +1,7 @@
+@startuml
+class CameraShake {
+    + Shake(duration:float, magnitude:float) : void
+    - DoShake(duration:float, magnitude:float) : IEnumerator
+}
+MonoBehaviour <|-- CameraShake
+@enduml

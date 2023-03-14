@@ -1,0 +1,15 @@
+@startuml
+class CurtainCtr {
+    - b_Start : bool = false
+    - b_SE : bool = false
+    - Awake() : void
+    - Update() : void
+}
+MonoBehaviour <|-- CurtainCtr
+CurtainCtr --> "CurtainR" GameObject
+CurtainCtr --> "CurtainL" GameObject
+CurtainCtr --> "vec3R" Vector3
+CurtainCtr --> "vec3L" Vector3
+CurtainCtr --> "sound2" AudioClip
+CurtainCtr --> "audioSource" AudioSource
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class NumberCS {
+    - Update() : void
+    + RandomScore() : void
+    - View(score:int) : void
+}
+class "List`1"<T> {
+}
+MonoBehaviour <|-- NumberCS
+NumberCS o-> "number<int>" "List`1"
+@enduml

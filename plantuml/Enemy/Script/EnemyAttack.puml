@@ -1,0 +1,17 @@
+@startuml
+class EnemyAttack {
+    - mSpeed : float
+    - mLimit : float
+    - mInterval : float
+    - mShootingCnt : float
+    - mReactionMax : float
+    - mReaction : float = 0
+    - mReactionInclimentSize : float
+    - mReactionDecrimentSize : float
+    - Start() : void
+    + Shotting() : void
+}
+MonoBehaviour <|-- EnemyAttack
+EnemyAttack --> "mEnemyBullet" GameObject
+EnemyAttack --> "mRecoil" Vector3
+@enduml

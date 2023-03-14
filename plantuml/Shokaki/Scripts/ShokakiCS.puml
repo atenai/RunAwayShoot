@@ -1,0 +1,14 @@
+@startuml
+class ShokakiCS {
+    + EffectDestroyTime : float
+    - SE_Endtime : float
+    - Start() : void
+    - Update() : void
+    - OnTriggerEnter(coll:Collider) : void
+}
+MonoBehaviour <|-- ShokakiCS
+ShokakiCS --> "EffectPrefab" GameObject
+ShokakiCS --> "EffectPosition" Vector3
+ShokakiCS --> "AirPlayer" GameObject
+ShokakiCS --> "Air_SE" AudioClip
+@enduml

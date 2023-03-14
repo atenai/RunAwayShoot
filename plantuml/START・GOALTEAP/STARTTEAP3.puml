@@ -1,0 +1,9 @@
+@startuml
+class STARTTEAP3 {
+    - Awake() : void
+    - OnTriggerEnter(other:Collider) : void
+}
+MonoBehaviour <|-- STARTTEAP3
+STARTTEAP3 --> "gameobject_director" GameObject
+STARTTEAP3 --> "MissionSuccess_text" Text
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class IsVisible {
+    - Start() : void
+    - Update() : void
+    + Is_Visible() : bool
+}
+MonoBehaviour <|-- IsVisible
+IsVisible --> "_Renderer" Renderer
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+class SceneLoder {
+    - mFPS : int
+    - mIsFade : bool
+    - mInOut : bool
+    - mFadeAlfa : float
+    - mFadeSecond : float
+    - mSceanName : string
+    - Start() : void
+    - Update() : void
+    - NextScene() : void
+    - LoadData() : IEnumerator
+    - Fade() : void
+    - FadeIn() : void
+    - FadeOut() : void
+    + selectionScene(_sceneName:string) : void
+}
+MonoBehaviour <|-- SceneLoder
+SceneLoder --> "mAsync" AsyncOperation
+SceneLoder --> "mLoadUI" GameObject
+SceneLoder --> "mbackGround" GameObject
+SceneLoder --> "mFadeMaterial" Material
+SceneLoder --> "mSlider" Slider
+@enduml

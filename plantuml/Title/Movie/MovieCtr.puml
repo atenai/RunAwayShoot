@@ -1,0 +1,14 @@
+@startuml
+class MovieCtr {
+    - lightUp : bool
+    - videoFlag : bool = false
+    - b_Video : bool = false
+    - Awake() : void
+    - Update() : void
+    + GetvideoFlag() : bool
+}
+MonoBehaviour <|-- MovieCtr
+MovieCtr --> "videoClip" VideoClip
+MovieCtr --> "screen" GameObject
+MovieCtr --> "lightctr" LightCtr
+@enduml
