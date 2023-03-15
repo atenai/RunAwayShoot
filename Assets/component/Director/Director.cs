@@ -135,100 +135,56 @@ public class Director : MonoBehaviour
     player player;
 
     //エリアディレクターテクスチャ
-    // オブジェクトの取得
-    GameObject ImageArea1Director_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea1Director_component;
-    // オブジェクトの取得
-    GameObject ImageArea2Director_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea2Director_component;
-    // オブジェクトの取得
-    GameObject ImageArea3Director_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea3Director_component;
-    // オブジェクトの取得
-    GameObject ImageArea4Director_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea4Director_component;
-    // オブジェクトの取得
-    GameObject ImageArea5Director_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea5Director_component;
-    // オブジェクトの取得
-    GameObject ImageArea6Director_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea6Director_component;
 
     //エリアテクスチャ
-    // オブジェクトの取得
-    GameObject ImageArea1_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea1_component;
-    // オブジェクトの取得
-    GameObject ImageArea2_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea2_component;
-    // オブジェクトの取得
-    GameObject ImageArea3_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea3_component;
-    // オブジェクトの取得
-    GameObject ImageArea4_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea4_component;
-    // オブジェクトの取得
-    GameObject ImageArea5_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea5_component;
-    // オブジェクトの取得
-    GameObject ImageArea6_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea6_component;
 
     //ミッションサクセステクスチャ
-    // オブジェクトの取得
-    GameObject ImageArea1MissionSuccess_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea1MissionSuccess_component;
-    // オブジェクトの取得
-    GameObject ImageArea2MissionSuccess_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea2MissionSuccess_component;
-    // オブジェクトの取得
-    GameObject ImageArea3MissionSuccess_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea3MissionSuccess_component;
-    // オブジェクトの取得
-    GameObject ImageArea4MissionSuccess_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea4MissionSuccess_component;
-    // オブジェクトの取得
-    GameObject ImageArea5MissionSuccess_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea5MissionSuccess_component;
-    // オブジェクトの取得
-    GameObject ImageArea6MissionSuccess_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea6MissionSuccess_component;
 
     //ミッションフェイルテクスチャ
-    // オブジェクトの取得
-    GameObject ImageArea2MissionFailure_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea2MissionFailure_component;
-    // オブジェクトの取得
-    GameObject ImageArea4MissionFailure_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea4MissionFailure_component;
-    // オブジェクトの取得
-    GameObject ImageArea5MissionFailure_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageArea5MissionFailure_component;
 
     //オールミッションサクセステクスチャ
-    // オブジェクトの取得
-    GameObject ImageAllMissionSuccess_object;
     // コンポーネントの取得
     [SerializeField] private Image ImageAllMissionSuccess_component;
 
@@ -323,45 +279,29 @@ public class Director : MonoBehaviour
 
         //Textコンポーネント取得
         Table1_text = GameObject.Find("Table1").GetComponent<Text>();
-        //Table1_text.text = "内容1";
         Table1_text.text = "";
 
-        //Textコンポーネント取得
         Table2_text = GameObject.Find("Table2").GetComponent<Text>();
-        //Table2_text.text = "内容2";
         Table2_text.text = "";
 
-        //Textコンポーネント取得
         Table3_text = GameObject.Find("Table3").GetComponent<Text>();
-        //Table3_text.text = "内容3";
         Table3_text.text = "";
 
-        //Textコンポーネント取得
         Table4_text = GameObject.Find("Table4").GetComponent<Text>();
-        //Table4_text.text = "内容4";
         Table4_text.text = "";
 
-        //Textコンポーネント取得
         Table5_text = GameObject.Find("Table5").GetComponent<Text>();
-        //Table5_text.text = "内容5";
         Table5_text.text = "";
 
-        //Textコンポーネント取得
         Table6_text = GameObject.Find("Table6").GetComponent<Text>();
-        //Table6_text.text = "内容6";
         Table6_text.text = "";
 
-        //Textコンポーネント取得
         Table7_text = GameObject.Find("Table7").GetComponent<Text>();
-        //Table7_text.text = "内容7";
         Table7_text.text = "";
 
-        //Textコンポーネント取得
         Table8_text = GameObject.Find("Table8").GetComponent<Text>();
-        //Table8_text.text = "内容8";
         Table8_text.text = "";
 
-        //Textコンポーネント取得
         AllMissionSuccess_text = GameObject.Find("All Mission Success").GetComponent<Text>();
         AllMissionSuccess_text.text = "";
 
@@ -462,127 +402,64 @@ public class Director : MonoBehaviour
 
 
         //ディレクターテクスチャ
-        // オブジェクトの取得
-        ImageArea1Director_object = GameObject.Find("ImageArea1Director");
-        // コンポーネントの取得
-        ImageArea1Director_component = ImageArea1Director_object.GetComponent<Image>();
-        ImageArea1Director_component.color = Area1DirectortextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea2Director_object = GameObject.Find("ImageArea2Director");
-        // コンポーネントの取得
-        ImageArea2Director_component = ImageArea2Director_object.GetComponent<Image>();
-        ImageArea2Director_component.color = Area2DirectortextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea3Director_object = GameObject.Find("ImageArea3Director");
-        // コンポーネントの取得
-        ImageArea3Director_component = ImageArea3Director_object.GetComponent<Image>();
-        ImageArea3Director_component.color = Area3DirectortextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea4Director_object = GameObject.Find("ImageArea4Director");
-        // コンポーネントの取得
-        ImageArea4Director_component = ImageArea4Director_object.GetComponent<Image>();
-        ImageArea4Director_component.color = Area4DirectortextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea5Director_object = GameObject.Find("ImageArea5Director");
-        // コンポーネントの取得
-        ImageArea5Director_component = ImageArea5Director_object.GetComponent<Image>();
-        ImageArea5Director_component.color = Area5DirectortextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea6Director_object = GameObject.Find("ImageArea6Director");
-        // コンポーネントの取得
-        ImageArea6Director_component = ImageArea6Director_object.GetComponent<Image>();
-        ImageArea6Director_component.color = Area6DirectortextColor; //画像の透明度を変える
-
+        //オブジェクト名と色名の配列
+        string[] directorNames = { "ImageArea1Director", "ImageArea2Director", "ImageArea3Director", "ImageArea4Director", "ImageArea5Director", "ImageArea6Director" };
         //エリアテクスチャ
-        // オブジェクトの取得
-        ImageArea1_object = GameObject.Find("ImageArea1");
-        // コンポーネントの取得
-        ImageArea1_component = ImageArea1_object.GetComponent<Image>();
-        ImageArea1_component.color = Area1DirectortextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea2_object = GameObject.Find("ImageArea2");
-        // コンポーネントの取得
-        ImageArea2_component = ImageArea2_object.GetComponent<Image>();
-        ImageArea2_component.color = Area2DirectortextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea3_object = GameObject.Find("ImageArea3");
-        // コンポーネントの取得
-        ImageArea3_component = ImageArea3_object.GetComponent<Image>();
-        ImageArea3_component.color = Area3DirectortextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea4_object = GameObject.Find("ImageArea4");
-        // コンポーネントの取得
-        ImageArea4_component = ImageArea4_object.GetComponent<Image>();
-        ImageArea4_component.color = Area4DirectortextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea5_object = GameObject.Find("ImageArea5");
-        // コンポーネントの取得
-        ImageArea5_component = ImageArea5_object.GetComponent<Image>();
-        ImageArea5_component.color = Area5DirectortextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea6_object = GameObject.Find("ImageArea6");
-        // コンポーネントの取得
-        ImageArea6_component = ImageArea6_object.GetComponent<Image>();
-        ImageArea6_component.color = Area6DirectortextColor; //画像の透明度を変える
-
+        //オブジェクト名と色名の配列
+        string[] imageNames = { "ImageArea1", "ImageArea2", "ImageArea3", "ImageArea4", "ImageArea5", "ImageArea6" };
         //ミッションサクセステクスチャ
-        // オブジェクトの取得
-        ImageArea1MissionSuccess_object = GameObject.Find("ImageArea1MissionSuccess");
-        // コンポーネントの取得
-        ImageArea1MissionSuccess_component = ImageArea1MissionSuccess_object.GetComponent<Image>();
-        ImageArea1MissionSuccess_component.color = Area1MissionSuccesstextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea2MissionSuccess_object = GameObject.Find("ImageArea2MissionSuccess");
-        // コンポーネントの取得
-        ImageArea2MissionSuccess_component = ImageArea2MissionSuccess_object.GetComponent<Image>();
-        ImageArea2MissionSuccess_component.color = Area2MissionSuccesstextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea3MissionSuccess_object = GameObject.Find("ImageArea3MissionSuccess");
-        // コンポーネントの取得
-        ImageArea3MissionSuccess_component = ImageArea3MissionSuccess_object.GetComponent<Image>();
-        ImageArea3MissionSuccess_component.color = Area3MissionSuccesstextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea4MissionSuccess_object = GameObject.Find("ImageArea4MissionSuccess");
-        // コンポーネントの取得
-        ImageArea4MissionSuccess_component = ImageArea4MissionSuccess_object.GetComponent<Image>();
-        ImageArea4MissionSuccess_component.color = Area4MissionSuccesstextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea5MissionSuccess_object = GameObject.Find("ImageArea5MissionSuccess");
-        // コンポーネントの取得
-        ImageArea5MissionSuccess_component = ImageArea5MissionSuccess_object.GetComponent<Image>();
-        ImageArea5MissionSuccess_component.color = Area5MissionSuccesstextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea6MissionSuccess_object = GameObject.Find("ImageArea6MissionSuccess");
-        // コンポーネントの取得
-        ImageArea6MissionSuccess_component = ImageArea6MissionSuccess_object.GetComponent<Image>();
-        ImageArea6MissionSuccess_component.color = Area6MissionSuccesstextColor; //画像の透明度を変える
-
+        //オブジェクト名と色名の配列
+        string[] successNames = { "ImageArea1MissionSuccess", "ImageArea2MissionSuccess", "ImageArea3MissionSuccess", "ImageArea4MissionSuccess", "ImageArea5MissionSuccess", "ImageArea6MissionSuccess" };
         //ミッションフェイルテクスチャ
-        // オブジェクトの取得
-        ImageArea2MissionFailure_object = GameObject.Find("ImageArea2MissionFailure");
-        // コンポーネントの取得
-        ImageArea2MissionFailure_component = ImageArea2MissionFailure_object.GetComponent<Image>();
-        ImageArea2MissionFailure_component.color = Area2MissionFailuretextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea4MissionFailure_object = GameObject.Find("ImageArea4MissionFailure");
-        // コンポーネントの取得
-        ImageArea4MissionFailure_component = ImageArea4MissionFailure_object.GetComponent<Image>();
-        ImageArea4MissionFailure_component.color = Area4MissionFailuretextColor; //画像の透明度を変える
-        // オブジェクトの取得
-        ImageArea5MissionFailure_object = GameObject.Find("ImageArea5MissionFailure");
-        // コンポーネントの取得
-        ImageArea5MissionFailure_component = ImageArea5MissionFailure_object.GetComponent<Image>();
-        ImageArea5MissionFailure_component.color = Area5MissionFailuretextColor; //画像の透明度を変える
-
-
+        //オブジェクト名と色名の配列
+        string[] failureNames = { "ImageArea2MissionFailure", "ImageArea4MissionFailure", "ImageArea5MissionFailure" };
         //オールサクセステクスチャ
-        // オブジェクトの取得
-        ImageAllMissionSuccess_object = GameObject.Find("ImageAllMissionSuccess");
-        // コンポーネントの取得
-        ImageAllMissionSuccess_component = ImageAllMissionSuccess_object.GetComponent<Image>();
-        ImageAllMissionSuccess_component.color = AllMissionSuccesstextColor; //画像の透明度を変える
-    }
+        //オブジェクト名と色名の配列
+        string[] allSuccessNames = { "ImageAllMissionSuccess" };
 
+        Color[] colors = { Area1DirectortextColor, Area2DirectortextColor, Area3DirectortextColor, Area4DirectortextColor, Area5DirectortextColor, Area6DirectortextColor };
+
+        //画像の透明度を変える関数
+        void ChangeAlpha(string name, Color color)
+        {
+            // オブジェクトの取得
+            GameObject imageObject = GameObject.Find(name);
+            // コンポーネントの取得
+            Image imageComponent = imageObject.GetComponent<Image>();
+            // 画像の透明度を変える
+            imageComponent.color = color;
+        }
+
+        //配列から順番にオブジェクト名と色名を取り出して関数に渡すループ文
+        for (int i = 0; i < directorNames.Length; i++)
+        {
+            ChangeAlpha(directorNames[i], colors[i]);
+        }
+
+        //配列から順番にオブジェクト名と色名を取り出して関数に渡すループ文
+        for (int i = 0; i < imageNames.Length; i++)
+        {
+            ChangeAlpha(imageNames[i], colors[i]);
+        }
+
+        //配列から順番にオブジェクト名と色名を取り出して関数に渡すループ文
+        for (int i = 0; i < successNames.Length; i++)
+        {
+            ChangeAlpha(successNames[i], colors[i]);
+        }
+
+        //配列から順番にオブジェクト名と色名を取り出して関数に渡すループ文
+        for (int i = 0; i < failureNames.Length; i++)
+        {
+            ChangeAlpha(failureNames[i], colors[i]);
+        }
+
+        //配列から順番にオブジェクト名と色名を取り出して関数に渡すループ文
+        for (int i = 0; i < allSuccessNames.Length; i++)
+        {
+            ChangeAlpha(allSuccessNames[i], colors[i]);
+        }
+    }
 
 
     void Update()
@@ -597,73 +474,25 @@ public class Director : MonoBehaviour
                 audioSource.PlayOneShot(soundMissionStart);
                 b_SE_Start_Area1 = false;
             }
-            if (Enemy1 == true)
+            // 敵の状態を格納する配列
+            bool[] enemies = new bool[8] { Enemy1, Enemy2, Enemy3, Enemy4, Enemy5, Enemy6, Enemy7, Enemy8 };
+            // テキストを格納する配列
+            Text[] tables = new Text[8] { Table1_text, Table2_text, Table3_text, Table4_text, Table5_text, Table6_text, Table7_text, Table8_text };
+            // 配列の要素を順番にチェックする
+            for (int i = 0; i < enemies.Length; i++)
             {
-                Table1_text.text = "敵１を破壊";
+                // もし敵が倒されていたら
+                if (enemies[i] == true)
+                {
+                    // テキストを「敵〇〇を破壊」とする
+                    tables[i].text = "敵" + (i + 1) + "を破壊";
+                }
+                else
+                {
+                    // テキストを「敵〇〇は生存中」とする
+                    tables[i].text = "敵" + (i + 1) + "は生存中";
+                }
             }
-            else
-            {
-                Table1_text.text = "敵１は生存中";
-            }
-            if (Enemy2 == true)
-            {
-                Table2_text.text = "敵２を破壊";
-            }
-            else
-            {
-                Table2_text.text = "敵２は生存中";
-            }
-            if (Enemy3 == true)
-            {
-                Table3_text.text = "敵３を破壊";
-            }
-            else
-            {
-                Table3_text.text = "敵３は生存中";
-            }
-            if (Enemy4 == true)
-            {
-                Table4_text.text = "敵４を破壊";
-            }
-            else
-            {
-                Table4_text.text = "敵４は生存中";
-            }
-
-            if (Enemy5 == true)
-            {
-                Table5_text.text = "敵５を破壊";
-            }
-            else
-            {
-                Table5_text.text = "敵５は生存中";
-            }
-            if (Enemy6 == true)
-            {
-                Table6_text.text = "敵６を破壊";
-            }
-            else
-            {
-                Table6_text.text = "敵６は生存中";
-            }
-            if (Enemy7 == true)
-            {
-                Table7_text.text = "敵７を破壊";
-            }
-            else
-            {
-                Table7_text.text = "敵７は生存中";
-            }
-
-            if (Enemy8 == true)
-            {
-                Table8_text.text = "敵８を破壊";
-            }
-            else
-            {
-                Table8_text.text = "敵８は生存中";
-            }
-
             if (b_Area1 == false && Enemy1 == true && Enemy2 == true && Enemy3 == true && Enemy4 == true && Enemy5 == true && Enemy6 == true && Enemy7 == true && Enemy8 == true)
             {
                 Score.AddScore(2);
@@ -682,7 +511,6 @@ public class Director : MonoBehaviour
             {
                 MissionSuccessFadeOut(1);
             }
-
             if (b_GOAL1 == true)
             {
                 DirectorFadeOut(1);
@@ -697,157 +525,289 @@ public class Director : MonoBehaviour
                 Table8_text.text = "";
             }
         }
+
         else if (area_Num == 2)
         {
+            // エリア1のミッション成功テキストをフェードアウトする
             MissionSuccessFadeOut(1);
+
+            // エリア2のディレクターテキストをフェードインする
             DirectorFadeIn(2);
-            b_Area2if = true;
+
+            // ディレクターテキストの内容を設定する
             direct_text.text = "エリア2 \n 敵に見つからずに進め！！";
+
+            // ミッション開始時にサウンドを再生する（一回だけ）
             if (b_SE_Start_Area2 == true)
             {
                 audioSource.PlayOneShot(soundMissionStart);
                 b_SE_Start_Area2 = false;
             }
-            if (enemyFound == false)
+
+            // 敵に見つかったかどうかでテキストの内容を変える
+            content_text.text = enemyFound ? "見つかった" : "見つかってない";
+
+            // 敵に見つかった場合はミッション失敗とする
+            if (enemyFound == true)
             {
-                content_text.text = "見つかってない";
-            }
-            else if (enemyFound == true)
-            {
-                content_text.text = "見つかった";
-                MissionSuccess_text.color = new Color(0.0f, 0.0f, 255.0f);
-                MissionSuccess_text.text = "Area2MissionFailure";
+                // ミッション失敗テキストの色と内容を設定する関数（前回の回答で定義）
+                SetText(MissionSuccess_text, "Area2MissionFailure", 0.0f, 0.0f, 255.0f);
+
                 b_Area2MissionFailureFade = true;
+
+                // ミッション失敗時にサウンドを再生する（一回だけ）
                 if (b_SE_Failure_Area2 == true)
                 {
                     audioSource.PlayOneShot(soundMissionFailure);
                     b_SE_Failure_Area2 = false;
                 }
-            }
-            if (enemyFound == false && b_Area2 == true && b_FoundFalseGOAL == true)
-            {
-                Score.AddScore(2);
-                b_Area2 = false;
-                MissionSuccess_text.color = new Color(197.0f, 29.0f, 84.0f);
-                MissionSuccess_text.text = "Area2MissionSuccess";
-                b_Area2MissionSuccessFade = true;
-                audioSource.PlayOneShot(soundMissionSuccess);
-                b_All_Area2 = true;
-            }
-            if (b_Area2MissionSuccessFade == true)
-            {
-                MissionSuccessFadeIn(2);
-            }
-            else if (b_Area2MissionFailureFade == true)
-            {
+
+                // ミッション失敗テキストをフェードインする
                 MissionFailureFadeIn(2);
+
+                // ここでミッション失敗時の処理を行う（例：ゲームオーバー画面へ遷移）
+
+            }
+
+            // 敵に見つからないでゴールした場合はミッション成功とする
+            else if (enemyFound == false && b_Area2 == true && b_FoundFalseGOAL == true)
+            {
+                // スコアを加算する
+                Score.AddScore(2);
+
+                b_Area2 = false;
+
+                // ミッション成功テキストの色と内容を設定する関数（前回の回答で定義）
+                SetText(MissionSuccess_text, "Area2MissionSuccess", 197.0f, 29.0f, 84.0f);
+
+                b_Area2MissionSuccessFade = true;
+
+                audioSource.PlayOneShot(soundMissionSuccess);
+
+                b_All_Area2 = true;
+
+                // ミッション成功テキストをフェードインする
+                MissionSuccessFadeIn(2);
+
+                // ここでミッション成功時の処理を行う（例：次のエリアへ遷移）
+
             }
             else
             {
                 MissionSuccessFadeOut(2);
                 MissionFailureFadeOut(2);
             }
+
             if (b_GOAL2 == true)
             {
                 DirectorFadeOut(2);
+
                 content_text.text = "";
             }
         }
+
         else if (area_Num == 3)
         {
+            // エリア2のミッション成功・失敗テキストをフェードアウトする
             MissionSuccessFadeOut(2);
             MissionFailureFadeOut(2);
+
+            // エリア3のディレクターテキストをフェードインする
             DirectorFadeIn(3);
-            b_Area3if = true;
+
+            // ディレクターテキストの内容を設定する
             direct_text.text = "エリア3 \n 爆発物を使って敵を倒せ！！";
+
+            // ミッション開始時にサウンドを再生する（一回だけ）
             if (b_SE_Start_Area3 == true)
             {
                 audioSource.PlayOneShot(soundMissionStart);
                 b_SE_Start_Area3 = false;
             }
-            if (b_EnemyDrumsDestroy == false)
-            {
-                content_text.text = "爆発物で倒してない";
-            }
-            else if (b_EnemyDrumsDestroy == true)
-            {
-                content_text.text = "爆発物で倒した";
-            }
+
+            // 敵が爆発物で倒されたかどうかでテキストの内容を変える
+            content_text.text = b_EnemyDrumsDestroy ? "爆発物で倒した" : "爆発物で倒してない";
+
+            // 敵が爆発物で倒されてゴールした場合はミッション成功とする
             if (b_EnemyDrumsDestroy == true && b_Area3 == true)
             {
+                // スコアを加算する
                 Score.AddScore(2);
+
                 b_Area3 = false;
-                MissionSuccess_text.color = new Color(197.0f, 29.0f, 84.0f);
-                MissionSuccess_text.text = "Area3MissionSuccess";
+
+                // ミッション成功テキストの色と内容を設定する関数（前回の回答で定義）
+                SetText(MissionSuccess_text, "Area3MissionSuccess", 197.0f, 29.0f, 84.0f);
+
                 b_Area3Fade = true;
+
                 audioSource.PlayOneShot(soundMissionSuccess);
+
                 b_All_Area3 = true;
-            }
-            if (b_Area3Fade == true)
-            {
+
+                // ミッション成功テキストをフェードインする
                 MissionSuccessFadeIn(3);
+
+                // ここでミッション成功時の処理を行う（例：次のエリアへ遷移）
+
             }
+
             else
             {
                 MissionSuccessFadeOut(3);
             }
+
             if (b_GOAL3 == true)
             {
                 DirectorFadeOut(3);
+
                 content_text.text = "";
             }
         }
+
         else if (area_Num == 4)
         {
+            // エリア5のミッション成功・失敗テキストをフェードアウトする
             MissionSuccessFadeOut(5);
             MissionFailureFadeOut(4);
+
+            // エリア6のディレクターテキストをフェードインする
             DirectorFadeIn(4);
+
+            // 残り時間を減らして表示する
             time -= Time.deltaTime;
             t = Mathf.FloorToInt(time);
             direct_text.text = "エリア6 \n 制限時間内に駆け抜けろ！！";
             content_text.text = "残り時間 : " + t;
+
+            // ミッション開始時にサウンドを再生する（一回だけ）
             if (b_SE_Start_Area4 == true)
             {
                 audioSource.PlayOneShot(soundMissionStart);
                 b_SE_Start_Area4 = false;
             }
+
+            // 時間切れになったらミッション失敗とする
             if (t <= 0)
             {
                 b_TimeOver = true;
                 Debug.Log("時間切れ");
                 content_text.text = "時間切れ";
-                MissionSuccess_text.color = new Color(0.0f, 0.0f, 255.0f);
-                MissionSuccess_text.text = "Area6MissionFailure";
+
+                // ミッション失敗テキストの色と内容を設定する関数（前回の回答で定義）
+                SetText(MissionSuccess_text, "Area6MissionFailure", 0.0f, 0.0f, 255.0f);
+
                 b_Area4MissionFailureFade = true;
+
+                // ミッション失敗時にサウンドを再生する（一回だけ）
                 if (b_SE_Failure_Area4 == true)
                 {
                     audioSource.PlayOneShot(soundMissionFailure);
                     b_SE_Failure_Area4 = false;
                 }
             }
-            if (b_TimeOver == false && b_TimeOverFalseGOAL == true && b_Area4 == true)
+
+            else
             {
-                Score.AddScore(2);
-                b_Area4 = false;
-                MissionSuccess_text.color = new Color(197.0f, 29.0f, 84.0f);
-                MissionSuccess_text.text = "Area6MissionSuccess";
-                b_Area4MissionSuccessFade = true;
-                audioSource.PlayOneShot(soundMissionSuccess);
-                b_All_Area4 = true;
-                if (b_All_Area1 == true && b_All_Area2 == true && b_All_Area3 == true && b_All_Area4 == true && b_All_Area5 == true && b_All_Area6 == true && b_AreaAll == true)
+                // 時間切れでなくてゴールした場合はミッション成功とする
+                if (b_TimeOverFalseGOAL == true && b_Area4 == true)
                 {
-                    Score.AddScore(3);
-                    AllMissionSuccess_text.text = "AllMissionSuccess";
-                    b_AreaAllFade = true;
-                    audioSource.PlayOneShot(soundAllMissionSuccess);
-                    b_AreaAll = false;
-                }
-                else
-                {
+                    // スコアを加算する
+                    Score.AddScore(2);
+
+                    b_Area4 = false;
+
+                    // ミッション成功テキストの色と内容を設定する関数（前回の回答で定義）
+                    SetText(MissionSuccess_text, "Area6MissionSuccess", 197.0f, 29.0f, 84.0f);
+
+                    b_Area4MissionSuccessFade = true;
+
                     audioSource.PlayOneShot(soundMissionSuccess);
+
+                    b_All_Area4 = true;
+
+                    // 全てのエリアが成功した場合は特別な処理を行う
+                    if (b_All_Area1 == true && b_All_Area2 == true && b_All_Area3 == true && b_All_Area4 == true && b_All_Area5 == true && b_All_Area6 == true && b_AreaAll == true)
+                    {
+                        Score.AddScore(3);
+
+                        AllMissionSuccess_text.text = "AllMissionSuccess";
+
+                        b_AreaAllFade = true;
+
+                        audioSource.PlayOneShot(soundAllMissionSuccess);
+
+                        b_AreaAll = false;
+
+                        // ここで全てのミッション成功時の処理を行う（例：ゲームクリア画面へ遷移）
+
+                    }
                 }
             }
-            if (b_Area4MissionSuccessFade == true)
+        }
+
+
+        else if (area_Num == 5)
+        {
+            // エリア6のミッション成功・失敗テキストをフェードアウトする
+            MissionSuccessFadeOut(6);
+
+            // エリア5のディレクターテキストをフェードインする
+            DirectorFadeIn(5);
+
+            b_Area5if = true;
+
+            direct_text.text = "エリア5 \n ダメージを受けるな！！";
+
+            // ミッション開始時にサウンドを再生する（一回だけ）
+            if (b_SE_Start_Area5 == true)
+            {
+                audioSource.PlayOneShot(soundMissionStart);
+                b_SE_Start_Area5 = false;
+            }
+
+            // ダメージを受けたかどうかでテキストやミッション失敗処理を行う
+            if (b_PlayerDamege == true)
+            {
+                content_text.text = "ダメージを受けた";
+
+                // ミッション失敗テキストの色と内容を設定する関数（前回の回答で定義）
+                SetText(MissionSuccess_text, "Area5MissionFailure", 0.0f, 0.0f, 255.0f);
+
+                b_Area5MissionFailureFade = true;
+
+                // ミッション失敗時にサウンドを再生する（一回だけ）
+                if (b_SE_Failure_Area5 == true)
+                {
+                    audioSource.PlayOneShot(soundMissionFailure);
+                    b_SE_Failure_Area5 = false;
+                }
+            }
+            else
+            {
+                content_text.text = "ダメージを受けていない";
+
+                // ダメージを受けずにゴールした場合はミッション成功とする
+                if (b_DamegeFalseGOAL == true && b_Area5 == true)
+                {
+                    // スコアを加算する
+                    Score.AddScore(2);
+
+                    b_Area5 = false;
+
+                    // ミッション成功テキストの色と内容を設定する関数（前回の回答で定義）
+                    SetText(MissionSuccess_text, "Area5MissionSuccess", 197.0f, 29.0f, 84.0f);
+
+                    b_Area5MissionSuccessFade = true;
+
+                    audioSource.PlayOneShot(soundMissionSuccess);
+
+                    b_All_Area5 = true;
+                }
+            }
+
+            // ミッション成功・失敗テキストのフェードイン・フェードアウト処理
+            if (b_Area5MissionSuccessFade == true)
             {
                 MissionSuccessFadeIn(4);
             }
@@ -860,73 +820,18 @@ public class Director : MonoBehaviour
                 MissionSuccessFadeOut(4);
                 MissionFailureFadeOut(4);
             }
-            if (b_AreaAllFade == true)
-            {
-                AllMissionSuccessFadeIn();
-            }
 
+            // ゴールしたらディレクターテキストとコンテントテキストをフェードアウトする
             if (b_GOAL4 == true)
             {
                 DirectorFadeOut(4);
                 content_text.text = "";
+
+                // ここでゴール時の処理を行う（例：次のエリアへ移動）
+
             }
         }
-        else if (area_Num == 5)
-        {
-            MissionSuccessFadeOut(6);
-            DirectorFadeIn(5);
-            b_Area5if = true;
-            direct_text.text = "エリア5 \n ダメージを受けるな！！";
-            if (b_SE_Start_Area5 == true)
-            {
-                audioSource.PlayOneShot(soundMissionStart);
-                b_SE_Start_Area5 = false;
-            }
-            if (b_PlayerDamege == false)
-            {
-                content_text.text = "ダメージを受けていない";
-            }
-            else if (b_PlayerDamege == true)
-            {
-                content_text.text = "ダメージを受けた";
-                MissionSuccess_text.color = new Color(0.0f, 0.0f, 255.0f);
-                MissionSuccess_text.text = "Area5MissionFailure";
-                b_Area5MissionFailureFade = true;
-                if (b_SE_Failure_Area5 == true)
-                {
-                    audioSource.PlayOneShot(soundMissionFailure);
-                    b_SE_Failure_Area5 = false;
-                }
-            }
-            if (b_PlayerDamege == false && b_DamegeFalseGOAL == true && b_Area5 == true)
-            {
-                Score.AddScore(2);
-                b_Area5 = false;
-                MissionSuccess_text.color = new Color(197.0f, 29.0f, 84.0f);
-                MissionSuccess_text.text = "Area5MissionSuccess";
-                b_Area5MissionSuccessFade = true;
-                audioSource.PlayOneShot(soundMissionSuccess);
-                b_All_Area5 = true;
-            }
-            if (b_Area5MissionSuccessFade == true)
-            {
-                MissionSuccessFadeIn(5);
-            }
-            else if (b_Area5MissionFailureFade == true)
-            {
-                MissionFailureFadeIn(5);
-            }
-            else
-            {
-                MissionSuccessFadeOut(5);
-                MissionFailureFadeOut(5);
-            }
-            if (b_GOAL5 == true)
-            {
-                DirectorFadeOut(5);
-                content_text.text = "";
-            }
-        }
+
         else if (area_Num == 6)
         {
             MissionSuccessFadeOut(3);
@@ -938,83 +843,65 @@ public class Director : MonoBehaviour
                 audioSource.PlayOneShot(soundMissionStart);
                 b_SE_Start_Area6 = false;
             }
-            if (nood1 == true)
-            {
-                Table1_text.text = "カプセル１発見";
-            }
-            else
-            {
-                Table1_text.text = "カプセル１未発見";
-            }
 
-            if (nood2 == true)
-            {
-                Table2_text.text = "カプセル２発見";
-            }
-            else
-            {
-                Table2_text.text = "カプセル２未発見";
-            }
+            //カプセル１から５まで共通化したメソッド（仮）
+            CheckCapsules(nood1, Table1_text, "カプセル１");
+            CheckCapsules(nood2, Table2_text, "カプセル２");
+            CheckCapsules(nood3, Table3_text, "カプセル３");
+            CheckCapsules(nood4, Table4_text, "カプセル４");
+            CheckCapsules(nood5, Table5_text, "カプセル５");
 
-            if (nood3 == true)
-            {
-                Table3_text.text = "カプセル３発見";
-            }
-            else
-            {
-                Table3_text.text = "カプセル３未発見";
-            }
-            if (nood4 == true)
-            {
-                Table4_text.text = "カプセル４発見";
-            }
-            else
-            {
-                Table4_text.text = "カプセル４未発見";
-            }
-            if (nood5 == true)
-            {
-                Table5_text.text = "カプセル５発見";
-            }
-            else
-            {
-                Table5_text.text = "カプセル５未発見";
-            }
             Table6_text.text = "";
             Table7_text.text = "";
             Table8_text.text = "";
-            if (b_Area6 == true && nood1 == true && nood2 == true && nood3 == true && nood4 == true && nood5 == true)
-            {
-                Score.AddScore(2);
-                b_Area6 = false;
-                MissionSuccess_text.color = new Color(197.0f, 29.0f, 84.0f);
-                MissionSuccess_text.text = "Area4MissionSuccess";
-                b_Area6Fade = true;
-                audioSource.PlayOneShot(soundMissionSuccess);
-                b_All_Area6 = true;
-            }
-            if (b_Area6Fade == true)
-            {
-                MissionSuccessFadeIn(6);
-            }
-            else
-            {
-                MissionSuccessFadeOut(6);
-            }
-            if (b_GOAL6 == true)
-            {
-                DirectorFadeOut(6);
-                content_text.text = "";
-                Table1_text.text = "";
-                Table2_text.text = "";
-                Table3_text.text = "";
-                Table4_text.text = "";
-                Table5_text.text = "";
-            }
         }
+
+        //追加したコード
+        if (b_Area6Fade == true)
+        {
+            MissionSuccessFadeIn(6);
+        }
+        else
+        {
+            MissionSuccessFadeOut(6);
+        }
+        if (b_GOAL6 == true)
+        {
+            DirectorFadeOut(6);
+            content_text.text = "";
+            Table1_text.text = "";
+            Table2_text.text = "";
+            Table3_text.text = "";
+            Table4_text.text = "";
+            Table5_text.text = "";
+        }
+
         if (Input.GetKey("joystick button 13"))
         {
             SceneManager.LoadScene("title");
+        }
+    }
+
+    // テキストの色と内容を設定する関数
+    void SetText(Text text, string content, float r, float g, float b)
+    {
+        // テキストの内容を設定する
+        text.text = content;
+
+        // テキストの色を設定する（RGB値は255で割る必要がある）
+        text.color = new Color(r / 255.0f, g / 255.0f, b / 255.0f);
+    }
+
+    //共通化したメソッド（仮）の定義
+    void CheckCapsules(bool nood, Text tableText, string capsuleName)
+    {
+        if (nood == true)
+        {
+            tableText.text = capsuleName + "発見";
+        }
+        else
+        {
+            tableText.text = capsuleName + "未発見";
         }
     }
 
@@ -1422,7 +1309,7 @@ public class Director : MonoBehaviour
 
             // 画像の透明度を変える
             imageComponent.color = textColor;
-            Debug.Log($"ミッション{areaNumber}フェイルフェードアウト中だよ");
+            //Debug.Log($"ミッション{areaNumber}フェイルフェードアウト中だよ");
         }
     }
 }

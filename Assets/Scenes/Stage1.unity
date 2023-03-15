@@ -79786,28 +79786,28 @@ MonoBehaviour:
   soundAllMissionSuccess: {fileID: 8300000, guid: 5c35c41b991e411449d19c99bf2bea64,
     type: 3}
   soundMissionStart: {fileID: 8300000, guid: 0b1817fee9ae36a43ba8896f48df95b9, type: 3}
-  ImageArea1Director_component: {fileID: 0}
-  ImageArea2Director_component: {fileID: 0}
-  ImageArea3Director_component: {fileID: 0}
-  ImageArea4Director_component: {fileID: 0}
-  ImageArea5Director_component: {fileID: 0}
-  ImageArea6Director_component: {fileID: 0}
-  ImageArea1_component: {fileID: 0}
-  ImageArea2_component: {fileID: 0}
-  ImageArea3_component: {fileID: 0}
-  ImageArea4_component: {fileID: 0}
-  ImageArea5_component: {fileID: 0}
-  ImageArea6_component: {fileID: 0}
-  ImageArea1MissionSuccess_component: {fileID: 0}
-  ImageArea2MissionSuccess_component: {fileID: 0}
-  ImageArea3MissionSuccess_component: {fileID: 0}
-  ImageArea4MissionSuccess_component: {fileID: 0}
-  ImageArea5MissionSuccess_component: {fileID: 0}
-  ImageArea6MissionSuccess_component: {fileID: 0}
-  ImageArea2MissionFailure_component: {fileID: 0}
-  ImageArea4MissionFailure_component: {fileID: 0}
-  ImageArea5MissionFailure_component: {fileID: 0}
-  ImageAllMissionSuccess_component: {fileID: 0}
+  ImageArea1Director_component: {fileID: 45428311}
+  ImageArea2Director_component: {fileID: 2035476498}
+  ImageArea3Director_component: {fileID: 2097259992}
+  ImageArea4Director_component: {fileID: 1473504243}
+  ImageArea5Director_component: {fileID: 922120744}
+  ImageArea6Director_component: {fileID: 1689611900}
+  ImageArea1_component: {fileID: 1320437598}
+  ImageArea2_component: {fileID: 1481483324}
+  ImageArea3_component: {fileID: 366181423}
+  ImageArea4_component: {fileID: 1001514949}
+  ImageArea5_component: {fileID: 2026456550}
+  ImageArea6_component: {fileID: 609981119}
+  ImageArea1MissionSuccess_component: {fileID: 1057973105}
+  ImageArea2MissionSuccess_component: {fileID: 882681029}
+  ImageArea3MissionSuccess_component: {fileID: 3930090}
+  ImageArea4MissionSuccess_component: {fileID: 220409789}
+  ImageArea5MissionSuccess_component: {fileID: 1728729346}
+  ImageArea6MissionSuccess_component: {fileID: 1433169223}
+  ImageArea2MissionFailure_component: {fileID: 1879587630}
+  ImageArea4MissionFailure_component: {fileID: 894864539}
+  ImageArea5MissionFailure_component: {fileID: 1029495223}
+  ImageAllMissionSuccess_component: {fileID: 2050461528}
 --- !u!114 &1357241126
 MonoBehaviour:
   m_ObjectHideFlags: 0
