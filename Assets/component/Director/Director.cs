@@ -4,27 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//このスクリプトをリファクタリングする必要がある
 public class Director : MonoBehaviour
 {
-
     public int area_Num = 0;//エリアカウント
 
     //フェード
     public float fadeInSpeed = 0.05f; //フェードインのスピード
     public float fadeOutSpeed = 0.05f; //フェードアウトのスピード
-    private Color Area1DirectortextColor;　　//Area1ディレクターテキストのカラー変数
-    private Color Area2DirectortextColor;　　//Area2ディレクターテキストのカラー変数
-    private Color Area3DirectortextColor;　　//Area3ディレクターテキストのカラー変数
-    private Color Area4DirectortextColor;　　//Area4ディレクターテキストのカラー変数
-    private Color Area5DirectortextColor;　　//Area5ディレクターテキストのカラー変数
-    private Color Area6DirectortextColor;  //Area6ディレクターテキストのカラー変数
+    private Color Area1DirectortextColor;//Area1ディレクターテキストのカラー変数
+    private Color Area2DirectortextColor;//Area2ディレクターテキストのカラー変数
+    private Color Area3DirectortextColor;//Area3ディレクターテキストのカラー変数
+    private Color Area4DirectortextColor;//Area4ディレクターテキストのカラー変数
+    private Color Area5DirectortextColor;//Area5ディレクターテキストのカラー変数
+    private Color Area6DirectortextColor;//Area6ディレクターテキストのカラー変数
     private Color ContenttextColor;//コンテントテキストのカラー変数
-    //private Color Area1ContenttextColor;//コンテントテキストのカラー変数
-    //private Color Area2ContenttextColor;//コンテントテキストのカラー変数
-    //private Color Area3ContenttextColor;//コンテントテキストのカラー変数
-    //private Color Area4ContenttextColor;//コンテントテキストのカラー変数
-    //private Color Area5ContenttextColor;//コンテントテキストのカラー変数
-    //private Color Area6ContenttextColor;//コンテントテキストのカラー変数
+
     private Color Area1MissionSuccesstextColor;//ミッションテキストのカラー変数
     private Color Area2MissionSuccesstextColor;//ミッションテキストのカラー変数
     private Color Area3MissionSuccesstextColor;//ミッションテキストのカラー変数
@@ -423,7 +418,7 @@ public class Director : MonoBehaviour
         b_GOAL5 = false;
         b_GOAL6 = false;
 
-         b_Area1Fade = false;
+        b_Area1Fade = false;
         b_Area2MissionSuccessFade = false;
         b_Area2MissionFailureFade = false;
         b_Area3Fade = false;
@@ -437,15 +432,15 @@ public class Director : MonoBehaviour
 
         //エリア１用変数初期化
         enemyDestroyNum = 0; //倒した敵の数
-         b_Area1 = false;
-         Enemy1 = false;
-         Enemy2 = false;
-         Enemy3 = false;
-         Enemy4 = false;
-         Enemy5 = false;
-         Enemy6 = false;
-         Enemy7 = false;
-         Enemy8 = false;
+        b_Area1 = false;
+        Enemy1 = false;
+        Enemy2 = false;
+        Enemy3 = false;
+        Enemy4 = false;
+        Enemy5 = false;
+        Enemy6 = false;
+        Enemy7 = false;
+        Enemy8 = false;
 
         //エリア２用変数初期化
         enemyFound = false;//敵に見つかったかどうか？
@@ -481,25 +476,25 @@ public class Director : MonoBehaviour
         noodNum = 0;
 
         //全エリアのAI監督の要望達成変数
-         b_All_Area1 = false;
-         b_All_Area2 = false;
-         b_All_Area3 = false;
-         b_All_Area4 = false;
-         b_All_Area5 = false;
-         b_All_Area6 = false;
+        b_All_Area1 = false;
+        b_All_Area2 = false;
+        b_All_Area3 = false;
+        b_All_Area4 = false;
+        b_All_Area5 = false;
+        b_All_Area6 = false;
         b_AreaAll = true;
 
         //Componentを取得
         audioSource = GetComponent<AudioSource>();
-         b_SE_Failure_Area2 = true;
-         b_SE_Failure_Area4 = true;
-         b_SE_Failure_Area5 = true;
-         b_SE_Start_Area1 = true;
-         b_SE_Start_Area2 = true;
-         b_SE_Start_Area3 = true;
-         b_SE_Start_Area4 = true;
-         b_SE_Start_Area5 = true;
-         b_SE_Start_Area6 = true;
+        b_SE_Failure_Area2 = true;
+        b_SE_Failure_Area4 = true;
+        b_SE_Failure_Area5 = true;
+        b_SE_Start_Area1 = true;
+        b_SE_Start_Area2 = true;
+        b_SE_Start_Area3 = true;
+        b_SE_Start_Area4 = true;
+        b_SE_Start_Area5 = true;
+        b_SE_Start_Area6 = true;
 
 
         //ディレクターテクスチャ
@@ -628,12 +623,12 @@ public class Director : MonoBehaviour
 
     void Update()
     {
-         if (area_Num == 1)
+        if (area_Num == 1)
         {
 
-                Area1DirectorFadeIn();
+            Area1DirectorFadeIn();
 
-            
+
             direct_text.text = "エリア1 \n 敵を全滅させろ！！";
             //content_text.text = "敵を" + enemyDestroyNum + "倒した";
             content_text.text = "";
@@ -658,7 +653,7 @@ public class Director : MonoBehaviour
 
             if (Enemy2 == true)
             {
-               // Debug.Log("Enemy2がtrueだよ！！！！");
+                // Debug.Log("Enemy2がtrueだよ！！！！");
                 //Table2_text.text = "Enemy2はtrue";
                 Table2_text.text = "敵２を破壊";
             }
@@ -747,7 +742,7 @@ public class Director : MonoBehaviour
                 //テキストカラー初期化
                 MissionSuccess_text.color = new Color(197.0f, 29.0f, 84.0f);
                 MissionSuccess_text.text = "Area1MissionSuccess";
-                
+
                 b_Area1Fade = true;
                 //SE再生
                 //音(soundMissionSuccess)を鳴らす
@@ -757,10 +752,11 @@ public class Director : MonoBehaviour
                 b_Area1 = true;
             }
 
-            if(b_Area1Fade == true)
+            if (b_Area1Fade == true)
             {
                 Area1MissionSuccessFadeIn();
-            }else
+            }
+            else
             {
                 Area1MissionSuccessFadeOut();
             }
@@ -791,13 +787,13 @@ public class Director : MonoBehaviour
             }
 
         }
-        else if(area_Num == 2)
+        else if (area_Num == 2)
         {
             Area1MissionSuccessFadeOut();
 
             Area2DirectorFadeIn();
             b_Area2if = true;
-            direct_text.text = "エリア2 \n 敵に見つからずに進め！！";           
+            direct_text.text = "エリア2 \n 敵に見つからずに進め！！";
             if (b_SE_Start_Area2 == true)
             {
                 //SE再生
@@ -810,7 +806,8 @@ public class Director : MonoBehaviour
                 //テキストカラー初期化
                 //content_text.color = new Color(197.0f, 29.0f, 84.0f);
                 content_text.text = "見つかってない";
-            }else if(enemyFound == true)
+            }
+            else if (enemyFound == true)
             {
                 //テキストカラー初期化
                 //content_text.color = new Color(197.0f, 29.0f, 84.0f);
@@ -827,7 +824,7 @@ public class Director : MonoBehaviour
                     b_SE_Failure_Area2 = false;
                 }
             }
-            if(enemyFound == false && b_Area2 == true && b_FoundFalseGOAL == true)
+            if (enemyFound == false && b_Area2 == true && b_FoundFalseGOAL == true)
             {
                 Score.AddScore(2);
                 //Debug.Log("敵に見つからなかったよ！！");
@@ -847,7 +844,7 @@ public class Director : MonoBehaviour
             {
                 Area2MissionSuccessFadeIn();
             }
-            else if(b_Area2MissionFailureFade == true)
+            else if (b_Area2MissionFailureFade == true)
             {
                 Area2MissionFailureFadeIn();
             }
@@ -864,7 +861,7 @@ public class Director : MonoBehaviour
                 content_text.text = "";
             }
         }
-        else if(area_Num == 3)
+        else if (area_Num == 3)
         {
             Area2MissionSuccessFadeOut();
             Area2MissionFailureFadeOut();
@@ -890,7 +887,7 @@ public class Director : MonoBehaviour
                 //content_text.color = new Color(197.0f, 29.0f, 84.0f);
                 content_text.text = "爆発物で倒した";
             }
-            if(b_EnemyDrumsDestroy == true　&& b_Area3 == true)
+            if (b_EnemyDrumsDestroy == true && b_Area3 == true)
             {
                 Score.AddScore(2);
                 //Debug.Log("ドラム缶・消火器で敵を殺したよ！！");
@@ -923,7 +920,7 @@ public class Director : MonoBehaviour
 
             }
         }
-        else if(area_Num == 4)
+        else if (area_Num == 4)
         {
             Area5MissionSuccessFadeOut();
             Area5MissionFailureFadeOut();
@@ -959,7 +956,7 @@ public class Director : MonoBehaviour
                 }
             }
 
-            if(b_TimeOver == false && b_TimeOverFalseGOAL == true && b_Area4 == true)
+            if (b_TimeOver == false && b_TimeOverFalseGOAL == true && b_Area4 == true)
             {
                 Score.AddScore(2);
                 //Debug.Log("時間内にゴールしたよ！！");
@@ -999,16 +996,17 @@ public class Director : MonoBehaviour
             {
                 Area4MissionSuccessFadeIn();
             }
-            else if(b_Area4MissionFailureFade == true)
+            else if (b_Area4MissionFailureFade == true)
             {
                 Area4MissionFailureFadeIn();
-            }else
+            }
+            else
             {
                 Area4MissionSuccessFadeOut();
                 Area4MissionFailureFadeOut();
             }
 
-            if(b_AreaAllFade == true)
+            if (b_AreaAllFade == true)
             {
                 AllMissionSuccessFadeIn();
             }
@@ -1021,13 +1019,13 @@ public class Director : MonoBehaviour
 
             }
 
-           
+
 
         }
-        else if(area_Num == 5)
+        else if (area_Num == 5)
         {
             Area6MissionSuccessFadeOut();
-        
+
             Area5DirectorFadeIn();
             b_Area5if = true;
             direct_text.text = "エリア5 \n ダメージを受けるな！！";
@@ -1041,7 +1039,7 @@ public class Director : MonoBehaviour
             if (b_PlayerDamege == false)
             {
                 //テキストカラー初期化
-               // content_text.color = new Color(197.0f, 29.0f, 84.0f);
+                // content_text.color = new Color(197.0f, 29.0f, 84.0f);
                 content_text.text = "ダメージを受けていない";
             }
             else if (b_PlayerDamege == true)
@@ -1061,7 +1059,7 @@ public class Director : MonoBehaviour
                     b_SE_Failure_Area5 = false;
                 }
             }
-            if(b_PlayerDamege == false && b_DamegeFalseGOAL == true && b_Area5 == true)
+            if (b_PlayerDamege == false && b_DamegeFalseGOAL == true && b_Area5 == true)
             {
                 Score.AddScore(2);
                 //Debug.Log("ダメージを受けなかったよ！！");
@@ -1081,10 +1079,11 @@ public class Director : MonoBehaviour
             {
                 Area5MissionSuccessFadeIn();
             }
-            else if(b_Area5MissionFailureFade == true)
+            else if (b_Area5MissionFailureFade == true)
             {
                 Area5MissionFailureFadeIn();
-            }else
+            }
+            else
             {
                 Area5MissionSuccessFadeOut();
                 Area5MissionFailureFadeOut();
@@ -1099,10 +1098,10 @@ public class Director : MonoBehaviour
             }
 
         }
-        else if(area_Num == 6)
+        else if (area_Num == 6)
         {
             Area3MissionSuccessFadeOut();
-          
+
             Area6DirectorFadeIn();
             direct_text.text = "エリア4 \n オレンジカプセルを取れ！！";
             //content_text.text = "残りのノード数" + (5 - noodNum);
@@ -1226,7 +1225,7 @@ public class Director : MonoBehaviour
             //SceneManager.LoadScene("Result");
         }
 
-        if(Input.GetKey("joystick button 13"))
+        if (Input.GetKey("joystick button 13"))
         {
             //リザルトへ
             SceneManager.LoadScene("title");
@@ -1254,7 +1253,7 @@ public class Director : MonoBehaviour
     //敵をドラム缶・消火器で殺したら
     static public void EnemyDrumsDestroy()
     {
-        if(b_Area3if == true)
+        if (b_Area3if == true)
         {
             b_EnemyDrumsDestroy = true;
         }
@@ -1263,7 +1262,7 @@ public class Director : MonoBehaviour
     //プレイヤーがダメージを受けたら
     static public void PlayerDamege()
     {
-        if(b_Area5if == true)
+        if (b_Area5if == true)
         {
             b_PlayerDamege = true;
         }
@@ -1609,7 +1608,7 @@ public class Director : MonoBehaviour
 
         }
 
-        
+
     }
 
     void Area2DirectorFadeOut()
