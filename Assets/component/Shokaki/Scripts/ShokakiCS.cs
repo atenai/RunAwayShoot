@@ -17,11 +17,6 @@ public class ShokakiCS : MonoBehaviour
         SE_Endtime = Air_SE.length;
     }
 
-    void Update()
-    {
-
-    }
-
     void OnTriggerEnter(Collider coll)
     {
         // プレイヤーバレットに当たった場合

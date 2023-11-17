@@ -9,22 +9,8 @@ public class ExplosionCS : MonoBehaviour
     //参照するエネミースクリプト
     EnemyMove m_EnemyCS;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     void OnTriggerEnter(Collider coll)//弾とのあたり判定を取っている
     {
-
         if (coll.gameObject.tag == "Enemy")
         {
             //Debug.Log("敵にドラム缶爆発ダメージ");

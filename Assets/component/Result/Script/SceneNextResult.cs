@@ -46,10 +46,9 @@ public class SceneNextResult : MonoBehaviour
             Debug.Log("リザルト画面へシーン遷移！！");
             //return;
         }
-
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")   //敵の視界から離れたか障害物がある場合
         {
@@ -58,12 +57,10 @@ public class SceneNextResult : MonoBehaviour
             if (b_GOAL == false)
             {
                 //SE再生
-                //音(GOALSound)を鳴らす
                 audioSource.PlayOneShot(GOALSound);
                 Score.AddScore(3);//スコアに+10000加算
                 b_GOAL = true;
             }
         }
     }
-
 }

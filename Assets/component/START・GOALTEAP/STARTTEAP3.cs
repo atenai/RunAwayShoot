@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class STARTTEAP3 : MonoBehaviour
 {
-    GameObject gameobject_director;//Director.cs呼び出し
+    //Director.cs呼び出し
+    GameObject gameobject_director;
 
     Text MissionSuccess_text;
 
-    private void Awake()
+    void Awake()
     {
         //キャンバスオブジェクト取得
         gameobject_director = GameObject.Find("Canvas");
@@ -18,14 +19,13 @@ public class STARTTEAP3 : MonoBehaviour
         MissionSuccess_text = GameObject.Find("Mission Success").GetComponent<Text>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         //プレイヤーがあたったら
         if (other.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-            //gameobject_director.GetComponent<Director>().area_flag = true;
-            // gameobject_director.GetComponent<Director>().areaflag();
+
             gameobject_director.GetComponent<Director>().area_Num = 3;//エリアをプラス１する
             Debug.Log("=3");
 

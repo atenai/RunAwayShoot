@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class PlayerCollider : MonoBehaviour
 {
-    [SerializeField]
-    private HitAttackUI mHitCircle;
+    [SerializeField] private HitAttackUI mHitCircle;
 
-    [SerializeField]
-    private GameObject mWeapon;
+    [SerializeField] private GameObject mWeapon;
 
-    [SerializeField]
-    private player mPlayerCon;
+    [SerializeField] private player mPlayerCon;
 
     //サウンド
     public AudioClip sound1;
@@ -24,13 +21,12 @@ public class PlayerCollider : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-
     void Update()
     {
         mHitCircle.setPlayerPos(this.transform.position);
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag == "EnemyBullet")
         {

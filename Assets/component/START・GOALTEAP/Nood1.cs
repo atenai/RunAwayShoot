@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Nood1 : MonoBehaviour
 {
+    //Director.cs呼び出し
+    GameObject gameobject_director;
 
-    GameObject gameobject_director;//Director.cs呼び出し
-
-    private void Awake()
+    void Awake()
     {
         //キャンバスオブジェクト取得
         gameobject_director = GameObject.Find("Canvas");
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         //プレイヤーがあたったら
         if (other.gameObject.tag == "Player")

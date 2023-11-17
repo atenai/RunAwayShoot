@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-
 public class CameraShake : MonoBehaviour
 {
     public void Shake(float duration, float magnitude)
@@ -9,7 +8,7 @@ public class CameraShake : MonoBehaviour
         StartCoroutine(DoShake(duration, magnitude));
     }
 
-    private IEnumerator DoShake(float duration, float magnitude)
+    IEnumerator DoShake(float duration, float magnitude)
     {
         var pos = transform.localPosition;
 

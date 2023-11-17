@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class AreaManager : MonoBehaviour
 {
-    void Update()
-    {
 
-    }
 }

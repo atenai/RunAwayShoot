@@ -6,11 +6,11 @@ using UnityEngine.Video;
 
 public class videoScript : MonoBehaviour
 {
-    private GameObject obj;
-    private RawImage videoBase;
+    GameObject obj;
+    RawImage videoBase;
     public VideoPlayer videoPlayer;
-    private new GameObject camera;
-    // Start is called before the first frame update
+    new GameObject camera;
+
     void Start()
     {
         obj = GameObject.Find("videoBase");
@@ -63,11 +63,5 @@ public class videoScript : MonoBehaviour
         Destroy(videoPlayer);
         videoPlayer = null;
         // 動画再生完了時の処理
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

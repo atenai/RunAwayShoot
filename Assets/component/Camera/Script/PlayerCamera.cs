@@ -5,61 +5,59 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     [SerializeField]                                    //プレイヤーの現在情報
-    private player mPlayerClass;
+    player mPlayerClass;
     [SerializeField]
-    private GameObject mCameraLookAt;                  //エイム時の注視点オブジェクト(Camera
+    GameObject mCameraLookAt;                  //エイム時の注視点オブジェクト(Camera
     [SerializeField]
-    private GameObject mBodyaLookAt;                   //エイム時の注視点オブジェクト(Body
+    GameObject mBodyaLookAt;                   //エイム時の注視点オブジェクト(Body
     [SerializeField]
-    private AssaultRifle assaultRifle;
+    AssaultRifle assaultRifle;
     [SerializeField]
-    private GameObject mControlLookAt;
+    GameObject mControlLookAt;
 
 
     [SerializeField]                                    // 回転速度
-    private float mTurnSpeed;
+    float mTurnSpeed;
     [SerializeField]                                    // 通常時注視対象
-    private Transform mPlayer;
+    Transform mPlayer;
 
     [SerializeField]
-    private Vector3 mEye;                               // 構え状態pos
+    Vector3 mEye;                               // 構え状態pos
 
     [SerializeField]                                    // 注視対象プレイヤーからカメラを離す距離
-    private float mDistance;
+    float mDistance;
 
-    private float mAimSpeed;                            // エイム時の感度
+    float mAimSpeed;                            // エイム時の感度
     [SerializeField]
-    private float mAimDefSpeed;                         // エイム時のデフォルト感度
+    float mAimDefSpeed;                         // エイム時のデフォルト感度
     [SerializeField]
-    private float mAimAdjusSpeed;                       // 敵を捕らえているときの感度減率
-    private Quaternion mvRotation;                      // カメラの垂直回転(見下ろし回転)
-    private Quaternion mhRotation;                      // カメラの水平回転
+    float mAimAdjusSpeed;                       // 敵を捕らえているときの感度減率
+    Quaternion mvRotation;                      // カメラの垂直回転(見下ろし回転)
+    Quaternion mhRotation;                      // カメラの水平回転
 
-    private Vector3 mWeponRecoli;                       //カメラリコイル保管用
-    private float mRecoilLarp = 0;                      //カメラのリコイル用のらーぷを扱う値
-    private bool isShoot;
-    private Vector3 m_optmaizeVec;
+    Vector3 mWeponRecoli;                       //カメラリコイル保管用
+    float mRecoilLarp = 0;                      //カメラのリコイル用のらーぷを扱う値
+    bool isShoot;
+    Vector3 m_optmaizeVec;
 
-
-    [SerializeField]
-    private LayerMask mRayMask;                         //レイ
 
     [SerializeField]
-    private HitAttackUI mHitCircle;                     //敵からのダメージサークル
-
-    private Vector3 mDataWeponsH = Vector3.zero;        //ボディの起点と銃の起点の差分データ
+    LayerMask mRayMask;                         //レイ
 
     [SerializeField]
-    private float mRStickDeadZone = 0.0f;
+    HitAttackUI mHitCircle;                     //敵からのダメージサークル
+
+    Vector3 mDataWeponsH = Vector3.zero;        //ボディの起点と銃の起点の差分データ
 
     [SerializeField]
-    private float mCameraLimit = 60f;
+    float mRStickDeadZone = 0.0f;
+
+    [SerializeField]
+    float mCameraLimit = 60f;
 
     // ---------------------
     // コントローラ
-    private Vector2 R_Stick;
-
-
+    Vector2 R_Stick;
 
     void Awake()
     {
@@ -232,7 +230,7 @@ public class PlayerCamera : MonoBehaviour
     {
         Ray ray = new Ray(this.transform.position, this.transform.forward);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 100.0f/*30.0f*/, mRayMask.value))
+        if (Physics.Raycast(ray, out hit, 100.0f, mRayMask.value))
         {
             //何かがレイに触れた場合 
 
@@ -245,7 +243,6 @@ public class PlayerCamera : MonoBehaviour
             else
             {
                 mBodyaLookAt.transform.position = ray.GetPoint(hit.distance);
-                //mBodyaLookAt.transform.position = mCameraLookAt.transform.position;
             }
         }
         else

@@ -6,25 +6,16 @@ public class InCamera : MonoBehaviour
 {
     [SerializeField] private Director director;
 
-    static public bool isStay = false;//プレイヤーが滞在してるか
+    public static bool isStay = false;//プレイヤーが滞在してるか
 
-    private void Awake()
+    void Awake()
     {
         //キャンバスオブジェクト取得
         GameObject gameObject = GameObject.Find("Canvas");
         director = director.GetComponent<Director>();
     }
 
-    void Update()
-    {
-        ////ゴールに着いたら色変わる
-        //if (director.isAchieve)
-        //{
-        //    GetComponent<Renderer>().material.color = Color.red;
-        //}
-    }
-
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         //プレイヤーが範囲にいたら
         if (other.gameObject.tag == "Player")
@@ -34,7 +25,7 @@ public class InCamera : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
@@ -42,7 +33,7 @@ public class InCamera : MonoBehaviour
         }
     }
 
-    static public bool GetisStay()
+    public static bool GetisStay()
     {
         return isStay;
     }

@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class STARTTEAP6 : MonoBehaviour
 {
-    GameObject gameobject_director;//Director.cs呼び出し
+    //Director.cs呼び出し
+    GameObject gameobject_director;
 
     Text MissionSuccess_text;
 
-    private void Awake()
+    void Awake()
     {
         //キャンバスオブジェクト取得
         gameobject_director = GameObject.Find("Canvas");
@@ -18,7 +19,7 @@ public class STARTTEAP6 : MonoBehaviour
         MissionSuccess_text = GameObject.Find("Mission Success").GetComponent<Text>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         //プレイヤーがあたったら
         if (other.gameObject.tag == "Player")

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class WaeponUI : MonoBehaviour
 {
-    [SerializeField] private Text mUI01;
-    [SerializeField] private Text mUI02;
-    [SerializeField] private GameObject mObj;
+    [SerializeField] Text mUI01;
+    [SerializeField] Text mUI02;
+    [SerializeField] GameObject mObj;
 
-    private void Awake() { }
+    void Awake() { }
 
-    private void Update()
+    void Update()
     {
         uint _u1 = mObj.GetComponent<AssaultRifle>().getRemainderBulletMagazine();
         uint _u2 = mObj.GetComponent<AssaultRifle>().getRemainderBulletContet();

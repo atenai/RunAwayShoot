@@ -5,10 +5,10 @@ using UnityEngine;
 public class IsRenderer : MonoBehaviour
 {
     //カメラオブジェクト取得
-    [SerializeField] private GameObject movieCamera1;
+    [SerializeField] GameObject movieCamera1;
 
     //カメラについているタグ名
-    private const string CAMERA_TAG_NAME = "MovieCamera1";
+    const string CAMERA_TAG_NAME = "MovieCamera1";
 
     //カメラに表示されているか
     public static bool isRendered = false;
@@ -16,8 +16,8 @@ public class IsRenderer : MonoBehaviour
     //プレイヤーが触れているか
     public bool isPlayer = false;
 
-    [SerializeField] private GameObject plane;
-    private InCamera script;
+    [SerializeField] GameObject plane;
+    InCamera script;
 
     void Awake()
     {
@@ -39,17 +39,6 @@ public class IsRenderer : MonoBehaviour
             movieCamera1.SetActive(false);
         }
     }
-
-    //カメラに写っている間に呼ばれる
-    /* private void OnWillRenderObject()
-     {
-         //カメラに映った時だけisRenderedを有効に
-         if (Camera.current.tag == CAMERA_TAG_NAME)
-         {
-
-             isRendered = true;
-         }
-     }*/
 
     public static bool GetIsRendered()
     {

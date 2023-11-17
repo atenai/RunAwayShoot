@@ -9,16 +9,9 @@ public class EnemySoundList : MonoBehaviour
     public AudioClip Damaged_Sound;
     private AudioSource EnemyMaster_audioSource;
 
-    // Start is called before the first frame update
     void Start()
     {
         EnemyMaster_audioSource = this.gameObject.transform.GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void EnemyWalkSound()

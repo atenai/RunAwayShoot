@@ -11,7 +11,6 @@ public class RectTest : MonoBehaviour
     private float ySpeed;
     public float FPS;
 
-    // Start is called before the first frame update
     void Start()
     {
         FPS = 30;
@@ -23,11 +22,10 @@ public class RectTest : MonoBehaviour
         ySpeed = (yMax - this.gameObject.transform.position.y) / FPS;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        rectTransform.position = new Vector3(this.transform.position.x+xSpeed, this.transform.position.y + ySpeed, 0);
-        if(this.gameObject.transform.position.x >= xMax && this.gameObject.transform.position.y >= yMax)
+        rectTransform.position = new Vector3(this.transform.position.x + xSpeed, this.transform.position.y + ySpeed, 0);
+        if (this.gameObject.transform.position.x >= xMax && this.gameObject.transform.position.y >= yMax)
         {
             Destroy(this.gameObject);
         }

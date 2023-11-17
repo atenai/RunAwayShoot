@@ -13,18 +13,15 @@ public class AssaultRifle : weapon
     private float mLaterFlame = 0;
 
     //レティクルの広がりの最大値
-    [SerializeField]
-    private float mReactionMax;
+    [SerializeField] private float mReactionMax;
 
     //レティクルの広がりの広がり方
-    private float mReaction = 0 ;
+    private float mReaction = 0;
     //レティクルの広がりの大きさ
-    [SerializeField]
-    private float mReactionInclimentSize;
+    [SerializeField] private float mReactionInclimentSize;
     //レティクルの閉まり方
-    [SerializeField]
-    private float mReactionDecrimentSize;
-    
+    [SerializeField] private float mReactionDecrimentSize;
+
     private Vector3 mRecoil;
 
     public PlayerSound Playsound;
@@ -34,13 +31,11 @@ public class AssaultRifle : weapon
     private int Recastcount = 0;
     private int Recastlimit = 30;
 
-    [SerializeField]
-    private ReticleScr mReticle;
+    [SerializeField] private ReticleScr mReticle;
 
     private Vector3 mRecoilSave;
 
-    [SerializeField]
-    private PlayerCamera mCamera;
+    [SerializeField] private PlayerCamera mCamera;
 
     public void Awake()
     {
@@ -48,10 +43,9 @@ public class AssaultRifle : weapon
         mRecoilSave = Vector3.zero;
     }
 
-
-    public override void Update ()
+    public override void Update()
     {
-        if(mReaction >= 0)
+        if (mReaction >= 0)
             mReaction -= mReactionDecrimentSize;
 
     }
@@ -65,7 +59,8 @@ public class AssaultRifle : weapon
     public override void shooting(string _tagName)
     {
         if (mRemainderBulletMagazine <= 0)
-        {//残弾なし状態
+        {
+            //残弾なし状態
             if (Recastsound == true)
             {
                 Playsound.PlayBulletEmptySound();
@@ -83,7 +78,8 @@ public class AssaultRifle : weapon
             return;
         }
         if (mLaterFlame < mShootSpeed)
-        {//レートから弾の発生をコントロール
+        {
+            //レートから弾の発生をコントロール
             mLaterFlame += Time.deltaTime;
             return;
         }
@@ -97,13 +93,13 @@ public class AssaultRifle : weapon
         }
 
         mRecoilSave = mRecoil;
-        Vector3 _front = (mFrontVec.transform.position + mRecoil) - this.transform.position ;
+        Vector3 _front = (mFrontVec.transform.position + mRecoil) - this.transform.position;
 
-        mBulletPrefab.GetComponent<bullet>().createBullet( this.gameObject, _front.normalized, _tagName);
+        mBulletPrefab.GetComponent<bullet>().createBullet(this.gameObject, _front.normalized, _tagName);
 
         mRemainderBulletMagazine -= 1;
 
-        if(mReaction <= mReactionMax)
+        if (mReaction <= mReactionMax)
         {
             mReaction += mReactionInclimentSize;
         }

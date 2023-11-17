@@ -11,8 +11,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoder : MonoBehaviour
 {
-    [SerializeField]
-    private int mFPS;
+    [SerializeField] private int mFPS;
     //フェード確認
     private bool mIsFade;
     //フェードの種類   false:In    true:Out
@@ -22,23 +21,17 @@ public class SceneLoder : MonoBehaviour
     //　非同期動作で使用するAsyncOperation
     private AsyncOperation mAsync;
     //　シーンロード中に表示するUI画面
-    [SerializeField]
-    private GameObject mLoadUI;
+    [SerializeField] private GameObject mLoadUI;
     //　フェード用の背景
-    [SerializeField]
-    private GameObject mbackGround;
-    [SerializeField]
-    private Material mFadeMaterial;
+    [SerializeField] private GameObject mbackGround;
+    [SerializeField] private Material mFadeMaterial;
     //フェードに用いる時間
-    [SerializeField]
-    private float mFadeSecond;
+    [SerializeField] private float mFadeSecond;
 
     //　読み込み率を表示するスライダー
-    [SerializeField]
-    private Slider mSlider;
+    [SerializeField] private Slider mSlider;
 
     //次に読み込むシーン名
-    //[SerializeField]
     private string mSceanName;
 
     void Start()
@@ -101,7 +94,7 @@ public class SceneLoder : MonoBehaviour
             (byte)mFadeMaterial.color.r,
             (byte)mFadeMaterial.color.g,
             (byte)mFadeMaterial.color.b,
-            (byte)(mFadeAlfa ));
+            (byte)(mFadeAlfa));
 
         if (mFadeAlfa <= 0)
         {
@@ -123,7 +116,7 @@ public class SceneLoder : MonoBehaviour
         if (mFadeAlfa >= 255)
         {
             mIsFade = false;
-            
+
             mLoadUI.SetActive(true);
             mSlider.gameObject.SetActive(true);
             //　コルーチンを開始

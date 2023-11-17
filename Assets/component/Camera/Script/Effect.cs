@@ -6,7 +6,6 @@ using UnityEngine;
 //  ポストエフェクト
 //  ShotaYamasita
 
-
 public class Effect : MonoBehaviour
 {
     //ブラー用マテリアル情報
@@ -25,9 +24,9 @@ public class Effect : MonoBehaviour
         Max
     }
 
-    private PostEffectNum mType = 0;
+    PostEffectNum mType = 0;
 
-    private void Update()
+    void Update()
     {
         //キー入力によるシェーダの切り替え
         switchType();
@@ -60,7 +59,7 @@ public class Effect : MonoBehaviour
         }
     }
 
-    private void switchType()
+    void switchType()
     {
         //シェーダ切替入力検知
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -73,7 +72,7 @@ public class Effect : MonoBehaviour
         }
     }
 
-    private void checkValue()
+    void checkValue()
     {
         //上限下限検知
         if (mType < 0)
@@ -86,13 +85,17 @@ public class Effect : MonoBehaviour
         }
     }
 
-    private void defaltePostEffect(RenderTexture _source, RenderTexture _destination)
-    { Graphics.Blit(_source, _destination); }
+    void defaltePostEffect(RenderTexture _source, RenderTexture _destination)
+    {
+        Graphics.Blit(_source, _destination);
+    }
 
-    private void monoToonRender(RenderTexture _source, RenderTexture _destination)
-    { Graphics.Blit(_source, _destination, mMonoToonMat); }
+    void monoToonRender(RenderTexture _source, RenderTexture _destination)
+    {
+        Graphics.Blit(_source, _destination, mMonoToonMat);
+    }
 
-    private void gaussianBlur(RenderTexture _source, RenderTexture _destination)
+    void gaussianBlur(RenderTexture _source, RenderTexture _destination)
     {
 
     }

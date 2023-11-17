@@ -15,8 +15,7 @@ public class shutter : MonoBehaviour
     private Vector3 m_TargetPosition;
 
     //到達するまでの時間（秒)
-    [SerializeField]
-    private int m_Second;
+    [SerializeField] private int m_Second;
 
     private float m_ColliderOffset;
 
@@ -27,21 +26,17 @@ public class shutter : MonoBehaviour
 
     /*デバッグ関係*/
     //　距離を表示するテキストUI
-    [SerializeField]
-    private Text distanceUI;
+    [SerializeField] private Text distanceUI;
 
     private float UpdateDiatance;
+
     void Start()
     {
         m_bShutout = false;
 
-
         m_Target = GameObject.Find("target2");
         m_Position = this.transform.position;
         m_TargetPosition = m_Target.transform.position;
-
-        //m_ColliderOffset = (GetComponent<BoxCollider>().size.x * 0.5f) + (m_Target.GetComponent < BoxCollider>().size.x * 0.5f);
-        //m_ColliderOffset = (this.transform.localScale.x * 0.5f) + (m_Target.transform.localScale.x * 0.5f);
 
         //壁との距離計算のためのオフセット値
         //Rendererコンポーネントでオブジェクトの幅を取得している
@@ -76,18 +71,6 @@ public class shutter : MonoBehaviour
             //シャッターがしまったフラグをオン
             m_bShutout = true;
         }
-
-    }
-
-    //シャッター用タイマーの初期化処理
-    void TimerInit()
-    {
-
-    }
-
-    //シャッター用タイマーの更新処理
-    void TimerUpdate()
-    {
 
     }
 

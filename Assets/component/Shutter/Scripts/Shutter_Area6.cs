@@ -37,11 +37,10 @@ public class Shutter_Area6 : MonoBehaviour
             }
         }
 
-        //ShutterX.gameObject.transform.position = new Vector3(-20.0f, posy, 5.0f);
         ShutterX.gameObject.transform.position = new Vector3(ShutterX.gameObject.transform.position.x, posy, ShutterX.gameObject.transform.position.z);
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         //プレイヤーがあたったら
         if (other.gameObject.tag == "Player")

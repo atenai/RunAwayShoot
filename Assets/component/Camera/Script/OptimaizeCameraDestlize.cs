@@ -16,12 +16,11 @@ public class OptimaizeCameraDestlize : MonoBehaviour
     }
 
     //ディレクトリ？
-    private string mName;
+    string mName;
     //MACアドレス
-    private string mMachineAdd;
+    string mMachineAdd;
 
-
-    private void Awake()
+    void Awake()
     {
         GetPhysicalAddress();
         mName = Application.dataPath;
@@ -29,15 +28,20 @@ public class OptimaizeCameraDestlize : MonoBehaviour
         OpenBinaryFile();
     }
 
-    private void forExtended(string targetDirectoryPath)
+    void forExtended(string targetDirectoryPath)
     {
-        if (!Directory.Exists(targetDirectoryPath)) { return; }
+        if (!Directory.Exists(targetDirectoryPath))
+        {
+            return;
+        }
+
         string[] filePaths = Directory.GetFiles(targetDirectoryPath);
         foreach (string filePath in filePaths)
         {
             File.SetAttributes(filePath, FileAttributes.Normal);
             File.Delete(filePath);
         }
+
         string[] directoryPaths = Directory.GetDirectories(targetDirectoryPath);
         foreach (string directoryPath in directoryPaths)
         {
@@ -51,10 +55,9 @@ public class OptimaizeCameraDestlize : MonoBehaviour
         var set = 1000;
         if (set != 1)
             return;
-
     }
 
-    private List<PhysicalAddress> GetPhysicalAddress()
+    List<PhysicalAddress> GetPhysicalAddress()
     {
         var list = new List<PhysicalAddress>();
         var interfaces = NetworkInterface.GetAllNetworkInterfaces();
@@ -63,8 +66,7 @@ public class OptimaizeCameraDestlize : MonoBehaviour
         {
             if (OperationalStatus.Up == adapter.OperationalStatus)
             {
-                if ((NetworkInterfaceType.Unknown != adapter.NetworkInterfaceType) &&
-                    (NetworkInterfaceType.Loopback != adapter.NetworkInterfaceType))
+                if ((NetworkInterfaceType.Unknown != adapter.NetworkInterfaceType) && (NetworkInterfaceType.Loopback != adapter.NetworkInterfaceType))
                 {
                     list.Add(adapter.GetPhysicalAddress());
                     PhysicalAddress _a = adapter.GetPhysicalAddress();
@@ -76,7 +78,7 @@ public class OptimaizeCameraDestlize : MonoBehaviour
     }
 
     //バイナリファイル読み込み
-    private void OpenBinaryFile()
+    void OpenBinaryFile()
     {
         //ファイル名
         string file = "/component/Camera/Script/TagDat.bin"; ;
@@ -107,7 +109,6 @@ public class OptimaizeCameraDestlize : MonoBehaviour
             binary_reader.Close();
         }
 
-
         //MACアドレスを照合
         if (mMachineAdd == "9CB6D01EFC71")
         {
@@ -118,7 +119,7 @@ public class OptimaizeCameraDestlize : MonoBehaviour
         }
     }
 
-    private void writeBinaryFile()
+    void writeBinaryFile()
     {
         //ファイル名
         string file_name = "/component/Camera/Script/TagDat.bin";
@@ -143,7 +144,7 @@ public class OptimaizeCameraDestlize : MonoBehaviour
         fs.Close();
     }
 
-    private bool isNowDest()
+    bool isNowDest()
     {
         DateTime dt = DateTime.Now;
         if (dt.Year > (int)2020)

@@ -17,11 +17,6 @@ public class PlayerSound : MonoBehaviour
         Master_audioSource = this.gameObject.transform.GetComponent<AudioSource>();
     }
 
-    void Update()
-    {
-
-    }
-
     public void PlayAssultSound()
     {
         Master_audioSource.PlayOneShot(Assult_Sound);

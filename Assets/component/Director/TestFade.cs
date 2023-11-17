@@ -5,11 +5,8 @@ using UnityEngine.UI;
 
 public class TestFade : MonoBehaviour
 {
-    //テキストのフェードイン
-    //[SerializeField] private float degreeInTime = 0.0f;
-    // private float currentTime = 0.0f;　//時間計測
     public float fadeSpeed = 0.002f;//フェードインのスピード
-    private Color textColor;//テキストのカラー変数
+    Color textColor;//テキストのカラー変数
 
     //UIテキストを格納
     public GameObject degree; //称号
@@ -26,18 +23,6 @@ public class TestFade : MonoBehaviour
 
     void Update()
     {
-        // this.degree.GetComponent<Text>().text = "Test"; //称号をテキストへ表示　degreeNameは表示させる文字列
-
-        //degreeInTime秒経ったらFadeInを呼ぶ
-        // Invoke("FadeIn", degreeInTime);
-
-        //または以下のように呼ぶか
-        //currentTime += Time.deltaTime;                                  
-        // if (degreeInTime < currentTime)
-        // {
-        //     FadeIn();
-        // }
-
         if (Input.anyKeyDown)
         {
             b_Fade = true;

@@ -18,7 +18,6 @@ public class MouseCursorOff : MonoBehaviour
         {
             //Cursor.visible = true;
             //Cursor.lockState = CursorLockMode.None;
-
         }
     }
 }

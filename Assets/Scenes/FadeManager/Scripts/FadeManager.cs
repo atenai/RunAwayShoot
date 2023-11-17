@@ -35,16 +35,21 @@ public class FadeManager : MonoBehaviour
 	#endregion Singleton
 
 	/// <summary>
-	/// デバッグモード .
+	/// デバッグモード 
 	/// </summary>
 	public bool DebugMode = true;
-	/// <summary>フェード中の透明度</summary>
+	/// <summary>
+	/// フェード中の透明度
+	/// </summary>
 	private float fadeAlpha = 0;
-	/// <summary>フェード中かどうか</summary>
+	/// <summary>
+	/// フェード中かどうか
+	/// </summary>
 	private bool isFading = false;
-	/// <summary>フェード色</summary>
+	/// <summary>
+	/// フェード色
+	/// </summary>
 	public Color fadeColor = Color.black;
-
 
 	public void Awake()
 	{
@@ -99,9 +104,6 @@ public class FadeManager : MonoBehaviour
 				}
 			}
 		}
-
-
-
 	}
 
 	/// <summary>

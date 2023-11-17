@@ -7,7 +7,6 @@ using HitUI;
 
 public class BulletCollider : MonoBehaviour
 {
-
     private void OnCollisionEnter(Collision collision)
     {
         if (this.transform.tag != "PlayerBullet")

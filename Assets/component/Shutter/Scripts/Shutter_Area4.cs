@@ -28,7 +28,6 @@ public class Shutter_Area4 : MonoBehaviour
         posy = 3.0f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (b_pos == true)
@@ -39,11 +38,10 @@ public class Shutter_Area4 : MonoBehaviour
             }
         }
 
-        //ShutterX.gameObject.transform.position = new Vector3(-20.0f, posy, 5.0f);
         ShutterX.gameObject.transform.position = new Vector3(ShutterX.gameObject.transform.position.x, posy, ShutterX.gameObject.transform.position.z);
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
 
         //プレイヤーがあたったら

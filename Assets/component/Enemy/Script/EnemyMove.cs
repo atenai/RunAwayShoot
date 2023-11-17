@@ -29,7 +29,7 @@ public class EnemyMove : MonoBehaviour
                                                                 //③空オブジェのポジションを設定
                                                                 //④巡回させたいルート順でpoints配列にぶち込む
                                                                 //以上
-    //-----------------------------------------------------------------------------------------------------------------------------
+                                                                //-----------------------------------------------------------------------------------------------------------------------------
     public float mDistancetoVoice;
     //-----------------------------------------------------------------------------------------------------------------------------
 
@@ -44,8 +44,8 @@ public class EnemyMove : MonoBehaviour
     private EnemyAttack S_enemyAttack2;
     public Vector3 BeDamaged_PlayerPos;
 
-   // private GameObject gameobject_director;//ディレクター呼び出し
-   // private Director director;
+    // private GameObject gameobject_director;//ディレクター呼び出し
+    // private Director director;
     public GameObject OCanvas;
     public GameObject TestObj;
 
@@ -80,9 +80,6 @@ public class EnemyMove : MonoBehaviour
         HPUI = this.gameObject.transform.Find("HPUI").gameObject;
         HPSlider = HPUI.transform.Find("HPBar").GetComponent<Slider>();
         HPSlider.value = mHP / mMaxHP;
-        ////キャンバスオブジェクト取得
-        //gameobject_director = GameObject.Find("Canvas");
-        //director = gameobject_director.GetComponent<Director>();
 
         //方向オブジェクトと攻撃スクリプトを格納
         Direction = this.gameObject.transform.Find("Direction").gameObject;
@@ -125,7 +122,7 @@ public class EnemyMove : MonoBehaviour
         {
             BeDamaged();
         }
-        if(mHP<=0)
+        if (mHP <= 0)
         {
             mSetMode = 0;
             DestroyPhase();
@@ -136,8 +133,6 @@ public class EnemyMove : MonoBehaviour
             EnemySound.EnemyWalkSound();
         }
         WalkCnt++;
-        //mHP -= 1;
-
     }
 
     //-------------------------------------------------------------------------------------
@@ -175,13 +170,10 @@ public class EnemyMove : MonoBehaviour
             if (Hit.transform.gameObject.name == "body")//bodyかPlayerに設定すれば反応する多分？
             {
                 mIs_Obstacle = false;
-                
-                
             }
             else
             {
                 mIs_Obstacle = true;
-               // director.discovery();
             }
         }
     }
@@ -204,7 +196,7 @@ public class EnemyMove : MonoBehaviour
             // 次の巡回地点を設定する処理を実行
             GotoNextPoint();
         }
-        
+
     }
 
     //-------------------------------------------------------------------------------------
@@ -232,7 +224,7 @@ public class EnemyMove : MonoBehaviour
         //攻撃関数呼び出し
         S_enemyAttack.Shotting();
         S_enemyAttack2.Shotting();
-        if(AttackCnt%30==0)
+        if (AttackCnt % 30 == 0)
         {
             EnemySound.EnemyShotSound();
         }
@@ -246,7 +238,7 @@ public class EnemyMove : MonoBehaviour
     //-------------------------------------------------------------------------------------
     private void BeDamaged()
     {
-        if(StayCnt==0)
+        if (StayCnt == 0)
         {
             Quaternion targetRotation = Quaternion.LookRotation(BeDamaged_PlayerPos - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * mRotationSpeed);
@@ -254,14 +246,14 @@ public class EnemyMove : MonoBehaviour
 
             mDistancetoTarget = Vector3.SqrMagnitude(transform.position - BeDamaged_PlayerPos);
         }
-        
+
         //Debug.Log("Move");
 
         // エージェントが現在の巡回地点に到達したら
         if (mDistancetoTarget < 0.5f)
         {
             StayCnt++;
-            if(StayCnt>=90)
+            if (StayCnt >= 90)
             {
                 // 次の巡回地点を設定する処理を実行
                 mSetMode = 1;
@@ -269,8 +261,6 @@ public class EnemyMove : MonoBehaviour
             }
         }
     }
-
-
 
     private void DestroyPhase()
     {
@@ -292,13 +282,12 @@ public class EnemyMove : MonoBehaviour
                 obj2 = Instantiate(ExplosionParticle, new Vector3(this.transform.position.x + 2.5f, this.transform.position.y + 5f, this.transform.position.z), this.transform.rotation);
                 Destroy(obj2, 1f);
             }
-            if(Cnt == 40)
+            if (Cnt == 40)
             {
                 GameObject obj3;
                 obj3 = Instantiate(ExplosionParticle, new Vector3(this.transform.position.x, this.transform.position.y + 3f, this.transform.position.z), this.transform.rotation);
                 Destroy(obj3, 3f);
-                //GameObject obj = Instantiate(TestObj, this.transform.position, new Quaternion(0, 0, 0, 0));
-                //obj.transform.parent = OCanvas.transform;
+
                 Destroy(this.gameObject.gameObject);
             }
             Cnt++;

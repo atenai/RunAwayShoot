@@ -4,17 +4,7 @@ using UnityEngine;
 
 public class GameQuit : MonoBehaviour
 {
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
-
-    private void LateUpdate()
+    void LateUpdate()
     {
         //Escapeキーでゲーム終了
         if (Input.GetKeyDown(KeyCode.Escape))

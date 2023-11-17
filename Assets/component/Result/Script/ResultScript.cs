@@ -28,8 +28,6 @@ public class ResultScript : MonoBehaviour
     private uint nModeCnt;
     private float fReviewScore;
 
-
-    // Start is called before the first frame update
     void Awake()
     {
         //RectTransform格納
@@ -138,7 +136,7 @@ public class ResultScript : MonoBehaviour
         }
     }
 
-    void Step1()////Star
+    void Step1()//Star
     {
         if (i == 0 && i < MaxCnt)
         {
@@ -223,11 +221,8 @@ public class ResultScript : MonoBehaviour
             nModeCnt++;
 
         }
-        //else
-        //{
-        mScore += 200;
-        //}
 
+        mScore += 200;
     }
 
     void Step3()//Review Score

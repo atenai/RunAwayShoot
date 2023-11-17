@@ -20,7 +20,6 @@ public class Score : MonoBehaviour
     };
     public static AddScoreType add_score_type;
 
-
     Text score_text;
     void Awake()
     {
@@ -29,7 +28,6 @@ public class Score : MonoBehaviour
         score_text = this.GetComponent<Text>();
         //テキストの文字入力
         score_text.text = score + "";
-
     }
 
     void Update()

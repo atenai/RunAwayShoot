@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class GOALTEAP3 : MonoBehaviour
 {
-    GameObject gameobject_director;//Director.cs呼び出し
+    //Director.cs呼び出し
+    GameObject gameobject_director;
 
-    private void Awake()
+    void Awake()
     {
         //キャンバスオブジェクト取得
         gameobject_director = GameObject.Find("Canvas");
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         //プレイヤーがあたったら
         if (other.gameObject.tag == "Player")

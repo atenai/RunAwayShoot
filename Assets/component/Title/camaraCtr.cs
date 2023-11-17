@@ -26,10 +26,6 @@ public class camaraCtr : MonoBehaviour
 
         if (inputFlag == true)
         {
-            //MovieCtr.cs関数取得
-            // videoFlag = moviectr.GetvideoFlag();
-            //動画終了したら
-            //if (videoFlag)
             camera_transform.Translate(0.0f, 0.0f, cnt);
         }
     }

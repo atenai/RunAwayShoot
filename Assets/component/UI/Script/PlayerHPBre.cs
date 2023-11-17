@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHPBre : MonoBehaviour
 {
     //Playerコンポーネント
-    private player mPlayerCon;
+    player mPlayerCon;
 
     //HP表示に用いるオブジェクト
     [SerializeField] private Image mLifeUI;

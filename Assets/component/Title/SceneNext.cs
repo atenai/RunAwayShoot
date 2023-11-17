@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneNext : MonoBehaviour
 {
-
     [SerializeField] float SceneNextTimer;
 
     bool b_Start = false;
@@ -27,7 +26,6 @@ public class SceneNext : MonoBehaviour
         if (Input.anyKeyDown)
         {
             //SE再生
-            //音(GOALSound)を鳴らす
             audioSource.PlayOneShot(StartSound);
 
             b_Start = true;

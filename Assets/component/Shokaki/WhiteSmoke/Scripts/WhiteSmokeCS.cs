@@ -9,19 +9,6 @@ public class WhiteSmokeCS : MonoBehaviour
     //参照するエネミースクリプト
     EnemyMove m_EnemyCS;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
     void OnTriggerEnter(Collider coll)
     {
         if (coll.gameObject.tag == "Enemy")
@@ -34,6 +21,4 @@ public class WhiteSmokeCS : MonoBehaviour
 
         }
     }
-
-
 }

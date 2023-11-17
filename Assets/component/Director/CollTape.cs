@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class CollTape : MonoBehaviour
 {
-    GameObject gameobject_director;//Director.cs呼び出し
+    //Director.cs呼び出し
+    GameObject gameobject_director;
 
-    private void Awake()
+    void Awake()
     {
         //キャンバスオブジェクト取得
         gameobject_director = GameObject.Find("Canvas");
     }
-    private void OnTriggerEnter(Collider other)
+
+    void OnTriggerEnter(Collider other)
     {
         //プレイヤーがあたったら
         if (other.gameObject.tag == "Player")
@@ -19,7 +21,7 @@ public class CollTape : MonoBehaviour
             Destroy(this.gameObject);
 
             gameobject_director.GetComponent<Director>().area_Num++;//エリアをプラス１する
-            Debug.Log("+1");
+            //Debug.Log("+1");
         }
     }
 }

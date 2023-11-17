@@ -10,29 +10,20 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     //発射する実体
-    [SerializeField]
-    private GameObject mObject;
-    
+    [SerializeField] private GameObject mObject;
+
     // 進む速度
-    [SerializeField]
-    private float mSpeed;
+    [SerializeField] private float mSpeed;
     //　生存時間/s
-    [SerializeField]
-    private float mLimit;
-       
-    
-    void Awake()
-    {
-    }
-    
-    
+    [SerializeField] private float mLimit;
+
     //弾の生成と弾のリミット設定
-    public void createBullet(GameObject _obj , Vector3 _frontVec)
+    public void createBullet(GameObject _obj, Vector3 _frontVec)
     //　※追記:10/09　生成位置を進行方向側へ少し移動 
     {
         {
-            GameObject newBullet = 
-                Instantiate(mObject, 
+            GameObject newBullet =
+                Instantiate(mObject,
                 new Vector3(_obj.transform.position.x + _frontVec.x,
                 _obj.transform.position.y + _frontVec.y,
                 _obj.transform.position.z + _frontVec.z),
@@ -41,6 +32,7 @@ public class bullet : MonoBehaviour
             Destroy(newBullet, mLimit);
         }
     }
+
     //弾の生成と弾のリミット設定
     //タグもつける
     public void createBullet(GameObject _obj, Vector3 _frontVec, string _tagName)

@@ -57,10 +57,6 @@ public class Shutter02 : MonoBehaviour
     [SerializeField]
     private Text distanceUI;
 
-    ////ディレクター取得
-    //private GameObject gamedirector;
-    //private Director director;
-
     private float UpdateDiatance;
     void Start()
     {
@@ -80,10 +76,6 @@ public class Shutter02 : MonoBehaviour
         m_Player = GameObject.Find("Player/body");
 
         m_PlayerCollider = GetComponent<BoxCollider>();
-
-        //ディレクター取得
-        //gamedirector = GameObject.Find("Canvas");
-        //director = gamedirector.GetComponent<Director>();
 
         m_ShutterPos[(int)SHUTTER_TYPE.RIGHT] = m_ShutterR.transform.position;
         m_ShutterPos[(int)SHUTTER_TYPE.LEFT] = m_ShutterL.transform.position;
@@ -150,19 +142,6 @@ public class Shutter02 : MonoBehaviour
 
         }
 
-        //左シャッターの右側の座標X
-        //m_RightOffset = m_ShutterLPos.x +
-        /*----------------  距離デバッグテキスト表示 ------------------------------------------------------------------*/
-
-        //UpdateDiatance = Vector3.Distance(m_ShutterR.transform.position, m_ShutterL.transform.position) - m_ColliderOffset ;
-        //if (distanceUI != null)
-        //{
-        //    distanceUI.text = UpdateDiatance.ToString("0.00m");
-        //}
-
-        /*-------------------------------------------------------------------------------------------------------------*/
-        //if(director.directors[3].IsArea)
-        //{
         if (m_bShutterStart == true)
         {
             if (m_ShutterR.transform.position.x - InsideOffset[(int)SHUTTER_TYPE.RIGHT] >= m_Center.x)

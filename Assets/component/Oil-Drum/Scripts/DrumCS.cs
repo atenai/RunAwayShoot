@@ -10,17 +10,9 @@ public class DrumCS : MonoBehaviour
     public AudioClip Explosion_SE;
     private float SE_Endtime;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         SE_Endtime = Explosion_SE.length;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     //当たった瞬間
@@ -33,7 +25,7 @@ public class DrumCS : MonoBehaviour
             // 爆発エフェクトを生成する	
             GameObject effect = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             //SE再生
-            GameObject SE= Instantiate(ExplosionPlayer, this.transform.position, Quaternion.identity);
+            GameObject SE = Instantiate(ExplosionPlayer, this.transform.position, Quaternion.identity);
             Destroy(SE, SE_Endtime);
             //1秒後に爆発
             Destroy(effect, 1.0f);

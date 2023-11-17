@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Director : MonoBehaviour
 {
-
     public int area_Num = 0;//エリアカウント
 
     //フェード
@@ -587,8 +586,6 @@ public class Director : MonoBehaviour
         ImageAllMissionSuccess_component = ImageAllMissionSuccess_object.GetComponent<Image>();
         ImageAllMissionSuccess_component.color = AllMissionSuccesstextColor; //画像の透明度を変える
     }
-
-
 
     void Update()
     {

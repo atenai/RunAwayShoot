@@ -8,9 +8,4 @@ public class ScreenSetting : MonoBehaviour
     {
         Screen.SetResolution(1920, 1080, true, 60);
     }
-
-    void Update()
-    {
-
-    }
 }

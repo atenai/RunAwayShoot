@@ -7,7 +7,7 @@ namespace HitUI
 {
     public class HitPlayerBulletUI : MonoBehaviour
     {
-        static private float timer;
+        static float timer;
 
         void Awake()
         {
