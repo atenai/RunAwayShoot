@@ -14,7 +14,6 @@ public class SceneNext : MonoBehaviour
     public AudioClip StartSound;
     AudioSource audioSource;
 
-    // Start is called before the first frame update
     void Start()
     {
         //Componentを取得
@@ -23,10 +22,8 @@ public class SceneNext : MonoBehaviour
         b_Start = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         if (Input.anyKeyDown)
         {
             //SE再生
@@ -41,7 +38,7 @@ public class SceneNext : MonoBehaviour
             SceneNextTimer = SceneNextTimer - Time.deltaTime;
             if (SceneNextTimer <= 0.0f)
             {
-                
+
                 //ステージ１シーンへ
                 SceneManager.LoadScene("Stage1");
             }

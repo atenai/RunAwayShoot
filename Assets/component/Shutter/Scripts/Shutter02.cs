@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+
 public class Shutter02 : MonoBehaviour
 {
     //扉の列挙型
@@ -27,13 +28,13 @@ public class Shutter02 : MonoBehaviour
     private Vector3 m_PlayerSize;
 
     //プレイヤーエリア用コライダー
-    private BoxCollider m_PlayerCollider; 
+    private BoxCollider m_PlayerCollider;
 
 
     //2点間の距離
-    private float [] m_Distance = new float[(int)SHUTTER_TYPE.MAX];
+    private float[] m_Distance = new float[(int)SHUTTER_TYPE.MAX];
     //オブジェクト座標
-    private Vector3 [] m_ShutterPos = new Vector3[(int)SHUTTER_TYPE.MAX]; 
+    private Vector3[] m_ShutterPos = new Vector3[(int)SHUTTER_TYPE.MAX];
     //オブジェクト内側のオフセット
     private float[] InsideOffset = new float[(int)SHUTTER_TYPE.MAX];
     //プレイヤー侵入可能エリア
@@ -146,7 +147,7 @@ public class Shutter02 : MonoBehaviour
         else
         {
             GetComponent<BoxCollider>().enabled = false;
- 
+
         }
 
         //左シャッターの右側の座標X
@@ -162,19 +163,19 @@ public class Shutter02 : MonoBehaviour
         /*-------------------------------------------------------------------------------------------------------------*/
         //if(director.directors[3].IsArea)
         //{
-        if(m_bShutterStart == true)
-        { 
+        if (m_bShutterStart == true)
+        {
             if (m_ShutterR.transform.position.x - InsideOffset[(int)SHUTTER_TYPE.RIGHT] >= m_Center.x)
             {
                 m_ShutterR.transform.position -= m_ShutterR.transform.right * m_fMove[(int)SHUTTER_TYPE.RIGHT] * Time.deltaTime;
             }
-    
+
 
             if (m_ShutterL.transform.position.x + InsideOffset[(int)SHUTTER_TYPE.LEFT] <= m_Center.x)
             {
                 m_ShutterL.transform.position += m_ShutterL.transform.right * m_fMove[(int)SHUTTER_TYPE.LEFT] * Time.deltaTime;
             }
-     
+
         }
 
     }

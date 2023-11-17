@@ -13,7 +13,6 @@ public class Shutter_Area3 : MonoBehaviour
 
     void Awake()
     {
-
         // 親オブジェクトを探す
         ShutterOya = GameObject.Find("ShutterArea3");
 
@@ -45,14 +44,12 @@ public class Shutter_Area3 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         //プレイヤーがあたったら
         if (other.gameObject.tag == "Player")
         {
             //Debug.Log("トリガーに当たっているよ");
             //小オブジェクトの表示をtrue
             ShutterCol.gameObject.SetActive(true);//戻れなくする
-
 
             b_pos = true;//シャッターの閉鎖開始
         }

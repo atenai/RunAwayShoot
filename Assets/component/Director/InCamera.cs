@@ -5,7 +5,7 @@ using UnityEngine;
 public class InCamera : MonoBehaviour
 {
     [SerializeField] private Director director;
-    // Update is called once per frame
+
     static public bool isStay = false;//プレイヤーが滞在してるか
 
     private void Awake()
@@ -14,6 +14,7 @@ public class InCamera : MonoBehaviour
         GameObject gameObject = GameObject.Find("Canvas");
         director = director.GetComponent<Director>();
     }
+
     void Update()
     {
         ////ゴールに着いたら色変わる
@@ -22,6 +23,7 @@ public class InCamera : MonoBehaviour
         //    GetComponent<Renderer>().material.color = Color.red;
         //}
     }
+
     private void OnTriggerEnter(Collider other)
     {
         //プレイヤーが範囲にいたら
@@ -31,6 +33,7 @@ public class InCamera : MonoBehaviour
             Debug.Log("カメラに当たりました");
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")

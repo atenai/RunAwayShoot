@@ -21,17 +21,13 @@ public class TimerCS02 : MonoBehaviour
     //数字の桁情報
     public List<int> number = new List<int>();
 
-    // Start is called before the first frame update
     void Start()
     {
         //トータルタイムの初期化
         totalTime = minute * 60 + seconds;
         oldSeconds = 0f;
-
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         //　制限時間が0秒以下なら何もしない
@@ -68,7 +64,6 @@ public class TimerCS02 : MonoBehaviour
                 }
             }
         }
- 
     }
 
     //数字の表示(関数で値渡し)

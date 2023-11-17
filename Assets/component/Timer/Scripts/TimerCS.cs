@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 public class TimerCS : MonoBehaviour
 {
     //　トータル制限時間
@@ -55,7 +56,7 @@ public class TimerCS : MonoBehaviour
         //　一旦トータルの制限時間を計測；
         totalTime = minute * 60 + seconds;
         totalTime -= Time.deltaTime;
-        
+
 
         //　再設定
         minute = (int)totalTime / 60;
@@ -70,8 +71,7 @@ public class TimerCS : MonoBehaviour
         //　制限時間以下になったらコンソールに『制限時間終了』という文字列を表示する
         if (totalTime <= 0.0f)
         {
-           
-            TimeOver_text.text = "TimeOver";   
+            TimeOver_text.text = "TimeOver";
 
             if (b_Result == false)
             {
@@ -81,11 +81,8 @@ public class TimerCS : MonoBehaviour
                 Score.AddScore(5);//タイムオーバーになったらスコアを-3000にする//柏原
                 b_Result = true;
             }
-           
-
         }
     }
-
 
     public int GetMinute()
     {

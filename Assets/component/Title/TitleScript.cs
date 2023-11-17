@@ -5,7 +5,6 @@ using UnityEngine.Video;
 
 public class TitleScript : MonoBehaviour
 {
-
     GameObject Right;
     GameObject Left;
     //VideoClip VideoClip;
@@ -20,13 +19,11 @@ public class TitleScript : MonoBehaviour
         VideoPlayer = Video.GetComponent<VideoPlayer>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         //// transformを取得
@@ -51,7 +48,7 @@ public class TitleScript : MonoBehaviour
 
         //if (Rightpos.x >= 20 && Leftpos.x <= -20)
         //{
-            
+
         //}
 
         VideoPlayer.Play();

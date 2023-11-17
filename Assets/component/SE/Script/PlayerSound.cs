@@ -10,18 +10,16 @@ public class PlayerSound : MonoBehaviour
     public AudioClip Switch_sound;
     private AudioSource Master_audioSource;
 
-    bool Bool_Sound=true;
+    bool Bool_Sound = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         Master_audioSource = this.gameObject.transform.GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void PlayAssultSound()
@@ -36,12 +34,7 @@ public class PlayerSound : MonoBehaviour
 
     public void PlayBulletEmptySound()
     {
-
-
-
         Master_audioSource.PlayOneShot(BulletEmpty_Sound);
-
-
     }
 
     public void PlaySwitchSound()

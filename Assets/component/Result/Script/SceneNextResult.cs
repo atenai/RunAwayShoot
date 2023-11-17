@@ -16,7 +16,6 @@ public class SceneNextResult : MonoBehaviour
     public AudioClip GOALSound;
     AudioSource audioSource;
 
-    // Start is called before the first frame update
     void Start()
     {
         //Componentを取得
@@ -30,10 +29,9 @@ public class SceneNextResult : MonoBehaviour
         ResultTime = 0.0f;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(b_GOAL == true)
+        if (b_GOAL == true)
         {
             //Debug.Log("ゴール当たっているよ");
             ResultTime -= Time.deltaTime;

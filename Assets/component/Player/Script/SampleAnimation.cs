@@ -22,7 +22,6 @@ public class SampleAnimation : MonoBehaviour
     // 1フレームに1回コールされる
     void Update()
     {
-
         // 矢印下ボタンを押下している
         //if (Input.GetKey(KeyCode.Space))
         //{

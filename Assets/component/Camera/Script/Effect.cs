@@ -39,7 +39,7 @@ public class Effect : MonoBehaviour
     void OnRenderImage(RenderTexture _source, RenderTexture _destination)
     {
 
-        switch(mType)
+        switch (mType)
         {
             case PostEffectNum.Default:
                 defaltePostEffect(_source, _destination);
@@ -56,8 +56,8 @@ public class Effect : MonoBehaviour
             default:
                 defaltePostEffect(_source, _destination);
                 break;
-                
-        }        
+
+        }
     }
 
     private void switchType()
@@ -87,10 +87,10 @@ public class Effect : MonoBehaviour
     }
 
     private void defaltePostEffect(RenderTexture _source, RenderTexture _destination)
-    {   Graphics.Blit(_source, _destination);}
+    { Graphics.Blit(_source, _destination); }
 
     private void monoToonRender(RenderTexture _source, RenderTexture _destination)
-    {   Graphics.Blit(_source, _destination, mMonoToonMat);  }
+    { Graphics.Blit(_source, _destination, mMonoToonMat); }
 
     private void gaussianBlur(RenderTexture _source, RenderTexture _destination)
     {

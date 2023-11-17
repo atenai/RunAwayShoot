@@ -6,10 +6,8 @@ using UnityEngine.UI;
 public class titleLogo : MonoBehaviour
 {
     bool titlelogo;
-    // Update is called once per frame
+
     [SerializeField] private GameObject Title;
-
-
 
     void Awake()
     {
@@ -19,7 +17,7 @@ public class titleLogo : MonoBehaviour
 
     void Update()
     {
-        if(titlelogo)
+        if (titlelogo)
         {
             Title.SetActive(true);
         }

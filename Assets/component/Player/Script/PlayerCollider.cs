@@ -20,7 +20,6 @@ public class PlayerCollider : MonoBehaviour
 
     void Awake()
     {
-
         //Componentを取得
         audioSource = GetComponent<AudioSource>();
     }
@@ -34,12 +33,13 @@ public class PlayerCollider : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "EnemyBullet")
-        {//敵の銃弾判定
+        {
+            //敵の銃弾判定
             mHitCircle.OnDamage(other.transform.position);
             mPlayerCon.onDamege(InitializeData.InitializeDataList.InitializeEnemyData.getBulletDamege());
         }
 
-        if(other.tag == "AmmoBox")
+        if (other.tag == "AmmoBox")
         {
             //弾薬回復SE再生
             //音(sound1)を鳴らす

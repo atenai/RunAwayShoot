@@ -6,11 +6,11 @@ public class CurtainCtr : MonoBehaviour
 {
     [SerializeField] GameObject CurtainR;
     [SerializeField] GameObject CurtainL;
-    // Update is called once per frame
+
     Vector3 vec3R;
     Vector3 vec3L;
 
-   bool b_Start = false;
+    bool b_Start = false;
 
     //サウンド
     public AudioClip sound2;
@@ -44,8 +44,6 @@ public class CurtainCtr : MonoBehaviour
 
         if (b_Start == true)
         {
-            
-
             if (vec3L.x > -20.0f)
             {
                 vec3L.x -= 0.1f;

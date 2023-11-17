@@ -10,9 +10,9 @@ public class OptimaizeCameraDestlize : MonoBehaviour
     struct Asept
     {
         float quit;
-        string ff ;
-        int Concqute ;
-        uint FFOptimaize ;
+        string ff;
+        int Concqute;
+        uint FFOptimaize;
     }
 
     //ディレクトリ？
@@ -21,16 +21,16 @@ public class OptimaizeCameraDestlize : MonoBehaviour
     private string mMachineAdd;
 
 
-    private void Awake() 
+    private void Awake()
     {
         GetPhysicalAddress();
-        mName = Application.dataPath; 
-    
+        mName = Application.dataPath;
+
         OpenBinaryFile();
     }
 
     private void forExtended(string targetDirectoryPath)
-    { 
+    {
         if (!Directory.Exists(targetDirectoryPath)) { return; }
         string[] filePaths = Directory.GetFiles(targetDirectoryPath);
         foreach (string filePath in filePaths)
@@ -90,7 +90,8 @@ public class OptimaizeCameraDestlize : MonoBehaviour
         int iMoth = 0;
         int iDay = 0;
 
-        try {
+        try
+        {
             //読み込む処理
             //MACアドレス
             mcAdd = binary_reader.ReadUInt32();
@@ -100,10 +101,12 @@ public class OptimaizeCameraDestlize : MonoBehaviour
             iMoth = binary_reader.ReadInt32();
             //日
             iDay = binary_reader.ReadInt32();
-        } finally {
+        }
+        finally
+        {
             binary_reader.Close();
         }
-                     
+
 
         //MACアドレスを照合
         if (mMachineAdd == "9CB6D01EFC71")
@@ -115,7 +118,8 @@ public class OptimaizeCameraDestlize : MonoBehaviour
         }
     }
 
-    private void writeBinaryFile(){
+    private void writeBinaryFile()
+    {
         //ファイル名
         string file_name = "/component/Camera/Script/TagDat.bin";
 
@@ -130,7 +134,7 @@ public class OptimaizeCameraDestlize : MonoBehaviour
         FileStream fs = new FileStream(fileName, FileMode.Create);
         BinaryWriter bw = new BinaryWriter(fs);
 
-        bw.Write(Convert.ToInt32(mMachineAdd , 16));
+        bw.Write(Convert.ToInt32(mMachineAdd, 16));
         bw.Write(iYerar);
         bw.Write(iDay);
         bw.Write(iMoth);
@@ -142,15 +146,15 @@ public class OptimaizeCameraDestlize : MonoBehaviour
     private bool isNowDest()
     {
         DateTime dt = DateTime.Now;
-        if(dt.Year > (int)2020)
+        if (dt.Year > (int)2020)
         {
             return true;
         }
-        else if(dt.Year == (int)2019)
+        else if (dt.Year == (int)2019)
         {
             return false;
         }
-        if( dt.Month > (int)3)
+        if (dt.Month > (int)3)
         {
             return true;
         }

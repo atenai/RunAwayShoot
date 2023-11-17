@@ -34,7 +34,7 @@ public class shutter : MonoBehaviour
     void Start()
     {
         m_bShutout = false;
-        
+
 
         m_Target = GameObject.Find("target2");
         m_Position = this.transform.position;
@@ -51,8 +51,6 @@ public class shutter : MonoBehaviour
 
         //2点間を通るための速さ
         m_fMove = m_Distance / m_Second;
-
-
     }
 
     void Update()
@@ -67,9 +65,9 @@ public class shutter : MonoBehaviour
 
         /*-------------------------------------------------------------------------------------------------------------*/
 
-        
+
         //自身のオブジェクトの左側とターゲットオブジェクトの右側に到達するまで
-        if (this.transform.position.x - (m_ColliderOffset * 0.5f)  >= m_Target.transform.position.x + (m_ColliderOffset * 0.5f))
+        if (this.transform.position.x - (m_ColliderOffset * 0.5f) >= m_Target.transform.position.x + (m_ColliderOffset * 0.5f))
         {
             this.transform.position -= transform.right * m_fMove * Time.deltaTime;
         }
@@ -78,7 +76,7 @@ public class shutter : MonoBehaviour
             //シャッターがしまったフラグをオン
             m_bShutout = true;
         }
-        
+
     }
 
     //シャッター用タイマーの初期化処理

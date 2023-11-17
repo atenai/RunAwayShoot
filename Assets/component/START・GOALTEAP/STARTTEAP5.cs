@@ -17,6 +17,7 @@ public class STARTTEAP5 : MonoBehaviour
         //Textコンポーネント取得
         MissionSuccess_text = GameObject.Find("Mission Success").GetComponent<Text>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         //プレイヤーがあたったら

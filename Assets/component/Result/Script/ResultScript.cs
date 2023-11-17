@@ -114,7 +114,6 @@ public class ResultScript : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (nModeCnt == 0)  //星表示フェーズ
@@ -138,7 +137,6 @@ public class ResultScript : MonoBehaviour
             FinalStep();
         }
     }
-
 
     void Step1()////Star
     {
@@ -230,7 +228,6 @@ public class ResultScript : MonoBehaviour
         mScore += 200;
         //}
 
-
     }
 
     void Step3()//Review Score
@@ -252,7 +249,7 @@ public class ResultScript : MonoBehaviour
             Comment1_Text.text = "ゴミ映画";
             Comment2_Text.text = "撮影代金返せ！";
         }
-        if (Comment_Type == 1)          
+        if (Comment_Type == 1)
         {
             Comment1_Text.text = "紙映画";
             Comment2_Text.text = "紙見たいに薄っぺらいな！";
@@ -287,7 +284,7 @@ public class ResultScript : MonoBehaviour
             if (!Input.GetKeyDown(KeyCode.Escape))
             {
                 SceneManager.LoadScene("title");
-            }          
+            }
         }
     }
 }

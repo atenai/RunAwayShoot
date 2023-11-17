@@ -7,7 +7,7 @@ public class MovieCtr : MonoBehaviour
 {
     [SerializeField] private VideoClip videoClip;
     [SerializeField] private GameObject screen;
-    
+
     //LightCtr取得用
     bool lightUp;
     public LightCtr lightctr;
@@ -17,13 +17,13 @@ public class MovieCtr : MonoBehaviour
     //動画始まったか
     bool b_Video = false;
 
-    
+
     private void Awake()
-    {   
+    {
         // videoPlayeコンポーネントの追加
         var videoPlayer = screen.AddComponent<VideoPlayer>();
         // 動画ソースの設定
-        videoPlayer.source = VideoSource.VideoClip; 
+        videoPlayer.source = VideoSource.VideoClip;
         videoPlayer.clip = videoClip;
         b_Video = false;
     }
@@ -40,15 +40,15 @@ public class MovieCtr : MonoBehaviour
         //{
         //    if (b_Video == false)
         //    {
-                videoPlayer.Play(); // 動画を再生する。
-               
-          //  }
-            //フラグ抜けだすよう
-            //b_Video = true;
+        videoPlayer.Play(); // 動画を再生する。
 
-       // }
+        //  }
+        //フラグ抜けだすよう
+        //b_Video = true;
 
-        
+        // }
+
+
         //動画が終了したら
         /*if ((ulong)videoPlayer.frame == videoPlayer.frameCount - 5)
         {

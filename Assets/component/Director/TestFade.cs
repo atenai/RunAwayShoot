@@ -8,16 +8,14 @@ public class TestFade : MonoBehaviour
     //テキストのフェードイン
     //[SerializeField] private float degreeInTime = 0.0f;
     // private float currentTime = 0.0f;　//時間計測
-    public float fadeSpeed = 0.002f;　//フェードインのスピード
-    private Color textColor;　　//テキストのカラー変数
+    public float fadeSpeed = 0.002f;//フェードインのスピード
+    private Color textColor;//テキストのカラー変数
 
     //UIテキストを格納
     public GameObject degree; //称号
 
     bool b_Fade = false;
 
-
-    // Use this for initialization
     void Start()
     {
         //称号のカラーを取得してアルファを０に初期化
@@ -26,10 +24,8 @@ public class TestFade : MonoBehaviour
         this.degree.GetComponent<Text>().color = textColor;
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         // this.degree.GetComponent<Text>().text = "Test"; //称号をテキストへ表示　degreeNameは表示させる文字列
 
         //degreeInTime秒経ったらFadeInを呼ぶ
@@ -47,20 +43,18 @@ public class TestFade : MonoBehaviour
             b_Fade = true;
         }
 
-            if (b_Fade == true)
+        if (b_Fade == true)
         {
             FadeIn();
         }
-
     }
 
     void FadeIn()
     {
         if (textColor.a <= 1)
         {
-            textColor.a += fadeSpeed;　//アルファ値を徐々に＋する
-            this.degree.GetComponent<Text>().color = textColor;　//テキストへ反映させる
+            textColor.a += fadeSpeed;//アルファ値を徐々に＋する
+            this.degree.GetComponent<Text>().color = textColor;//テキストへ反映させる
         }
-
     }
 }

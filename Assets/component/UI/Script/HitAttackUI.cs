@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-
 public class HitAttackUI : MonoBehaviour
 {
     // ダメージエフェクト用テクスチャー(面倒なのでインスペクターから設定).
@@ -16,7 +14,7 @@ public class HitAttackUI : MonoBehaviour
     private Vector3 mPlayerFrontVec;
 
     // ダメージを受ける関数.
-    public void OnDamage( Vector3 sender)
+    public void OnDamage(Vector3 sender)
     {
         // 攻撃者の座標を受け取る.
         attacker = sender;

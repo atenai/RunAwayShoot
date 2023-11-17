@@ -5,7 +5,7 @@ using UnityEngine;
 public class LightCtr : MonoBehaviour
 {
     public float timeOut;
-    [SerializeField]public float timeElapsed;
+    [SerializeField] public float timeElapsed;
 
     public bool timeUp = false;
     public bool timeStart = false;
@@ -18,52 +18,55 @@ public class LightCtr : MonoBehaviour
     //どれくらいの速さで明るくなるか
     [SerializeField] public float lightUpSpeed;
 
-    [SerializeField]float cnt;
+    [SerializeField] float cnt;
+
     private void Awake()
     {
         LIntensity = this.GetComponent<Light>().intensity;
         b_Start = false;
         timeStart = true;
     }
+
     void Update()
     {
-            //秒たったら
-            if (timeUp)
+        //秒たったら
+        if (timeUp)
+        {
+            //ライトが明転
+            if (LIntensity < 1.0f)
             {
-                //ライトが明転
-                if (LIntensity < 1.0f)
-                {
-                    LIntensity += lightUpSpeed;
-                }
-                //動画開始
-                if (LIntensity > 1.0f)
-                {
-                    lightUp = true;
-                }
-                this.GetComponent<Light>().intensity = LIntensity;
+                LIntensity += lightUpSpeed;
+            }
+            //動画開始
+            if (LIntensity > 1.0f)
+            {
+                lightUp = true;
+            }
+            this.GetComponent<Light>().intensity = LIntensity;
 
-            }
-            if(timeStart)
+        }
+        if (timeStart)
+        {
+            //時間経過
+            if (timeElapsed >= timeOut)
             {
-                //時間経過
-                if (timeElapsed >= timeOut)
-                {
-                    timeUp = true;
-                }
-                timeElapsed += Time.deltaTime;
+                timeUp = true;
             }
-            if(lightOff)
+            timeElapsed += Time.deltaTime;
+        }
+        if (lightOff)
+        {
+            //ライトが暗転
+            if (LIntensity > -10.0f)
             {
-                //ライトが暗転
-                if (LIntensity > -10.0f)
-                {
-                    LIntensity -= lightUpSpeed;
-                }
-                this.GetComponent<Light>().intensity = LIntensity;
+                LIntensity -= lightUpSpeed;
+            }
+            this.GetComponent<Light>().intensity = LIntensity;
 
-            }
-        
+        }
+
     }
+
     public bool GetlightUp()
     {
         return lightUp;

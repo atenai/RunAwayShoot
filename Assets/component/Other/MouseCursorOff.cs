@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MouseCursorOff : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         //マウスカーソルを消す
@@ -12,7 +11,6 @@ public class MouseCursorOff : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
         //Escapeキーでマウスカーソルを出す

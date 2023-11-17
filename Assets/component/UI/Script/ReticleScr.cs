@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class ReticleScr : MonoBehaviour
 {
-    private float mReticleScale = 0;
-
+    float mReticleScale = 0;
 
     void LateUpdate()
     {
-        this.GetComponent<RectTransform>().sizeDelta = new Vector2( mReticleScale * 2 + 2, mReticleScale * 2 + 2);
+        this.GetComponent<RectTransform>().sizeDelta = new Vector2(mReticleScale * 2 + 2, mReticleScale * 2 + 2);
     }
 
     public void setReticleSize(float _scale)

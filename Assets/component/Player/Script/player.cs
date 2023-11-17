@@ -11,8 +11,7 @@ public class player : MonoBehaviour
 {
     private GameObject mBody;
 
-    [SerializeField]
-    private GameObject mCameraLookAt;           //PlayerCameraと併用
+    [SerializeField] private GameObject mCameraLookAt;           //PlayerCameraと併用
 
     //[SerializeField]
     private PlayerCamera mCamera;
@@ -22,19 +21,15 @@ public class player : MonoBehaviour
 
     private bool mBattleMode;
 
-    [SerializeField]
-    private float mNormalWalkSpeed;
+    [SerializeField] private float mNormalWalkSpeed;
 
-    [SerializeField]
-    private float mWeaponWalkSpeed;
+    [SerializeField] private float mWeaponWalkSpeed;
 
     //走るスピードの倍率
-    [SerializeField]
-    private float mRunMagnification;
+    [SerializeField] private float mRunMagnification;
 
     //振り向き速度
-    [SerializeField]
-    private float mApplySpeed;
+    [SerializeField] private float mApplySpeed;
 
     //移動ベクトル
     private Vector3 mVelocity;
@@ -64,17 +59,15 @@ public class player : MonoBehaviour
     private SampleAnimation AnimetionController;
 
     //操作ガイドUI
-    [SerializeField]
-    private GameObject mGuidUI;
-    [SerializeField]
-    private GameObject mGuidUI2;
-
+    [SerializeField] private GameObject mGuidUI;
+    [SerializeField] private GameObject mGuidUI2;
 
     GameObject GB_Score;//スコア呼び出し用
 
     private void Awake()
     {
-        {//情報の取得
+        {
+            //情報の取得
             GameObject _obj;
             //ボディ取得
             mBody = this.gameObject.transform.Find("body").gameObject;
@@ -124,7 +117,7 @@ public class player : MonoBehaviour
     //操作ガイド
     void guidUIUpdate()
     {
-        if(Input.GetButton("PS4 L2"))
+        if (Input.GetButton("PS4 L2"))
         {
             mGuidUI.SetActive(false);
             mGuidUI2.SetActive(true);
@@ -171,7 +164,7 @@ public class player : MonoBehaviour
 
             uint n = mWeapon.GetComponent<weapon>().getRemainderBulletMagazine();
 
-            if ((Input.GetKey(KeyCode.Space) || Input.GetButton("PS4 R2")) && IsReload==false)
+            if ((Input.GetKey(KeyCode.Space) || Input.GetButton("PS4 R2")) && IsReload == false)
             {
                 mWeapon.GetComponent<weapon>().shooting("PlayerBullet");
             }
@@ -294,7 +287,7 @@ public class player : MonoBehaviour
     {
         return mBattleMode;
     }
-    
+
     //レティクルの有効化
     private void activationReticle()
     {
@@ -351,7 +344,7 @@ public class player : MonoBehaviour
     }
 
     private void onResult()
-    {   
-        
+    {
+
     }
 }

@@ -53,7 +53,6 @@ public class Shutter_Area4 : MonoBehaviour
             //小オブジェクトの表示をtrue
             ShutterCol.gameObject.SetActive(true);//戻れなくする
 
-
             b_pos = true;//シャッターの閉鎖開始
         }
     }

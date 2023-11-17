@@ -12,13 +12,12 @@ public class Area1Enemy2 : MonoBehaviour
         EnemyMove = this.GetComponent<EnemyMove>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         f_EnemyHp = EnemyMove.GetEnemyHP();
         if (f_EnemyHp <= 0.0f)
         {
-           // Debug.Log("Enemy2のHPは0だよ！");
+            // Debug.Log("Enemy2のHPは0だよ！");
             Director.EnemyDestroy2();
         }
     }

@@ -11,26 +11,26 @@ public class camaraCtr : MonoBehaviour
     private Transform camera_transform;
     [SerializeField] float cnt;
     private bool inputFlag = false;
+
     void Awake()
     {
         camera_transform = this.gameObject.transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.anyKeyDown)
         {
-            inputFlag= true;
+            inputFlag = true;
         }
 
         if (inputFlag == true)
         {
             //MovieCtr.cs関数取得
-           // videoFlag = moviectr.GetvideoFlag();
+            // videoFlag = moviectr.GetvideoFlag();
             //動画終了したら
             //if (videoFlag)
-                camera_transform.Translate(0.0f, 0.0f, cnt);
+            camera_transform.Translate(0.0f, 0.0f, cnt);
         }
     }
 }

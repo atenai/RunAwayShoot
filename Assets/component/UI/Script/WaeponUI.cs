@@ -5,17 +5,11 @@ using UnityEngine.UI;
 
 public class WaeponUI : MonoBehaviour
 {
-    [SerializeField]
-    private Text mUI01;
-    [SerializeField]
-    private Text mUI02;
-    [SerializeField]
-    private GameObject mObj;
+    [SerializeField] private Text mUI01;
+    [SerializeField] private Text mUI02;
+    [SerializeField] private GameObject mObj;
 
-    private void Awake()
-    {
-        
-    }
+    private void Awake() { }
 
     private void Update()
     {

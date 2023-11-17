@@ -12,19 +12,14 @@ public class Director : MonoBehaviour
     //フェード
     public float fadeInSpeed = 0.05f; //フェードインのスピード
     public float fadeOutSpeed = 0.05f; //フェードアウトのスピード
-    private Color Area1DirectortextColor;　　//Area1ディレクターテキストのカラー変数
-    private Color Area2DirectortextColor;　　//Area2ディレクターテキストのカラー変数
-    private Color Area3DirectortextColor;　　//Area3ディレクターテキストのカラー変数
-    private Color Area4DirectortextColor;　　//Area4ディレクターテキストのカラー変数
-    private Color Area5DirectortextColor;　　//Area5ディレクターテキストのカラー変数
-    private Color Area6DirectortextColor;  //Area6ディレクターテキストのカラー変数
+    private Color Area1DirectortextColor;//Area1ディレクターテキストのカラー変数
+    private Color Area2DirectortextColor;//Area2ディレクターテキストのカラー変数
+    private Color Area3DirectortextColor;//Area3ディレクターテキストのカラー変数
+    private Color Area4DirectortextColor;//Area4ディレクターテキストのカラー変数
+    private Color Area5DirectortextColor;//Area5ディレクターテキストのカラー変数
+    private Color Area6DirectortextColor; //Area6ディレクターテキストのカラー変数
     private Color ContenttextColor;//コンテントテキストのカラー変数
-    //private Color Area1ContenttextColor;//コンテントテキストのカラー変数
-    //private Color Area2ContenttextColor;//コンテントテキストのカラー変数
-    //private Color Area3ContenttextColor;//コンテントテキストのカラー変数
-    //private Color Area4ContenttextColor;//コンテントテキストのカラー変数
-    //private Color Area5ContenttextColor;//コンテントテキストのカラー変数
-    //private Color Area6ContenttextColor;//コンテントテキストのカラー変数
+
     private Color Area1MissionSuccesstextColor;//ミッションテキストのカラー変数
     private Color Area2MissionSuccesstextColor;//ミッションテキストのカラー変数
     private Color Area3MissionSuccesstextColor;//ミッションテキストのカラー変数
@@ -141,8 +136,6 @@ public class Director : MonoBehaviour
     //　他スクリプト変数　取得用
 
     //プレイヤー
-    //float playerHp;
-    //private GameObject m_player;
     private player player;
 
     // ////////////////////////////////////////////////////////
@@ -245,7 +238,6 @@ public class Director : MonoBehaviour
     // コンポーネントの取得
     [SerializeField] private Image ImageAllMissionSuccess_component;
 
-
     void Awake()
     {
         //Textコンポーネント取得
@@ -285,37 +277,12 @@ public class Director : MonoBehaviour
         content_text = GameObject.Find("Content").GetComponent<Text>();
         //content_text.text = "内容";
         content_text.text = "";
-        //テキストカラー初期化
-        //content_text.color = new Color(197.0f, 29.0f, 84.0f);
+
         //フェードイン
         //称号のカラーを取得してアルファを０に初期化
         ContenttextColor = content_text.color;
         ContenttextColor.a = 0;
         content_text.color = ContenttextColor;
-        ////称号のカラーを取得してアルファを０に初期化
-        //Area1ContenttextColor = content_text.color;
-        //Area1ContenttextColor.a = 0;
-        //content_text.color = Area1ContenttextColor;
-        ////称号のカラーを取得してアルファを０に初期化
-        //Area2ContenttextColor = content_text.color;
-        //Area2ContenttextColor.a = 0;
-        //content_text.color = Area2ContenttextColor;
-        ////称号のカラーを取得してアルファを０に初期化
-        //Area3ContenttextColor = content_text.color;
-        //Area3ContenttextColor.a = 0;
-        //content_text.color = Area3ContenttextColor;
-        ////称号のカラーを取得してアルファを０に初期化
-        //Area4ContenttextColor = content_text.color;
-        //Area4ContenttextColor.a = 0;
-        //content_text.color = Area4ContenttextColor;
-        ////称号のカラーを取得してアルファを０に初期化
-        //Area5ContenttextColor = content_text.color;
-        //Area5ContenttextColor.a = 0;
-        //content_text.color = Area5ContenttextColor;
-        ////称号のカラーを取得してアルファを０に初期化
-        //Area6ContenttextColor = content_text.color;
-        //Area6ContenttextColor.a = 0;
-        //content_text.color = Area6ContenttextColor;
 
         //Textコンポーネント取得
         MissionSuccess_text = GameObject.Find("Mission Success").GetComponent<Text>();
@@ -401,8 +368,7 @@ public class Director : MonoBehaviour
         //Textコンポーネント取得
         AllMissionSuccess_text = GameObject.Find("All Mission Success").GetComponent<Text>();
         AllMissionSuccess_text.text = "";
-        //テキストカラー初期化
-        //AllMissionSuccess_text.color = new Color(255.0f, 255.0f, 0.0f);
+
         //フェードイン
         //称号のカラーを取得してアルファを０に初期化
         AllMissionSuccesstextColor = AllMissionSuccess_text.color;
@@ -410,8 +376,6 @@ public class Director : MonoBehaviour
         AllMissionSuccess_text.color = AllMissionSuccesstextColor;
 
         //プレイヤー取得
-        //m_player = GameObject.Find("Player");
-        //player = m_player.GetComponent<player>();
         player = GameObject.Find("Player").GetComponent<player>();
 
         area_Num = 0;//エリアカウント
@@ -423,7 +387,7 @@ public class Director : MonoBehaviour
         b_GOAL5 = false;
         b_GOAL6 = false;
 
-         b_Area1Fade = false;
+        b_Area1Fade = false;
         b_Area2MissionSuccessFade = false;
         b_Area2MissionFailureFade = false;
         b_Area3Fade = false;
@@ -437,15 +401,15 @@ public class Director : MonoBehaviour
 
         //エリア１用変数初期化
         enemyDestroyNum = 0; //倒した敵の数
-         b_Area1 = false;
-         Enemy1 = false;
-         Enemy2 = false;
-         Enemy3 = false;
-         Enemy4 = false;
-         Enemy5 = false;
-         Enemy6 = false;
-         Enemy7 = false;
-         Enemy8 = false;
+        b_Area1 = false;
+        Enemy1 = false;
+        Enemy2 = false;
+        Enemy3 = false;
+        Enemy4 = false;
+        Enemy5 = false;
+        Enemy6 = false;
+        Enemy7 = false;
+        Enemy8 = false;
 
         //エリア２用変数初期化
         enemyFound = false;//敵に見つかったかどうか？
@@ -481,25 +445,25 @@ public class Director : MonoBehaviour
         noodNum = 0;
 
         //全エリアのAI監督の要望達成変数
-         b_All_Area1 = false;
-         b_All_Area2 = false;
-         b_All_Area3 = false;
-         b_All_Area4 = false;
-         b_All_Area5 = false;
-         b_All_Area6 = false;
+        b_All_Area1 = false;
+        b_All_Area2 = false;
+        b_All_Area3 = false;
+        b_All_Area4 = false;
+        b_All_Area5 = false;
+        b_All_Area6 = false;
         b_AreaAll = true;
 
         //Componentを取得
         audioSource = GetComponent<AudioSource>();
-         b_SE_Failure_Area2 = true;
-         b_SE_Failure_Area4 = true;
-         b_SE_Failure_Area5 = true;
-         b_SE_Start_Area1 = true;
-         b_SE_Start_Area2 = true;
-         b_SE_Start_Area3 = true;
-         b_SE_Start_Area4 = true;
-         b_SE_Start_Area5 = true;
-         b_SE_Start_Area6 = true;
+        b_SE_Failure_Area2 = true;
+        b_SE_Failure_Area4 = true;
+        b_SE_Failure_Area5 = true;
+        b_SE_Start_Area1 = true;
+        b_SE_Start_Area2 = true;
+        b_SE_Start_Area3 = true;
+        b_SE_Start_Area4 = true;
+        b_SE_Start_Area5 = true;
+        b_SE_Start_Area6 = true;
 
 
         //ディレクターテクスチャ
@@ -628,14 +592,13 @@ public class Director : MonoBehaviour
 
     void Update()
     {
-         if (area_Num == 1)
+        if (area_Num == 1)
         {
 
-                Area1DirectorFadeIn();
+            Area1DirectorFadeIn();
 
-            
             direct_text.text = "エリア1 \n 敵を全滅させろ！！";
-            //content_text.text = "敵を" + enemyDestroyNum + "倒した";
+
             content_text.text = "";
             if (b_SE_Start_Area1 == true)
             {
@@ -647,107 +610,91 @@ public class Director : MonoBehaviour
             if (Enemy1 == true)
             {
                 //Debug.Log("Enemy1がtrueだよ！！！！");
-                //Table1_text.text = "Enemy1はtrue";
                 Table1_text.text = "敵１を破壊";
             }
             else
             {
-                //Table1_text.text = "Enemy1はfalse";
                 Table1_text.text = "敵１は生存中";
             }
 
             if (Enemy2 == true)
             {
-               // Debug.Log("Enemy2がtrueだよ！！！！");
-                //Table2_text.text = "Enemy2はtrue";
+                // Debug.Log("Enemy2がtrueだよ！！！！");
                 Table2_text.text = "敵２を破壊";
             }
             else
             {
-                //Table2_text.text = "Enemy2はfalse";
                 Table2_text.text = "敵２は生存中";
             }
 
             if (Enemy3 == true)
             {
                 //Debug.Log("Enemy3がtrueだよ！！！！");
-                //Table3_text.text = "Enemy3はtrue";
                 Table3_text.text = "敵３を破壊";
             }
             else
             {
-                //Table3_text.text = "Enemy3はfalse";
                 Table3_text.text = "敵３は生存中";
             }
 
             if (Enemy4 == true)
             {
                 //Debug.Log("Enemy4がtrueだよ！！！！");
-                //Table4_text.text = "Enemy4はtrue";
                 Table4_text.text = "敵４を破壊";
             }
             else
             {
-                //Table4_text.text = "Enemy4はfalse";
                 Table4_text.text = "敵４は生存中";
             }
 
             if (Enemy5 == true)
             {
                 //Debug.Log("Enemy5がtrueだよ！！！！");
-                //Table5_text.text = "Enemy5はtrue";
                 Table5_text.text = "敵５を破壊";
             }
             else
             {
-                //Table5_text.text = "Enemy5はfalse";
                 Table5_text.text = "敵５は生存中";
             }
 
             if (Enemy6 == true)
             {
                 //Debug.Log("Enemy6がtrueだよ！！！！");
-                //Table6_text.text = "Enemy6はtrue";
                 Table6_text.text = "敵６を破壊";
             }
             else
             {
-                //Table6_text.text = "Enemy6はfalse";
                 Table6_text.text = "敵６は生存中";
             }
 
             if (Enemy7 == true)
             {
                 //Debug.Log("Enemy7がtrueだよ！！！！");
-                //Table7_text.text = "Enemy7はtrue";
                 Table7_text.text = "敵７を破壊";
             }
             else
             {
-                //Table7_text.text = "Enemy7はfalse";
                 Table7_text.text = "敵７は生存中";
             }
 
             if (Enemy8 == true)
             {
                 //Debug.Log("Enemy8がtrueだよ！！！！");
-                //Table8_text.text = "Enemy8はtrue";
                 Table8_text.text = "敵８を破壊";
             }
             else
             {
-                //Table8_text.text = "Enemy8はfalse";
                 Table8_text.text = "敵８は生存中";
             }
 
-            if (/*enemyDestroyNum == 8 && */b_Area1 == false && Enemy1 == true && Enemy2 == true && Enemy3 == true && Enemy4 == true && Enemy5 == true && Enemy6 == true && Enemy7 == true && Enemy8 == true)
+            if (b_Area1 == false && Enemy1 == true && Enemy2 == true && Enemy3 == true && Enemy4 == true && Enemy5 == true && Enemy6 == true && Enemy7 == true && Enemy8 == true)
             {
                 Score.AddScore(2);
                 //Debug.Log("敵を全て倒したよ！！");
                 //テキストカラー初期化
                 MissionSuccess_text.color = new Color(197.0f, 29.0f, 84.0f);
                 MissionSuccess_text.text = "Area1MissionSuccess";
-                
+
                 b_Area1Fade = true;
                 //SE再生
                 //音(soundMissionSuccess)を鳴らす
@@ -757,17 +704,17 @@ public class Director : MonoBehaviour
                 b_Area1 = true;
             }
 
-            if(b_Area1Fade == true)
+            if (b_Area1Fade == true)
             {
                 Area1MissionSuccessFadeIn();
-            }else
+            }
+            else
             {
                 Area1MissionSuccessFadeOut();
             }
 
             if (b_GOAL1 == true)
             {
-                //direct_text.text = "";
                 Area1DirectorFadeOut();
 
                 content_text.text = "";
@@ -791,13 +738,13 @@ public class Director : MonoBehaviour
             }
 
         }
-        else if(area_Num == 2)
+        else if (area_Num == 2)
         {
             Area1MissionSuccessFadeOut();
 
             Area2DirectorFadeIn();
             b_Area2if = true;
-            direct_text.text = "エリア2 \n 敵に見つからずに進め！！";           
+            direct_text.text = "エリア2 \n 敵に見つからずに進め！！";
             if (b_SE_Start_Area2 == true)
             {
                 //SE再生
@@ -807,13 +754,10 @@ public class Director : MonoBehaviour
             }
             if (enemyFound == false)
             {
-                //テキストカラー初期化
-                //content_text.color = new Color(197.0f, 29.0f, 84.0f);
                 content_text.text = "見つかってない";
-            }else if(enemyFound == true)
+            }
+            else if (enemyFound == true)
             {
-                //テキストカラー初期化
-                //content_text.color = new Color(197.0f, 29.0f, 84.0f);
                 content_text.text = "見つかった";
                 //テキストカラー初期化
                 MissionSuccess_text.color = new Color(0.0f, 0.0f, 255.0f);
@@ -827,7 +771,7 @@ public class Director : MonoBehaviour
                     b_SE_Failure_Area2 = false;
                 }
             }
-            if(enemyFound == false && b_Area2 == true && b_FoundFalseGOAL == true)
+            if (enemyFound == false && b_Area2 == true && b_FoundFalseGOAL == true)
             {
                 Score.AddScore(2);
                 //Debug.Log("敵に見つからなかったよ！！");
@@ -847,7 +791,7 @@ public class Director : MonoBehaviour
             {
                 Area2MissionSuccessFadeIn();
             }
-            else if(b_Area2MissionFailureFade == true)
+            else if (b_Area2MissionFailureFade == true)
             {
                 Area2MissionFailureFadeIn();
             }
@@ -859,12 +803,11 @@ public class Director : MonoBehaviour
 
             if (b_GOAL2 == true)
             {
-                //direct_text.text = "";
                 Area2DirectorFadeOut();
                 content_text.text = "";
             }
         }
-        else if(area_Num == 3)
+        else if (area_Num == 3)
         {
             Area2MissionSuccessFadeOut();
             Area2MissionFailureFadeOut();
@@ -880,17 +823,13 @@ public class Director : MonoBehaviour
             }
             if (b_EnemyDrumsDestroy == false)
             {
-                //テキストカラー初期化
-                //content_text.color = new Color(197.0f, 29.0f, 84.0f);
                 content_text.text = "爆発物で倒してない";
             }
             else if (b_EnemyDrumsDestroy == true)
             {
-                //テキストカラー初期化
-                //content_text.color = new Color(197.0f, 29.0f, 84.0f);
                 content_text.text = "爆発物で倒した";
             }
-            if(b_EnemyDrumsDestroy == true　&& b_Area3 == true)
+            if (b_EnemyDrumsDestroy == true && b_Area3 == true)
             {
                 Score.AddScore(2);
                 //Debug.Log("ドラム缶・消火器で敵を殺したよ！！");
@@ -917,13 +856,12 @@ public class Director : MonoBehaviour
 
             if (b_GOAL3 == true)
             {
-                //direct_text.text = "";
                 Area3DirectorFadeOut();
                 content_text.text = "";
 
             }
         }
-        else if(area_Num == 4)
+        else if (area_Num == 4)
         {
             Area5MissionSuccessFadeOut();
             Area5MissionFailureFadeOut();
@@ -931,8 +869,7 @@ public class Director : MonoBehaviour
             time -= Time.deltaTime;//ゲームループのタイマーを上で作ったtimeに-していく
             t = Mathf.FloorToInt(time);//float型のタイマーをint型に変換させるやつ(小数点以下を切り捨てる)
             direct_text.text = "エリア6 \n 制限時間内に駆け抜けろ！！";
-            //テキストカラー初期化
-            //content_text.color = new Color(197.0f, 29.0f, 84.0f);
+
             content_text.text = "残り時間 : " + t;
             if (b_SE_Start_Area4 == true)
             {
@@ -959,7 +896,7 @@ public class Director : MonoBehaviour
                 }
             }
 
-            if(b_TimeOver == false && b_TimeOverFalseGOAL == true && b_Area4 == true)
+            if (b_TimeOver == false && b_TimeOverFalseGOAL == true && b_Area4 == true)
             {
                 Score.AddScore(2);
                 //Debug.Log("時間内にゴールしたよ！！");
@@ -978,8 +915,7 @@ public class Director : MonoBehaviour
                 if (b_All_Area1 == true && b_All_Area2 == true && b_All_Area3 == true && b_All_Area4 == true && b_All_Area5 == true && b_All_Area6 == true && b_AreaAll == true)
                 {
                     Score.AddScore(3);
-                    //テキストカラー初期化
-                    //AllMissionSuccess_text.color = new Color(255.0f, 255.0f, 0.0f);
+
                     AllMissionSuccess_text.text = "AllMissionSuccess";
                     b_AreaAllFade = true;
                     //SE再生
@@ -999,35 +935,32 @@ public class Director : MonoBehaviour
             {
                 Area4MissionSuccessFadeIn();
             }
-            else if(b_Area4MissionFailureFade == true)
+            else if (b_Area4MissionFailureFade == true)
             {
                 Area4MissionFailureFadeIn();
-            }else
+            }
+            else
             {
                 Area4MissionSuccessFadeOut();
                 Area4MissionFailureFadeOut();
             }
 
-            if(b_AreaAllFade == true)
+            if (b_AreaAllFade == true)
             {
                 AllMissionSuccessFadeIn();
             }
 
             if (b_GOAL4 == true)
             {
-                //direct_text.text = "";
                 Area4DirectorFadeOut();
                 content_text.text = "";
 
             }
-
-           
-
         }
-        else if(area_Num == 5)
+        else if (area_Num == 5)
         {
             Area6MissionSuccessFadeOut();
-        
+
             Area5DirectorFadeIn();
             b_Area5if = true;
             direct_text.text = "エリア5 \n ダメージを受けるな！！";
@@ -1040,14 +973,10 @@ public class Director : MonoBehaviour
             }
             if (b_PlayerDamege == false)
             {
-                //テキストカラー初期化
-               // content_text.color = new Color(197.0f, 29.0f, 84.0f);
                 content_text.text = "ダメージを受けていない";
             }
             else if (b_PlayerDamege == true)
             {
-                //テキストカラー初期化
-                //content_text.color = new Color(197.0f, 29.0f, 84.0f);
                 content_text.text = "ダメージを受けた";
                 //テキストカラー初期化
                 MissionSuccess_text.color = new Color(0.0f, 0.0f, 255.0f);
@@ -1061,7 +990,7 @@ public class Director : MonoBehaviour
                     b_SE_Failure_Area5 = false;
                 }
             }
-            if(b_PlayerDamege == false && b_DamegeFalseGOAL == true && b_Area5 == true)
+            if (b_PlayerDamege == false && b_DamegeFalseGOAL == true && b_Area5 == true)
             {
                 Score.AddScore(2);
                 //Debug.Log("ダメージを受けなかったよ！！");
@@ -1081,10 +1010,11 @@ public class Director : MonoBehaviour
             {
                 Area5MissionSuccessFadeIn();
             }
-            else if(b_Area5MissionFailureFade == true)
+            else if (b_Area5MissionFailureFade == true)
             {
                 Area5MissionFailureFadeIn();
-            }else
+            }
+            else
             {
                 Area5MissionSuccessFadeOut();
                 Area5MissionFailureFadeOut();
@@ -1095,17 +1025,14 @@ public class Director : MonoBehaviour
                 //direct_text.text = "";
                 Area5DirectorFadeOut();
                 content_text.text = "";
-
             }
-
         }
-        else if(area_Num == 6)
+        else if (area_Num == 6)
         {
             Area3MissionSuccessFadeOut();
-          
+
             Area6DirectorFadeIn();
             direct_text.text = "エリア4 \n オレンジカプセルを取れ！！";
-            //content_text.text = "残りのノード数" + (5 - noodNum);
             content_text.text = "";
             if (b_SE_Start_Area6 == true)
             {
@@ -1195,7 +1122,6 @@ public class Director : MonoBehaviour
 
             if (b_GOAL6 == true)
             {
-                //direct_text.text = "";
                 Area6DirectorFadeOut();
                 content_text.text = "";
 
@@ -1209,24 +1135,10 @@ public class Director : MonoBehaviour
                 Table4_text.text = "";
                 //Table5_text.text = "内容5";
                 Table5_text.text = "";
-
             }
         }
 
-
-
-        //プレイヤーのHPが0になった際に行う処理//柏原
-        //playerHp = player.getHP();
-        //if (playerHp < 0)
-        //{
-        //   SceneManager.LoadScene("Result");
-        //}
-        if (player.getHP() < 0)
-        {
-            //SceneManager.LoadScene("Result");
-        }
-
-        if(Input.GetKey("joystick button 13"))
+        if (Input.GetKey("joystick button 13"))
         {
             //リザルトへ
             SceneManager.LoadScene("title");
@@ -1254,7 +1166,7 @@ public class Director : MonoBehaviour
     //敵をドラム缶・消火器で殺したら
     static public void EnemyDrumsDestroy()
     {
-        if(b_Area3if == true)
+        if (b_Area3if == true)
         {
             b_EnemyDrumsDestroy = true;
         }
@@ -1263,7 +1175,7 @@ public class Director : MonoBehaviour
     //プレイヤーがダメージを受けたら
     static public void PlayerDamege()
     {
-        if(b_Area5if == true)
+        if (b_Area5if == true)
         {
             b_PlayerDamege = true;
         }
@@ -1345,8 +1257,8 @@ public class Director : MonoBehaviour
     {
         if (Area1DirectortextColor.a <= 1)
         {
-            Area1DirectortextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
-            direct_text.color = Area1DirectortextColor;　//テキストへ反映させる
+            Area1DirectortextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
+            direct_text.color = Area1DirectortextColor;//テキストへ反映させる
 
             // 画像の透明度を変える
             ImageArea1Director_component.color = Area1DirectortextColor; //画像の透明度を変える
@@ -1357,18 +1269,17 @@ public class Director : MonoBehaviour
 
         if (ContenttextColor.a <= 1)
         {
-            ContenttextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
-            content_text.color = ContenttextColor;　//テキストへ反映させる
+            ContenttextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
+            content_text.color = ContenttextColor;//テキストへ反映させる
         }
-
     }
 
     void Area2DirectorFadeIn()
     {
         if (Area2DirectortextColor.a <= 1)
         {
-            Area2DirectortextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
-            direct_text.color = Area2DirectortextColor;　//テキストへ反映させる
+            Area2DirectortextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
+            direct_text.color = Area2DirectortextColor;//テキストへ反映させる
 
             // 画像の透明度を変える
             ImageArea2Director_component.color = Area2DirectortextColor; //画像の透明度を変える
@@ -1379,18 +1290,17 @@ public class Director : MonoBehaviour
 
         if (ContenttextColor.a <= 1)
         {
-            ContenttextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
-            content_text.color = ContenttextColor;　//テキストへ反映させる
+            ContenttextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
+            content_text.color = ContenttextColor;//テキストへ反映させる
         }
-
     }
 
     void Area3DirectorFadeIn()
     {
         if (Area3DirectortextColor.a <= 1)
         {
-            Area3DirectortextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
-            direct_text.color = Area3DirectortextColor;　//テキストへ反映させる
+            Area3DirectortextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
+            direct_text.color = Area3DirectortextColor;//テキストへ反映させる
 
             // 画像の透明度を変える
             ImageArea3Director_component.color = Area3DirectortextColor; //画像の透明度を変える
@@ -1401,18 +1311,17 @@ public class Director : MonoBehaviour
 
         if (ContenttextColor.a <= 1)
         {
-            ContenttextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
-            content_text.color = ContenttextColor;　//テキストへ反映させる
+            ContenttextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
+            content_text.color = ContenttextColor;//テキストへ反映させる
         }
-
     }
 
     void Area4DirectorFadeIn()
     {
         if (Area4DirectortextColor.a <= 1)
         {
-            Area4DirectortextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
-            direct_text.color = Area4DirectortextColor;　//テキストへ反映させる
+            Area4DirectortextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
+            direct_text.color = Area4DirectortextColor;//テキストへ反映させる
 
             // 画像の透明度を変える
             ImageArea4Director_component.color = Area4DirectortextColor; //画像の透明度を変える
@@ -1423,18 +1332,17 @@ public class Director : MonoBehaviour
 
         if (ContenttextColor.a <= 1)
         {
-            ContenttextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
-            content_text.color = ContenttextColor;　//テキストへ反映させる
+            ContenttextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
+            content_text.color = ContenttextColor;//テキストへ反映させる
         }
-
     }
 
     void Area5DirectorFadeIn()
     {
         if (Area5DirectortextColor.a <= 1)
         {
-            Area5DirectortextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
-            direct_text.color = Area5DirectortextColor;　//テキストへ反映させる
+            Area5DirectortextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
+            direct_text.color = Area5DirectortextColor;//テキストへ反映させる
 
             // 画像の透明度を変える
             ImageArea5Director_component.color = Area5DirectortextColor; //画像の透明度を変える
@@ -1445,18 +1353,17 @@ public class Director : MonoBehaviour
 
         if (ContenttextColor.a <= 1)
         {
-            ContenttextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
-            content_text.color = ContenttextColor;　//テキストへ反映させる
+            ContenttextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
+            content_text.color = ContenttextColor;//テキストへ反映させる
         }
-
     }
 
     void Area6DirectorFadeIn()
     {
         if (Area6DirectortextColor.a <= 1)
         {
-            Area6DirectortextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
-            direct_text.color = Area6DirectortextColor;　//テキストへ反映させる
+            Area6DirectortextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
+            direct_text.color = Area6DirectortextColor;//テキストへ反映させる
 
             // 画像の透明度を変える
             ImageArea6Director_component.color = Area6DirectortextColor; //画像の透明度を変える
@@ -1467,18 +1374,17 @@ public class Director : MonoBehaviour
 
         if (ContenttextColor.a <= 1)
         {
-            ContenttextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
-            content_text.color = ContenttextColor;　//テキストへ反映させる
+            ContenttextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
+            content_text.color = ContenttextColor;//テキストへ反映させる
         }
-
     }
 
     void Area1MissionSuccessFadeIn()
     {
         if (Area1MissionSuccesstextColor.a <= 1)
         {
-            Area1MissionSuccesstextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
-            MissionSuccess_text.color = Area1MissionSuccesstextColor;　//テキストへ反映させる
+            Area1MissionSuccesstextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
+            MissionSuccess_text.color = Area1MissionSuccesstextColor;//テキストへ反映させる
 
             // 画像の透明度を変える
             ImageArea1MissionSuccess_component.color = Area1MissionSuccesstextColor; //画像の透明度を変える
@@ -1489,7 +1395,7 @@ public class Director : MonoBehaviour
     {
         if (Area2MissionSuccesstextColor.a <= 1)
         {
-            Area2MissionSuccesstextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
+            Area2MissionSuccesstextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area2MissionSuccesstextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1500,7 +1406,7 @@ public class Director : MonoBehaviour
     {
         if (Area3MissionSuccesstextColor.a <= 1)
         {
-            Area3MissionSuccesstextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
+            Area3MissionSuccesstextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area3MissionSuccesstextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1511,7 +1417,7 @@ public class Director : MonoBehaviour
     {
         if (Area4MissionSuccesstextColor.a <= 1)
         {
-            Area4MissionSuccesstextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
+            Area4MissionSuccesstextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area4MissionSuccesstextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1522,7 +1428,7 @@ public class Director : MonoBehaviour
     {
         if (Area5MissionSuccesstextColor.a <= 1)
         {
-            Area5MissionSuccesstextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
+            Area5MissionSuccesstextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area5MissionSuccesstextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1533,7 +1439,7 @@ public class Director : MonoBehaviour
     {
         if (Area6MissionSuccesstextColor.a <= 1)
         {
-            Area6MissionSuccesstextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
+            Area6MissionSuccesstextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area6MissionSuccesstextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1546,7 +1452,7 @@ public class Director : MonoBehaviour
     {
         if (Area2MissionFailuretextColor.a <= 1)
         {
-            Area2MissionFailuretextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
+            Area2MissionFailuretextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area2MissionFailuretextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1557,7 +1463,7 @@ public class Director : MonoBehaviour
     {
         if (Area4MissionFailuretextColor.a <= 1)
         {
-            Area4MissionFailuretextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
+            Area4MissionFailuretextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area4MissionFailuretextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1568,7 +1474,7 @@ public class Director : MonoBehaviour
     {
         if (Area5MissionFailuretextColor.a <= 1)
         {
-            Area5MissionFailuretextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
+            Area5MissionFailuretextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area5MissionFailuretextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1580,8 +1486,8 @@ public class Director : MonoBehaviour
     {
         if (AllMissionSuccesstextColor.a <= 1)
         {
-            AllMissionSuccesstextColor.a += fadeInSpeed;　//アルファ値を徐々に＋する
-            AllMissionSuccess_text.color = AllMissionSuccesstextColor;　//テキストへ反映させる
+            AllMissionSuccesstextColor.a += fadeInSpeed;//アルファ値を徐々に＋する
+            AllMissionSuccess_text.color = AllMissionSuccesstextColor;//テキストへ反映させる
 
             // 画像の透明度を変える
             ImageAllMissionSuccess_component.color = AllMissionSuccesstextColor; //画像の透明度を変える
@@ -1592,8 +1498,8 @@ public class Director : MonoBehaviour
     {
         if (Area1DirectortextColor.a >= 0)
         {
-            Area1DirectortextColor.a = 0;　//アルファ値を徐々にーする
-            direct_text.color = Area1DirectortextColor;　//テキストへ反映させる
+            Area1DirectortextColor.a = 0;//アルファ値を徐々にーする
+            direct_text.color = Area1DirectortextColor;//テキストへ反映させる
 
             // 画像の透明度を変える
             ImageArea1Director_component.color = Area1DirectortextColor; //画像の透明度を変える
@@ -1603,21 +1509,17 @@ public class Director : MonoBehaviour
 
         if (ContenttextColor.a >= 0)
         {
-            ContenttextColor.a -= fadeOutSpeed;　//アルファ値を徐々に＋する
-            content_text.color = ContenttextColor;　//テキストへ反映させる
-
-
+            ContenttextColor.a -= fadeOutSpeed;//アルファ値を徐々に＋する
+            content_text.color = ContenttextColor;//テキストへ反映させる
         }
-
-        
     }
 
     void Area2DirectorFadeOut()
     {
         if (Area2DirectortextColor.a >= 0)
         {
-            Area2DirectortextColor.a = 0;　//アルファ値を徐々にーする
-            direct_text.color = Area2DirectortextColor;　//テキストへ反映させる
+            Area2DirectortextColor.a = 0;//アルファ値を徐々にーする
+            direct_text.color = Area2DirectortextColor;//テキストへ反映させる
 
             // 画像の透明度を変える
             ImageArea2Director_component.color = Area2DirectortextColor; //画像の透明度を変える
@@ -1627,19 +1529,17 @@ public class Director : MonoBehaviour
 
         if (ContenttextColor.a >= 0)
         {
-            ContenttextColor.a -= fadeOutSpeed;　//アルファ値を徐々に＋する
-            content_text.color = ContenttextColor;　//テキストへ反映させる
+            ContenttextColor.a -= fadeOutSpeed;//アルファ値を徐々に＋する
+            content_text.color = ContenttextColor;//テキストへ反映させる
         }
-
-
     }
 
     void Area3DirectorFadeOut()
     {
         if (Area3DirectortextColor.a >= 0)
         {
-            Area3DirectortextColor.a = 0;　//アルファ値を徐々にーする
-            direct_text.color = Area3DirectortextColor;　//テキストへ反映させる
+            Area3DirectortextColor.a = 0;//アルファ値を徐々にーする
+            direct_text.color = Area3DirectortextColor;//テキストへ反映させる
 
             // 画像の透明度を変える
             ImageArea3Director_component.color = Area3DirectortextColor; //画像の透明度を変える
@@ -1649,19 +1549,17 @@ public class Director : MonoBehaviour
 
         if (ContenttextColor.a >= 0)
         {
-            ContenttextColor.a -= fadeOutSpeed;　//アルファ値を徐々に＋する
-            content_text.color = ContenttextColor;　//テキストへ反映させる
+            ContenttextColor.a -= fadeOutSpeed;//アルファ値を徐々に＋する
+            content_text.color = ContenttextColor;//テキストへ反映させる
         }
-
-
     }
 
     void Area4DirectorFadeOut()
     {
         if (Area4DirectortextColor.a >= 0)
         {
-            Area4DirectortextColor.a = 0;　//アルファ値を徐々にーする
-            direct_text.color = Area4DirectortextColor;　//テキストへ反映させる
+            Area4DirectortextColor.a = 0;//アルファ値を徐々にーする
+            direct_text.color = Area4DirectortextColor;//テキストへ反映させる
 
             // 画像の透明度を変える
             ImageArea4Director_component.color = Area4DirectortextColor; //画像の透明度を変える
@@ -1671,19 +1569,17 @@ public class Director : MonoBehaviour
 
         if (ContenttextColor.a >= 0)
         {
-            ContenttextColor.a -= fadeOutSpeed;　//アルファ値を徐々に＋する
-            content_text.color = ContenttextColor;　//テキストへ反映させる
+            ContenttextColor.a -= fadeOutSpeed;//アルファ値を徐々に＋する
+            content_text.color = ContenttextColor;//テキストへ反映させる
         }
-
-
     }
 
     void Area5DirectorFadeOut()
     {
         if (Area5DirectortextColor.a >= 0)
         {
-            Area5DirectortextColor.a = 0;　//アルファ値を徐々にーする
-            direct_text.color = Area5DirectortextColor;　//テキストへ反映させる
+            Area5DirectortextColor.a = 0;//アルファ値を徐々にーする
+            direct_text.color = Area5DirectortextColor;//テキストへ反映させる
 
             // 画像の透明度を変える
             ImageArea5Director_component.color = Area5DirectortextColor; //画像の透明度を変える
@@ -1693,19 +1589,17 @@ public class Director : MonoBehaviour
 
         if (ContenttextColor.a >= 0)
         {
-            ContenttextColor.a -= fadeOutSpeed;　//アルファ値を徐々に＋する
-            content_text.color = ContenttextColor;　//テキストへ反映させる
+            ContenttextColor.a -= fadeOutSpeed;//アルファ値を徐々に＋する
+            content_text.color = ContenttextColor;//テキストへ反映させる
         }
-
-
     }
 
     void Area6DirectorFadeOut()
     {
         if (Area6DirectortextColor.a >= 0)
         {
-            Area6DirectortextColor.a = 0;　//アルファ値を徐々にーする
-            direct_text.color = Area6DirectortextColor;　//テキストへ反映させる
+            Area6DirectortextColor.a = 0;//アルファ値を徐々にーする
+            direct_text.color = Area6DirectortextColor;//テキストへ反映させる
 
             // 画像の透明度を変える
             ImageArea6Director_component.color = Area6DirectortextColor; //画像の透明度を変える
@@ -1715,18 +1609,16 @@ public class Director : MonoBehaviour
 
         if (ContenttextColor.a >= 0)
         {
-            ContenttextColor.a -= fadeOutSpeed;　//アルファ値を徐々に＋する
-            content_text.color = ContenttextColor;　//テキストへ反映させる
+            ContenttextColor.a -= fadeOutSpeed;//アルファ値を徐々に＋する
+            content_text.color = ContenttextColor;//テキストへ反映させる
         }
-
-
     }
 
     void Area1MissionSuccessFadeOut()
     {
         if (Area1MissionSuccesstextColor.a >= 0)
         {
-            Area1MissionSuccesstextColor.a = 0;　//アルファ値を徐々に＋する
+            Area1MissionSuccesstextColor.a = 0;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area1MissionSuccesstextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1738,7 +1630,7 @@ public class Director : MonoBehaviour
     {
         if (Area2MissionSuccesstextColor.a >= 0)
         {
-            Area2MissionSuccesstextColor.a = 0;　//アルファ値を徐々に＋する
+            Area2MissionSuccesstextColor.a = 0;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area2MissionSuccesstextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1750,7 +1642,7 @@ public class Director : MonoBehaviour
     {
         if (Area3MissionSuccesstextColor.a >= 0)
         {
-            Area3MissionSuccesstextColor.a = 0;　//アルファ値を徐々に＋する
+            Area3MissionSuccesstextColor.a = 0;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area3MissionSuccesstextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1763,7 +1655,7 @@ public class Director : MonoBehaviour
     {
         if (Area4MissionSuccesstextColor.a >= 0)
         {
-            Area4MissionSuccesstextColor.a = 0;　//アルファ値を徐々に＋する
+            Area4MissionSuccesstextColor.a = 0;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area4MissionSuccesstextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1776,7 +1668,7 @@ public class Director : MonoBehaviour
     {
         if (Area5MissionSuccesstextColor.a >= 0)
         {
-            Area5MissionSuccesstextColor.a = 0;　//アルファ値を徐々に＋する
+            Area5MissionSuccesstextColor.a = 0;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area5MissionSuccesstextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1789,7 +1681,7 @@ public class Director : MonoBehaviour
     {
         if (Area6MissionSuccesstextColor.a >= 0)
         {
-            Area6MissionSuccesstextColor.a = 0;　//アルファ値を徐々に＋する
+            Area6MissionSuccesstextColor.a = 0;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area6MissionSuccesstextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1803,7 +1695,7 @@ public class Director : MonoBehaviour
     {
         if (Area2MissionFailuretextColor.a >= 0)
         {
-            Area2MissionFailuretextColor.a = 0;　//アルファ値を徐々に＋する
+            Area2MissionFailuretextColor.a = 0;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area2MissionFailuretextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1815,7 +1707,7 @@ public class Director : MonoBehaviour
     {
         if (Area4MissionFailuretextColor.a >= 0)
         {
-            Area4MissionFailuretextColor.a = 0;　//アルファ値を徐々に＋する
+            Area4MissionFailuretextColor.a = 0;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area4MissionFailuretextColor; //テキストへ反映させる
 
             // 画像の透明度を変える
@@ -1828,7 +1720,7 @@ public class Director : MonoBehaviour
     {
         if (Area5MissionFailuretextColor.a >= 0)
         {
-            Area5MissionFailuretextColor.a = 0;　//アルファ値を徐々に＋する
+            Area5MissionFailuretextColor.a = 0;//アルファ値を徐々に＋する
             MissionSuccess_text.color = Area5MissionFailuretextColor; //テキストへ反映させる
 
             // 画像の透明度を変える

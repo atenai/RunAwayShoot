@@ -6,13 +6,13 @@ public class Nood2 : MonoBehaviour
 {
     GameObject gameobject_director;//Director.cs呼び出し
 
-    
 
     private void Awake()
     {
         //キャンバスオブジェクト取得
         gameobject_director = GameObject.Find("Canvas");
     }
+
     private void OnTriggerEnter(Collider other)
     {
         //プレイヤーがあたったら

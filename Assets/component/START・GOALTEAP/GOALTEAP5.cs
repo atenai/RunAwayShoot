@@ -11,6 +11,7 @@ public class GOALTEAP5 : MonoBehaviour
         //キャンバスオブジェクト取得
         gameobject_director = GameObject.Find("Canvas");
     }
+
     private void OnTriggerEnter(Collider other)
     {
         //プレイヤーがあたったら

@@ -14,15 +14,16 @@ public class IsRenderer : MonoBehaviour
     public static bool isRendered = false;
 
     //プレイヤーが触れているか
-    public  bool isPlayer = false;
+    public bool isPlayer = false;
 
     [SerializeField] private GameObject plane;
     private InCamera script;
+
     void Awake()
     {
-       script = plane.GetComponent<InCamera>();
+        script = plane.GetComponent<InCamera>();
     }
-    // Update is called once per frame
+
     void Update()
     {
         isRendered = false;
@@ -40,15 +41,15 @@ public class IsRenderer : MonoBehaviour
     }
 
     //カメラに写っている間に呼ばれる
-   /* private void OnWillRenderObject()
-    {
-        //カメラに映った時だけisRenderedを有効に
-        if (Camera.current.tag == CAMERA_TAG_NAME)
-        {
+    /* private void OnWillRenderObject()
+     {
+         //カメラに映った時だけisRenderedを有効に
+         if (Camera.current.tag == CAMERA_TAG_NAME)
+         {
 
-            isRendered = true;
-        }
-    }*/
+             isRendered = true;
+         }
+     }*/
 
     public static bool GetIsRendered()
     {

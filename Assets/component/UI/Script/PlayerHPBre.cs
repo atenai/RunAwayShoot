@@ -9,10 +9,8 @@ public class PlayerHPBre : MonoBehaviour
     private player mPlayerCon;
 
     //HP表示に用いるオブジェクト
-    [SerializeField]
-    private Image mLifeUI;
-    [SerializeField]
-    private Image mRedGageUI;
+    [SerializeField] private Image mLifeUI;
+    [SerializeField] private Image mRedGageUI;
 
     void Awake()
     {

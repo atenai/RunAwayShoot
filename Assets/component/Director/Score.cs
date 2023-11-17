@@ -32,12 +32,12 @@ public class Score : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         //テキストの文字入力
         score_text.text = score + "";
     }
+
     //スコア加算
     public static int AddScore(int num)
     {

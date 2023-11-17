@@ -17,8 +17,7 @@ public class CollTape : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-            //gameobject_director.GetComponent<Director>().area_flag = true;
-           // gameobject_director.GetComponent<Director>().areaflag();
+
             gameobject_director.GetComponent<Director>().area_Num++;//エリアをプラス１する
             Debug.Log("+1");
         }

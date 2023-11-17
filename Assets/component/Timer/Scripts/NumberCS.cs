@@ -33,6 +33,7 @@ public class NumberCS : MonoBehaviour
         }
         View(random);
     }
+
     //スコアを表示するメソッド
     void View(int score)
     {

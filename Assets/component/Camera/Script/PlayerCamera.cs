@@ -40,7 +40,7 @@ public class PlayerCamera : MonoBehaviour
     private bool isShoot;
     private Vector3 m_optmaizeVec;
 
-    
+
     [SerializeField]
     private LayerMask mRayMask;                         //レイ
 
@@ -59,7 +59,7 @@ public class PlayerCamera : MonoBehaviour
     // コントローラ
     private Vector2 R_Stick;
 
-  
+
 
     void Awake()
     {
@@ -109,11 +109,13 @@ public class PlayerCamera : MonoBehaviour
 
         // 水平回転の更新
         if (Input.GetKey(KeyCode.J))
-        {//L
+        {
+            //L
             mhRotation *= Quaternion.Euler(0, -mTurnSpeed, 0);
         }
         else if (Input.GetKey(KeyCode.L))
-        {//R
+        {
+            //R
             mhRotation *= Quaternion.Euler(0, mTurnSpeed, 0);
         }
 
@@ -148,14 +150,14 @@ public class PlayerCamera : MonoBehaviour
                 axisRot = -this.transform.right;
             }
         }
-        if (_rotY >= -mCameraLimit) 
+        if (_rotY >= -mCameraLimit)
         {
-         if (Input.GetKey(KeyCode.K))
+            if (Input.GetKey(KeyCode.K))
             {
                 axisRot = this.transform.right;
             }
         }
-        
+
         if (Input.GetKey(KeyCode.J))
         {
             axisRot = -this.transform.up;
@@ -172,37 +174,38 @@ public class PlayerCamera : MonoBehaviour
             if (_rotY <= mCameraLimit)
             {
                 if (mRStickDeadZone <= R_Stick.y)
-                {//↑
+                {
+                    //↑
                     axisRot = -this.transform.right;
                 }
             }
-            if(_rotY >= -mCameraLimit)
+            if (_rotY >= -mCameraLimit)
             {
                 if (-mRStickDeadZone >= R_Stick.y)
-                {//↓
+                {
+                    //↓
                     axisRot = this.transform.right;
                 }
             }
             if (-mRStickDeadZone >= R_Stick.x)
-            {//←
+            {
+                //←
                 _a = -this.transform.up;
             }
             if (mRStickDeadZone <= R_Stick.x)
-            {//→
+            {
+                //→
                 _a = this.transform.up;
             }
             axisRot += _a;
         }
-        if(isShoot)
+        if (isShoot)
         {
             mRecoilLarp = 0;
         }
 
         //ControlLookAtLookatオブジェを更新
-        mControlLookAt.transform.RotateAround(
-            mPlayer.transform.position,
-            axisRot,
-            mAimSpeed * Time.deltaTime);
+        mControlLookAt.transform.RotateAround(mPlayer.transform.position, axisRot, mAimSpeed * Time.deltaTime);
 
         //回転のLookATとリコイルの合成
         recoilCameraLockAt();
@@ -211,9 +214,7 @@ public class PlayerCamera : MonoBehaviour
         this.transform.LookAt(mCameraLookAt.transform);
 
         // カメラの位置(transform.position)の更新
-        transform.position =
-            mPlayer.position + new Vector3(0, mEye.y, 0)
-            - transform.rotation * (Vector3.forward + new Vector3(mEye.x, 0, mEye.z));
+        transform.position = mPlayer.position + new Vector3(0, mEye.y, 0) - transform.rotation * (Vector3.forward + new Vector3(mEye.x, 0, mEye.z));
 
         updateRay();
 
@@ -232,10 +233,12 @@ public class PlayerCamera : MonoBehaviour
         Ray ray = new Ray(this.transform.position, this.transform.forward);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100.0f/*30.0f*/, mRayMask.value))
-        {//何かがレイに触れた場合 
-           
+        {
+            //何かがレイに触れた場合 
+
             if (hit.collider.tag == "Enemy")
-            {//敵を見つけた際
+            {
+                //敵を見つけた際
                 mBodyaLookAt.transform.position = ray.GetPoint(hit.distance);
                 mAimSpeed = mAimAdjusSpeed * mAimDefSpeed;
             }

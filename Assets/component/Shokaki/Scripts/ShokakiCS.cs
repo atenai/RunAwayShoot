@@ -12,13 +12,11 @@ public class ShokakiCS : MonoBehaviour
     public AudioClip Air_SE;
     private float SE_Endtime;
 
-    // Start is called before the first frame update
     void Start()
     {
         SE_Endtime = Air_SE.length;
     }
 
-    // Update is called once per frame
     void Update()
     {
 
