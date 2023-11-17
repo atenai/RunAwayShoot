@@ -1,0 +1,13 @@
+Untagged
+Respawn
+Finish
+EditorOnly
+MainCamera
+Player
+GameController
+Enemy
+EnemyBullet
+PlayerBullet
+
+[Layer]
+Add : PlayerRayMask	<<プレイヤーのレイに検知されるものに当てる
